@@ -12,6 +12,9 @@ import { MessageService } from '../../service/message.service';
 export class HeroesComponent implements OnInit {
 
   heroes: Hero[] = [];
+  heroesAll: Hero[] = [];
+  heroesSearch: Hero[] = [];
+  stateSearch: false;
   // selectedHero?: Hero;
 
   // onSelect(hero: Hero): void {
@@ -21,7 +24,7 @@ export class HeroesComponent implements OnInit {
 
   getHeroes(): void {
     this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes);
+      .subscribe(heroes => (this.heroes = heroes, this.heroesAll = heroes));
   }
   add(name: string): void {
     name = name.trim();
@@ -34,6 +37,23 @@ export class HeroesComponent implements OnInit {
   delete(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero.id).subscribe();
+  }
+  onHeroesSearch(val) {
+    if (val != false) {
+        this.heroes = val;
+    }
+    else {
+      const typeVal = typeof val;
+      if (typeVal == 'object') {
+        this.heroes = val;
+      }
+      else {
+        this.heroes = this.heroesAll;
+      }
+    }
+  }
+  onStateSearch(val) {
+    this.stateSearch = val;
   }
   constructor(private heroService: HeroService, private messageService: MessageService) {
 

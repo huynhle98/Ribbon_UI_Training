@@ -1,5 +1,5 @@
 <h3>My Heroes</h3>
-<button class="btn btn-primary btn-new-hero" data-toggle="modal" data-target="#formAddNewHero">
+<button class="btn btn-info btn-new-hero" data-toggle="modal" data-target="#formAddNewHero">
   Add new hero
 </button>
 <div class="modal fade" id="formAddNewHero" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -23,14 +23,33 @@
     </div>
 </div>
 
+<div class="gr-filter">
+    <app-hero-search (heroesSearch)="onHeroesSearch($event)" (stateSearch)="onStateSearch($event)"></app-hero-search>
+    <div class="dropdown">
+        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Type All
+  </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">All Type</a>
+            <a class="dropdown-item" href="#">Physical</a>
+            <a class="dropdown-item" href="#">Magic</a>
+        </div>
+    </div>
+</div>
+
 <ul class="heroes">
+    <div class="heroes-notfound" *ngIf="heroes.length == 0 && stateSearch">
+        Not Found Heroes Matching
+    </div>
     <!-- <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelect(hero)"></li> -->
-    <li *ngFor="let hero of heroes">
+
+    <!-- <li *ngFor="let hero of heroes">
         <div routerLink="/detail/{{hero.id}}" class="btn-link">
             <span class="badge">{{hero.id}}</span> {{hero.name}}
         </div>
         <button class="btn btn-danger" title="delete hero" (click)="delete(hero)" title="Delete Hero">x</button>
-    </li>
+    </li> -->
+    <app-hero routerLink="/detail/{{hero.id}}" *ngFor="let hero of heroes" [heroInfo]="hero" class="hero"></app-hero>
 </ul>
 
 

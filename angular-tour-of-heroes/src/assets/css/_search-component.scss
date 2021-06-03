@@ -1,0 +1,87 @@
+.search-component {
+    i {
+        position: absolute;
+        left: 0.7rem;
+        top: 0.8rem;
+        font-size: 20px;
+    }
+    input {
+        padding: .5rem 2.5rem;
+        width: 100%;
+        max-width: 300px;
+        box-sizing: border-box;
+        display: block;
+        border: 1px solid $txtColor;
+        outline: none;
+    }
+    input:focus {
+        border-color: $colorActive;
+        outline: none;
+    }
+    input:focus+i {
+        color: $colorActive;
+    }
+    .search-result {
+        z-index: 1;
+        max-width: 300px;
+        opacity: 0.9;
+        border: 1px solid $borderColor;
+        border-top: 0;
+        a {
+            text-transform: uppercase;
+            position: relative;
+        }
+        img {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            object-fit: cover;
+            top: 0.3rem;
+            left: 0.25rem;
+            border-radius: 0.2rem;
+        }
+    }
+}
+
+
+/* HeroSearch private styles */
+
+.bgr-search {
+    width: 100%;
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+}
+
+li {
+    list-style-type: none;
+}
+
+.search-result li a {
+    display: inline-block;
+    width: 100%;
+    max-width: 300px;
+    padding: .5rem 2.5rem;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: black;
+}
+
+.search-result li a:hover {
+    background-color: $bgrMenu;
+}
+
+ul.search-result {
+    margin-top: 0;
+    padding-left: 0;
+    position: absolute;
+    width: 100%;
+    background: white;
+}

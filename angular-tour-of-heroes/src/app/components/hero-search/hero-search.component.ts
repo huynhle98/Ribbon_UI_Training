@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 
@@ -12,7 +12,10 @@ import { HeroService } from '../../service/hero.service';
 })
 export class HeroSearchComponent implements OnInit {
 
+  @Output() heroesSearch = new EventEmitter<any>();
+  @Output() stateSearch = new EventEmitter<any>();
   heroes$!: Observable<Hero[]>;
+  stateCls: string;
   private searchTerms = new Subject<string>();
 
   constructor(private heroService: HeroService) {
@@ -21,18 +24,42 @@ export class HeroSearchComponent implements OnInit {
   search(term: string): void {
     this.searchTerms.next(term);
   }
-
+  focusIn() {
+    this.stateSearch.emit(true);
+    this.stateCls = "";
+  }
+  focusOut(term: string) {
+    setTimeout(() => {
+      this.stateCls = "hidden";
+    }, 500);
+    if (term.length == 0) {
+      this.stateSearch.emit(false);
+    }
+    else {
+      this.stateSearch.emit(true);
+    }
+  }
   ngOnInit(): void {
+    var self = this;
     this.heroes$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
-      debounceTime(300),
+      debounceTime(100),
 
       // ignore new term if same as previous term
       distinctUntilChanged(),
 
       // switch to new search observable each time the term changes
-      switchMap((term: string) => this.heroService.searchHeroes(term)),
+      switchMap((term: string) => this.heroService.searchHeroes(term, function callback(val) {
+        self.heroesSearch.emit(val);
+      })),
     );
+    // window.addEventListener('click', function (e) {
+    //   if (document.querySelector('.search-component .search-result').contains(e.returnValue)) {
+    //     console.log("a");
+    //   } else {
+    //     console.log("b");
+    //   }
+    // });
   }
 
 }

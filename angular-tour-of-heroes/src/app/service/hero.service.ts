@@ -73,16 +73,16 @@ export class HeroService {
     );
   }
   /* GET heroes whose name contains search term */
-  searchHeroes(term: string): Observable<Hero[]> {
+  searchHeroes(term: string, callback): Observable<Hero[]> {
     if (!term.trim()) {
       // if not search term, return empty hero array.
-      return of([]);
+      return of([], callback(false));
     }
     return this.http.get<Hero[]>(`${this.heroesUrl}/?name=${term}`).pipe(
       tap(x => x.length ?
-        this.log(`found heroes matching "${term}"`) :
-        this.log(`no heroes matching "${term}"`)),
-      catchError(this.handleError<Hero[]>('searchHeroes', []))
+        (this.log(`found heroes matching "${term}"`), callback(x)) :
+        (this.log(`no heroes matching "${term}"`), callback(x))),
+      catchError(this.handleError<Hero[]>('searchHeroes', [])),
     );
   }
   // getHero(id: number): Observable<Hero> {

@@ -4,10 +4,58 @@
     button {
         width: 140px;
         margin-right: 1rem;
+        text-transform: uppercase;
     }
 }
 
 .form-gr {
     width: 70%;
     margin: 0.5rem 0;
+}
+
+.hero-detail {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    h3 {
+        width: 100%;
+        font-weight: 600;
+    }
+    &-info {
+        width: 60%;
+        margin-right: auto;
+    }
+    &-img {
+        width: 38%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        img {
+            width: 200px;
+            height: 250px;
+            object-fit: cover;
+            border: 1px solid $borderColor;
+            box-shadow: 0px 0px 8px 2px $borderColor;
+        }
+        input {
+            display: none;
+        }
+        .btn {
+            margin-top: 1rem;
+        }
+    }
+    .form-gr {
+        width: 100%;
+        label {
+            width: 28%;
+            color: $txtColor;
+        }
+        input {
+            width: 70%;
+        }
+        select {
+            width: 70%;
+            padding: 0.6rem 0.8rem;
+        }
+    }
 }

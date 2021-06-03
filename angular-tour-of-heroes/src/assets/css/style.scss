@@ -17,7 +17,7 @@ h1 {
 nav {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 22%;
     margin-right: auto;
     background: #fafafa;
 }
@@ -32,11 +32,11 @@ nav a.active,
 nav a:hover {
     background: #DBDBDB;
     text-decoration: unset;
-    color: #1976d2;
+    color: $colorActive;
 }
 
 nav a:hover i {
-    color: #1976d2;
+    color: $colorActive;
 }
 
 nav a i {
@@ -47,7 +47,7 @@ nav a i {
 }
 
 .content {
-    width: 73%;
+    width: 76%;
     border: 1px solid #DBDBDB;
     padding: 1rem;
     position: relative;
@@ -67,5 +67,17 @@ nav a i {
     }
 }
 
+.btn {
+    border-radius: 0.2rem;
+    padding: 0.5rem 1rem;
+    font-size: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
 @import './heroes';
 @import './hero-detail';
+@import './hero';
+@import './search-component';

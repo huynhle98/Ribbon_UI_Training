@@ -1,13 +1,58 @@
-<div *ngIf="hero">
+<div *ngIf="hero" class="hero-detail">
     <h3>{{hero.name | uppercase}} Details</h3>
-    <div><span>id: </span>{{hero.id}}</div>
-    <div class="form-gr">
-        <label for="hero-name">Hero name: </label>
-        <input id="hero-name" [(ngModel)]="hero.name" placeholder="Hero name">
+    <div class="hero-detail-info">
+        <div><span>id: </span>{{hero.id}}</div>
+        <div class="form-gr">
+            <label for="hero-name">Hero name: </label>
+            <input [(ngModel)]="hero.name" placeholder="Hero name">
+        </div>
+        <div class="form-gr">
+            <label for="hero-acttack">Attack Damage: </label>
+            <input [(ngModel)]="hero.attackDamage" placeholder="Attack Damage">
+        </div>
+        <div class="form-gr">
+            <label for="hero-acttack">Attack Range: </label>
+            <input [(ngModel)]="hero.attackRange" placeholder="Attack Range">
+        </div>
+        <div class="form-gr">
+            <label for="hero-acttack">Power Magic: </label>
+            <input [(ngModel)]="hero.powerMagic" placeholder="Power Magic">
+        </div>
+        <div class="form-gr">
+            <label for="hero-acttack">Health: </label>
+            <input [(ngModel)]="hero.health" placeholder="Health">
+        </div>
+        <div class="form-gr">
+            <label for="hero-acttack">Health Regen: </label>
+            <input [(ngModel)]="hero.healthRegen" placeholder="Health Regen">
+        </div>
+        <div class="form-gr">
+            <label for="hero-acttack">Armor: </label>
+            <input [(ngModel)]="hero.armor" placeholder="Armor">
+        </div>
+        <div class="form-gr">
+            <label for="hero-acttack">Magic Resist: </label>
+            <input [(ngModel)]="hero.magicResist" placeholder="Magic Resist">
+        </div>
+        <div class="form-gr">
+            <label for="hero-acttack">Move Speed: </label>
+            <input [(ngModel)]="hero.moveSpeed" placeholder="Move Speed">
+        </div>
+        <div class="form-gr">
+            <label for="hero-acttack">Type: </label>
+            <!-- <input id="hero-acttack" [(ngModel)]="hero.type" placeholder="Type"> -->
+            <select name="hero-type" (change)="onChangeValType($event)">
+              <option [value]="obj.id" [selected]="hero.type == obj.val" *ngFor="let obj of types">{{obj.val}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="hero-detail-img">
+        <img [src]="checkImg(hero.img)" alt="">
+        <input type="file" accept=".png, .jpg, .jpeg" #openFile (change)="onChangeImg($event)">
+        <button class="btn btn-info" (click)="openFile.click()">Choose Image</button>
     </div>
     <div class="gr-btn">
         <button class="btn btn-secondary" (click)="goBack()">Back</button>
         <button class="btn btn-primary" (click)="save()">Save</button>
     </div>
-
 </div>
