@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { DomSanitizer } from '@angular/platform-browser';
 
 import { Hero } from '../../model/hero';
 import { HeroService } from '../../service/hero.service';
@@ -18,26 +19,7 @@ export class HeroSearchComponent implements OnInit {
   stateCls: string;
   private searchTerms = new Subject<string>();
 
-  constructor(private heroService: HeroService) {
-  }
-
-  search(term: string): void {
-    this.searchTerms.next(term);
-  }
-  focusIn() {
-    this.stateSearch.emit(true);
-    this.stateCls = "";
-  }
-  focusOut(term: string) {
-    setTimeout(() => {
-      this.stateCls = "hidden";
-    }, 500);
-    if (term.length == 0) {
-      this.stateSearch.emit(false);
-    }
-    else {
-      this.stateSearch.emit(true);
-    }
+  constructor(private heroService: HeroService, private sanitizer: DomSanitizer) {
   }
   ngOnInit(): void {
     var self = this;
@@ -62,4 +44,25 @@ export class HeroSearchComponent implements OnInit {
     // });
   }
 
+  checkImg(url) {
+    return this.sanitizer.bypassSecurityTrustUrl(url);
+  }
+  search(term: string): void {
+    this.searchTerms.next(term);
+  }
+  focusIn() {
+    this.stateSearch.emit(true);
+    this.stateCls = "";
+  }
+  focusOut(term: string) {
+    setTimeout(() => {
+      this.stateCls = "hidden";
+    }, 500);
+    if (term.length == 0) {
+      this.stateSearch.emit(false);
+    }
+    else {
+      this.stateSearch.emit(true);
+    }
+  }
 }

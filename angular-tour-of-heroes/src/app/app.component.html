@@ -1,13 +1,1 @@
-<h1>{{title}}</h1>
-<div class="container">
-    <nav>
-        <!-- [class.acitve]=" === selectedHero" -->
-        <a routerLink="/dashboard" [class.active]=" pathCurrent=== '/dashboard'"><i class="fas fa-home"></i> Dashboard</a>
-        <a routerLink="/heroes" [class.active]=" pathCurrent == '/heroes'"><i class="fas fa-clipboard-list"></i> Heroes</a>
-    </nav>
-    <div class="content">
-        <router-outlet></router-outlet>
-    </div>
-</div>
-
-<!-- <app-messages></app-messages> -->
+<router-outlet></router-outlet>

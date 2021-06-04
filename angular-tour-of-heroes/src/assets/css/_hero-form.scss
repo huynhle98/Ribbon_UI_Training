@@ -1,0 +1,28 @@
+.hero-form {
+    .modal-body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .form-gr {
+        width: 46%;
+        label {
+            width: 45%;
+        }
+        input,
+        select {
+            width: 55%;
+        }
+        select {
+            padding: 0.6rem 1rem;
+            option {
+                padding: 0.6rem 1rem;
+            }
+        }
+    }
+    .btn {
+        padding: 0.7rem 3rem;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
+}

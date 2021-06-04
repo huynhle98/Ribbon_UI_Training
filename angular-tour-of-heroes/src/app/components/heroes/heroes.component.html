@@ -2,42 +2,26 @@
 <button class="btn btn-info btn-new-hero" data-toggle="modal" data-target="#formAddNewHero">
   Add new hero
 </button>
-<div class="modal fade" id="formAddNewHero" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Add New Hero</h5>
-            </div>
-            <div class="modal-body">
-                <div class="form-gr">
-                    <label for="new-hero">Hero name: </label>
-                    <input id="new-hero" #heroName />
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="add(heroName.value); heroName.value=''">Add hero</button>
-            </div>
-        </div>
-    </div>
-</div>
-
+<app-hero-form-add (newHero)="onNewHero($event)"></app-hero-form-add>
 <div class="gr-filter">
     <app-hero-search (heroesSearch)="onHeroesSearch($event)" (stateSearch)="onStateSearch($event)"></app-hero-search>
     <div class="dropdown">
-        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Type All
-  </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">All Type</a>
-            <a class="dropdown-item" href="#">Physical</a>
-            <a class="dropdown-item" href="#">Magic</a>
+        <button class="btn dropdown-toggle" type="button" value="{{heroTypes[0].id}}" id="btnSortType" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{heroTypes[0].type}}
+    </button>
+        <div class="dropdown-menu" aria-labelledby="btnSortType">
+            <button class="dropdown-item" *ngFor="let val of heroTypes" (click)="sortToType(val)">{{val.type}}</button>
         </div>
+    </div>
+    <div class="gr-view">
+        <span (click)="changeView(0)"><i class="fas fa-th" [class.active]=" viewType == 0"><span>Grid</span></i>
+        </span>
+        <span (click)="changeView(1)"><i class="fas fa-th-list" [class.active]=" viewType != 0"><span>List</span></i>
+        </span>
     </div>
 </div>
 
-<ul class="heroes">
+<ul class="heroes" *ngIf="viewType == 0" [@enterAnimation]>
     <div class="heroes-notfound" *ngIf="heroes.length == 0 && stateSearch">
         Not Found Heroes Matching
     </div>
@@ -49,8 +33,13 @@
         </div>
         <button class="btn btn-danger" title="delete hero" (click)="delete(hero)" title="Delete Hero">x</button>
     </li> -->
-    <app-hero routerLink="/detail/{{hero.id}}" *ngFor="let hero of heroes" [heroInfo]="hero" class="hero"></app-hero>
+    <app-hero routerLink="/detail/{{ hero.id }}" [@enterAnimation] *ngFor="let hero of heroes" [heroInfo]="hero" class="hero"></app-hero>
 </ul>
+<ul class="heroes" *ngIf="viewType != 0" [@enterAnimation]>
+    <div class="heroes-notfound" *ngIf="heroes.length == 0 && stateSearch">
+        Not Found Heroes Matching
+    </div>
 
-
+    <app-hero-type-list routerLink="/detail/{{ hero.id }}" *ngFor="let hero of heroes" [heroInfo]="hero" class="hero-type-list"></app-hero-type-list>
+</ul>
 <!-- <app-hero-detail [hero]="selectedHero"></app-hero-detail> -->

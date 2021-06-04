@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { HeroService } from '../../service/hero.service';
 import { DomSanitizer } from '@angular/platform-browser';
-
+import { HeroType } from '../../model/heroType'
 @Component({
   selector: 'app-hero-detail',
   templateUrl: './hero-detail.component.html',
@@ -13,9 +13,9 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class HeroDetailComponent implements OnInit {
 
   @Input() hero?: Hero;
-  types= [
-    { id: 1, val: "Physical"},
-    { id: 2, val: "Magic"}
+  types: HeroType[] = [
+    { id: 1, type: "Physical"},
+    { id: 2, type: "Magic"}
   ];
   constructor(
     private route: ActivatedRoute,
@@ -28,6 +28,7 @@ export class HeroDetailComponent implements OnInit {
     this.getHero();
 
   }
+
   getHero(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.heroService.getHero(id)
@@ -55,5 +56,8 @@ export class HeroDetailComponent implements OnInit {
   }
   checkImg(url) {
     return this.sanitizer.bypassSecurityTrustUrl(url);
+  }
+  onNumber(event) {
+    return event.charCode >= 48 && event.charCode <= 57 && event.charCode == 190
   }
 }

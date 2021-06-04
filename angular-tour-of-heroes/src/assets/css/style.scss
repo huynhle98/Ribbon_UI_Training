@@ -3,6 +3,30 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+    overflow-x: hidden;
+}
+
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Firefox */
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+button:focus {
+    outline: none;
+}
+
 h1 {
     text-align: center;
     margin: 1rem 0 3rem 0;
@@ -81,3 +105,5 @@ nav a i {
 @import './hero-detail';
 @import './hero';
 @import './search-component';
+@import './hero-type-list';
+@import './hero-form';

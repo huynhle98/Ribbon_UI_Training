@@ -1,0 +1,61 @@
+<div class="modal hero-form fade" id="formAddNewHero" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Add New Hero</h5>
+            </div>
+            <div class="modal-body">
+                <div class="form-gr">
+                    <label for="hero-name">Hero name: </label>
+                    <input [(ngModel)]="hero.name" placeholder="Hero name">
+                </div>
+                <div class="form-gr">
+                    <label for="hero-acttack">Attack Damage: </label>
+                    <input [(ngModel)]="hero.attackDamage" placeholder="Attack Damage" maxlength="6" type="text" (onkeypress)="onNumber($event)">
+                </div>
+                <div class="form-gr">
+                    <label for="hero-acttack">Attack Range: </label>
+                    <input [(ngModel)]="hero.attackRange" placeholder="Attack Range" maxlength="6" type="text" (onkeypress)="onNumber($event)">
+                </div>
+                <div class="form-gr">
+                    <label for="hero-acttack">Power Magic: </label>
+                    <input [(ngModel)]="hero.powerMagic" placeholder="Power Magic" maxlength="6" type="text" (onkeypress)="onNumber($event)">
+                </div>
+                <div class="form-gr">
+                    <label for="hero-acttack">Health: </label>
+                    <input [(ngModel)]="hero.health" placeholder="Health" maxlength="6" type="text" (onkeypress)="onNumber($event)">
+                </div>
+                <div class="form-gr">
+                    <label for="hero-acttack">Health Regen: </label>
+                    <input [(ngModel)]="hero.healthRegen" placeholder="Health Regen" maxlength="6" type="text" (onkeypress)="onNumber($event)">
+                </div>
+                <div class="form-gr">
+                    <label for="hero-acttack">Armor: </label>
+                    <input [(ngModel)]="hero.armor" placeholder="Armor" maxlength="6" type="text" (onkeypress)="onNumber($event)">
+                </div>
+                <div class="form-gr">
+                    <label for="hero-acttack">Magic Resist: </label>
+                    <input [(ngModel)]="hero.magicResist" placeholder="Magic Resist" maxlength="6" type="text" (onkeypress)="onNumber($event)">
+                </div>
+                <div class="form-gr">
+                    <label for="hero-acttack">Move Speed: </label>
+                    <input [(ngModel)]="hero.moveSpeed" placeholder="Move Speed" maxlength="6" type="text" (onkeypress)="onNumber($event)">
+                </div>
+                <div class="form-gr">
+                    <label for="hero-acttack">Type: </label>
+                    <select name="hero-type" (change)="onChangeValType($event)">
+                    <option [value]="obj.id" [selected]="obj.id == 0" *ngFor="let obj of types">{{obj.type}}</option>
+                  </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+        Close
+      </button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="add(hero)">
+        Add hero
+      </button>
+            </div>
+        </div>
+    </div>
+</div>

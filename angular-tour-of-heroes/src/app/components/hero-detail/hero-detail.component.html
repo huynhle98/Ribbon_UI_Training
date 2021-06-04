@@ -4,45 +4,45 @@
         <div><span>id: </span>{{hero.id}}</div>
         <div class="form-gr">
             <label for="hero-name">Hero name: </label>
-            <input [(ngModel)]="hero.name" placeholder="Hero name">
+            <input [(ngModel)]="hero.name" placeholder="Hero name" maxlength="20">
         </div>
         <div class="form-gr">
             <label for="hero-acttack">Attack Damage: </label>
-            <input [(ngModel)]="hero.attackDamage" placeholder="Attack Damage">
+            <input [(ngModel)]="hero.attackDamage" placeholder="Attack Damage" maxlength="6" type="text" (onkeypress)="onNumber($event)">
         </div>
         <div class="form-gr">
             <label for="hero-acttack">Attack Range: </label>
-            <input [(ngModel)]="hero.attackRange" placeholder="Attack Range">
+            <input [(ngModel)]="hero.attackRange" placeholder="Attack Range" maxlength="6" type="text" (onkeypress)="onNumber($event)">
         </div>
         <div class="form-gr">
             <label for="hero-acttack">Power Magic: </label>
-            <input [(ngModel)]="hero.powerMagic" placeholder="Power Magic">
+            <input [(ngModel)]="hero.powerMagic" placeholder="Power Magic" maxlength="6" type="text" (onkeypress)="onNumber($event)">
         </div>
         <div class="form-gr">
             <label for="hero-acttack">Health: </label>
-            <input [(ngModel)]="hero.health" placeholder="Health">
+            <input [(ngModel)]="hero.health" placeholder="Health" maxlength="6" type="text" (onkeypress)="onNumber($event)">
         </div>
         <div class="form-gr">
             <label for="hero-acttack">Health Regen: </label>
-            <input [(ngModel)]="hero.healthRegen" placeholder="Health Regen">
+            <input [(ngModel)]="hero.healthRegen" placeholder="Health Regen" maxlength="6" type="text" (onkeypress)="onNumber($event)">
         </div>
         <div class="form-gr">
             <label for="hero-acttack">Armor: </label>
-            <input [(ngModel)]="hero.armor" placeholder="Armor">
+            <input [(ngModel)]="hero.armor" placeholder="Armor" maxlength="6" type="text" (onkeypress)="onNumber($event)">
         </div>
         <div class="form-gr">
             <label for="hero-acttack">Magic Resist: </label>
-            <input [(ngModel)]="hero.magicResist" placeholder="Magic Resist">
+            <input [(ngModel)]="hero.magicResist" placeholder="Magic Resist" maxlength="6" type="text" (onkeypress)="onNumber($event)">
         </div>
         <div class="form-gr">
             <label for="hero-acttack">Move Speed: </label>
-            <input [(ngModel)]="hero.moveSpeed" placeholder="Move Speed">
+            <input [(ngModel)]="hero.moveSpeed" placeholder="Move Speed" maxlength="6" type="text" (onkeypress)="onNumber($event)">
         </div>
         <div class="form-gr">
             <label for="hero-acttack">Type: </label>
             <!-- <input id="hero-acttack" [(ngModel)]="hero.type" placeholder="Type"> -->
             <select name="hero-type" (change)="onChangeValType($event)">
-              <option [value]="obj.id" [selected]="hero.type == obj.val" *ngFor="let obj of types">{{obj.val}}</option>
+              <option [value]="obj.type" [selected]="hero.type == obj.type" *ngFor="let obj of types">{{obj.type}}</option>
             </select>
         </div>
     </div>
