@@ -7,14 +7,16 @@ import { DashboardComponent } from '../components/dashboard/dashboard.component'
 import { HeroDetailComponent } from '../components/hero-detail/hero-detail.component';
 import { NotFoundPageComponent } from '../components/not-found-page/not-found-page.component';
 import { LayoutComponent } from '../components/layout/layout.component';
+import { SkinsComponent } from '../components/skins/skins.component';
 
 const routes: Routes = [
   {
     path: '', component: LayoutComponent, children: [
-      { path: '', redirectTo: '/dashboard', pathMatch: 'full'},
+      { path: '', redirectTo: '/skins', pathMatch: 'full'},
       { path: 'dashboard', component: DashboardComponent },
       { path: 'heroes', component: HeroesComponent },
       { path: 'detail/:id', component: HeroDetailComponent },
+      { path: 'skins', component: SkinsComponent },
   ] },
 
   { path: '**', component: NotFoundPageComponent },

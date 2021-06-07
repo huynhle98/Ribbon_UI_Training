@@ -17,7 +17,10 @@ import { HeroComponent } from './components/hero/hero.component';
 import { NotFoundPageComponent } from './components/not-found-page/not-found-page.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HeroTypeListComponent } from './components/hero-type-list/hero-type-list.component';
-import { HeroFormAddComponent } from './components/hero-form-add/hero-form-add.component'
+import { HeroFormAddComponent } from './components/hero-form-add/hero-form-add.component';
+import { SkinsComponent } from './components/skins/skins.component'
+
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { HeroFormAddComponent } from './components/hero-form-add/hero-form-add.c
     NotFoundPageComponent,
     LayoutComponent,
     HeroTypeListComponent,
-    HeroFormAddComponent
+    HeroFormAddComponent,
+    SkinsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,8 @@ import { HeroFormAddComponent } from './components/hero-form-add/hero-form-add.c
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, {dataEncapsulation: false, delay: 500 }
-    )
+    ),
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
