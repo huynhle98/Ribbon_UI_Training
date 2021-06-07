@@ -359,6 +359,7 @@ nav a i {
   transition: all 0.8s ease;
   -webkit-transition-delay: 0.1s;
           transition-delay: 0.1s;
+  min-height: 42px;
 }
 
 .hero::after {
@@ -622,6 +623,7 @@ ul.search-result {
 
 .hero-form .form-gr {
   width: 46%;
+  position: relative;
 }
 
 .hero-form .form-gr label {
@@ -631,6 +633,14 @@ ul.search-result {
 .hero-form .form-gr input,
 .hero-form .form-gr select {
   width: 55%;
+}
+
+.hero-form .form-gr input {
+  border: 1px solid;
+}
+
+.hero-form .form-gr input:focus {
+  outline: none;
 }
 
 .hero-form .form-gr select {
@@ -645,5 +655,53 @@ ul.search-result {
   padding: 0.7rem 3rem;
   text-transform: uppercase;
   font-weight: 800;
+}
+
+.hero-form .gr-img {
+  width: 100%;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.hero-form .gr-img img {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-box-shadow: 0px 0px 5px 1px #C1C1C1;
+          box-shadow: 0px 0px 5px 1px #C1C1C1;
+}
+
+.hero-form .gr-img input {
+  display: none;
+}
+
+.hero-form .gr-img .btn {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  padding: 0;
+  margin-left: 1rem;
+}
+
+.alert-err {
+  position: absolute;
+  color: red;
+  right: 0;
+  bottom: -12px;
+  font-size: 12px;
+}
+
+.alert-err + input {
+  border-color: red !important;
 }
 /*# sourceMappingURL=style.css.map */
