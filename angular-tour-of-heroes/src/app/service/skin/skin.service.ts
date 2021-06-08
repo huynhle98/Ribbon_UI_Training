@@ -45,4 +45,23 @@ export class SkinService {
         catchError(this.handleError<Skin[]>('getSkins', []))
       );
   }
+  deleteSkin(id: number, callback): Observable<Skin> {
+    const url = `${this.skinsUrl}/${id}`;
+
+    return this.http.delete<Skin>(url, this.httpOptions).pipe(
+      tap(_ => this.log(`deleted skin id=${id}`),callback()),
+      catchError(this.handleError<Skin>('deleteSkin'))
+    );
+  }
+  searchSkins(term: string, callback): Observable<Skin[]> {
+    if (!term.trim()) {
+      return of([], callback(false));
+    }
+    return this.http.get<Skin[]>(`${this.skinsUrl}/?name=${term}`).pipe(
+      tap(x => x.length ?
+        (this.log(`found skins matching "${term}"`), callback(x)) :
+        (this.log(`no skins matching "${term}"`), callback(x))),
+      catchError(this.handleError<Skin[]>('searchSkins', [])),
+    );
+  }
 }

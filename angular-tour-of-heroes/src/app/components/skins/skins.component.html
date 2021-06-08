@@ -1,16 +1,65 @@
-<p-table [value]="skins">
-    <ng-template pTemplate="header">
-        <tr>
-            <th *ngFor="let col of cols">
-                {{col.header}}
-            </th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-skin>
-        <tr>
-            <td *ngFor="let col of cols">
-                {{skin[col.field]}}
-            </td>
-        </tr>
-    </ng-template>
-</p-table>
+<div class="skins">
+    <p-toast position="top-right" severity="success"></p-toast>
+    <div class="bgr-loading" *ngIf="skins === undefined">
+        <p-progressSpinner strokeWidth="5" class="icon-loading"></p-progressSpinner>
+    </div>
+    <div *ngIf="skins">
+        <p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle" #cf>
+            <ng-template pTemplate="footer">
+                <button type="button" pButton class="p-button-outlined" icon="pi pi-times" label="No" (click)="cf.reject()"></button>
+                <button type="button" pButton icon="pi pi-check" label="Yes" (click)="cf.accept()"></button>
+            </ng-template>
+        </p-confirmDialog>
+        <p-toolbar styleClass="p-mb-4">
+            <div class="p-toolbar-group-left">
+                <p-button label="New" icon="pi pi-plus" styleClass="p-button-success p-mr-2"></p-button>
+                <p-button icon="pi pi-times" styleClass="p-button-danger" (click)="deleteSelectedSkins()" [disabled]="!selectedskins || !selectedskins.length"></p-button>
+            </div>
+            <div class="p-toolbar-group-right">
+                <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="p-mr-2"></p-fileUpload>
+                <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
+            </div>
+        </p-toolbar>
+        <p-card>
+            <p-table #dtSkin [globalFilterFields]="['nameHero','name','type']" [value]="skins" [(selection)]="selectedskins" [rowHover]="true" [rows]="5" (onPage)="paginate($event)" (onFilter)="onFilterData($event)" [rowsPerPageOptions]="[5,10,15]" [paginator]="true">
+                <ng-template pTemplate="caption">
+                    <div class="p-d-flex p-ai-center p-jc-between">
+                        <h5 class="p-m-0">Total: {{totalSkin>1 ? totalSkin+' skins': totalSkin+' skin'}} </h5>
+                        <span class="p-input-icon-left">
+              <i class="pi pi-search"></i>
+              <input type="text" pInputText placeholder="Search (Hero Name, Skin Name, Type)" (input)="dtSkin.filterGlobal($event.target.value, 'contains')">
+            </span>
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th style="width: 3rem">
+                            <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                        </th>
+                        <th *ngFor="let col of cols" [pSortableColumn]="col.field != 'img' ? col.field : ''" class="p-text-nowrap" [ngStyle]="{'width': col.width}">
+                            {{col.header}}
+                            <p-sortIcon [field]="col.field" *ngIf="col.field != 'img'"></p-sortIcon>
+                        </th>
+                        <th></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-skin>
+                    <tr>
+                        <td>
+                            <p-tableCheckbox [value]="skin"></p-tableCheckbox>
+                        </td>
+                        <td *ngFor="let col of cols">
+                            <img [src]="skin[col.field]" alt="" *ngIf="col.field == 'img'" class="p-shadow-4">
+                            <span *ngIf="col.field == 'type'" [class]="'badge badge-'+ skin[col.field]|lowercase">{{skin[col.field]}}</span>
+                            <span *ngIf="col.field != 'img' && col.field != 'type'">{{skin[col.field]}}</span>
+                        </td>
+                        <td>
+                            <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-secondary p-mr-2" (click)="editSkin(skin)"></button>
+                            <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteSkin(skin)"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </p-card>
+    </div>
+</div>

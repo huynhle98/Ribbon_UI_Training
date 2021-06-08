@@ -34,14 +34,10 @@ h1 {
     font-weight: 600;
 }
 
-.container {
-    display: flex;
-}
-
 nav {
     display: flex;
     flex-direction: column;
-    width: 22%;
+    width: 19%;
     margin-right: auto;
     background: #fafafa;
 }
@@ -71,10 +67,15 @@ nav a i {
 }
 
 .content {
-    width: 76%;
-    border: 1px solid #DBDBDB;
+    width: 80%;
+    border: 1px solid $bgrActive;
     padding: 1rem;
     position: relative;
+    min-height: 100vh;
+    button.p-button,
+    span.p-button {
+        padding: 0.4rem 1rem;
+    }
 }
 
 .form-gr {
@@ -101,9 +102,30 @@ nav a i {
     display: none;
 }
 
+.bgr-loading {
+    width: 100%;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.icon-loading {
+    .p-progress-spinner {
+        width: 50px;
+        height: 50px;
+        .p-progress-spinner-circle {
+            stroke: $colorActive!important;
+        }
+    }
+}
+
+img[src=""] {
+    content: url("/assets/img/default/default-image.jpg")
+}
+
 @import './heroes';
 @import './hero-detail';
 @import './hero';
 @import './search-component';
 @import './hero-type-list';
 @import './hero-form';
+@import './skins';

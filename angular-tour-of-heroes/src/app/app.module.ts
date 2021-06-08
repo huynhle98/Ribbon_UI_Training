@@ -22,6 +22,15 @@ import { SkinsComponent } from './components/skins/skins.component'
 
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from 'primeng/toolbar';
+import { CardModule } from 'primeng/card';
+import { FileUploadModule } from 'primeng/fileupload';
+import { InputTextModule } from 'primeng/inputtext';
+import { CheckboxModule } from 'primeng/checkbox';
+import { PaginatorModule } from 'primeng/paginator';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
 
 @NgModule({
   declarations: [
@@ -49,7 +58,16 @@ import { TableModule } from 'primeng/table';
       InMemoryDataService, {dataEncapsulation: false, delay: 500 }
     ),
     ButtonModule,
-    TableModule
+    TableModule,
+    ProgressSpinnerModule,
+    ToastModule,
+    ToolbarModule,
+    CardModule,
+    FileUploadModule,
+    InputTextModule,
+    CheckboxModule,
+    PaginatorModule,
+    ConfirmDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],
