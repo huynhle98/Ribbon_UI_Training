@@ -64,4 +64,10 @@ export class SkinService {
       catchError(this.handleError<Skin[]>('searchSkins', [])),
     );
   }
+  addSkin(skin: Skin): Observable<Skin> {
+    return this.http.post<Skin>(this.skinsUrl, skin, this.httpOptions).pipe(
+      tap((newHero: Skin) => this.log(`added hero w/ id=${newHero.id}`)),
+      catchError(this.handleError<Skin>('addHero'))
+    );
+  }
 }

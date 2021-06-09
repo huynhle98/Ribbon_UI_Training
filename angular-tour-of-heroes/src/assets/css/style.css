@@ -475,14 +475,6 @@ img[src=""] {
   margin-bottom: 1.5rem;
 }
 
-label {
-  display: block;
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  margin-bottom: .5rem;
-}
-
 li {
   list-style-type: none;
 }
@@ -746,6 +738,16 @@ ul.search-result {
 .skins .p-card .p-card-content,
 .skins .p-card .p-card-body {
   padding: 0;
+}
+
+.skins .p-card .p-card-content .p-dropdown-label,
+.skins .p-card .p-card-body .p-dropdown-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.skins .p-dialog .p-dialog-content {
+  height: 100%;
 }
 
 .badge {

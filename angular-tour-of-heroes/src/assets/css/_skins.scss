@@ -19,7 +19,14 @@
         .p-card-content,
         .p-card-body {
             padding: 0;
+            .p-dropdown-label {
+                font-size: 0.85rem;
+                font-weight: 700;
+            }
         }
+    }
+    .p-dialog .p-dialog-content {
+        height: 100%;
     }
 }
 

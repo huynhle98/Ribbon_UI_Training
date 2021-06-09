@@ -19,6 +19,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HeroTypeListComponent } from './components/hero-type-list/hero-type-list.component';
 import { HeroFormAddComponent } from './components/hero-form-add/hero-form-add.component';
 import { SkinsComponent } from './components/skins/skins.component'
+import { SkinDialogComponent } from './components/skin-dialog/skin-dialog.component';
 
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
@@ -31,6 +32,9 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CheckboxModule } from 'primeng/checkbox';
 import { PaginatorModule } from 'primeng/paginator';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { DropdownModule } from 'primeng/dropdown';
+import { DialogModule } from 'primeng/dialog';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
@@ -45,7 +49,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     LayoutComponent,
     HeroTypeListComponent,
     HeroFormAddComponent,
-    SkinsComponent
+    SkinsComponent,
+    SkinDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +72,10 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
     InputTextModule,
     CheckboxModule,
     PaginatorModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    DropdownModule,
+    DialogModule,
+    InputNumberModule
   ],
   providers: [],
   bootstrap: [AppComponent],
