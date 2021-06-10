@@ -2,9 +2,10 @@
 <div class="container-xl p-d-flex">
     <nav>
         <!-- [class.acitve]=" === selectedHero" -->
-        <a routerLink="/dashboard" [class.active]=" pathCurrent=== '/dashboard'"><i class="fas fa-home"></i> Dashboard</a>
+        <a routerLink="/dashboard" [class.active]=" pathCurrent == '/dashboard'"><i class="fas fa-home"></i> Dashboard</a>
         <a routerLink="/heroes" [class.active]=" pathCurrent == '/heroes'"><i class="fas fa-clipboard-list"></i> Heroes</a>
         <a routerLink="/skins" [class.active]=" pathCurrent == '/skins'"><i class="pi pi-slack"></i> Skins</a>
+        <a routerLink="/chart" [class.active]=" pathCurrent == '/chart'"><i class="pi pi-chart-bar"></i> Chart</a>
     </nav>
     <div class="content">
         <router-outlet></router-outlet>

@@ -101,7 +101,6 @@ export class HeroFormAddComponent implements OnInit {
     return (event.keyCode >= 48 && event.keyCode <= 57) || (event.keyCode >= 96 && event.keyCode <= 105) && event.keyCode == 190 || event.keyCode == 46
   }
   reset() {
-    console.log("aa");
     this.hero = {
       name: "",
       health: 0,

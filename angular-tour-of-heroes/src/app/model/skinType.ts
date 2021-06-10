@@ -1,5 +1,7 @@
 export interface SkinType {
-  id: number;
+  id?: number;
   label: string,
-  value: string
+  value: string,
+  color?: string
+  hoverColor?: string
 }

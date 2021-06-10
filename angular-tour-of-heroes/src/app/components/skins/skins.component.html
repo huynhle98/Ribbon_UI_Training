@@ -16,15 +16,16 @@
                 <p-button icon="pi pi-times" styleClass="p-button-danger" (click)="deleteSelectedSkins($event)" [disabled]="!selectedskins || !selectedskins.length"></p-button>
             </div>
             <div class="p-toolbar-group-right">
-                <p-fileUpload mode="basic" accept="image/*" [maxFileSize]="1000000" label="Import" chooseLabel="Import" class="p-mr-2"></p-fileUpload>
-                <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help"></button>
+                <p-fileUpload #iFile mode="basic" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" class="p-mr-2" (onSelect)="onImportFile($event,iFile)" [maxFileSize]="1000000" label="Import" chooseLabel="Import">
+                </p-fileUpload>
+                <button pButton pRipple label="Export" icon="pi pi-upload" class="p-button-help" (click)="exportExcel()"></button>
             </div>
         </p-toolbar>
         <p-card>
             <p-table #dtSkin [globalFilterFields]="['nameHero','name','type']" [value]="skins" [(selection)]="selectedskins" [rowHover]="true" [rows]="5" (onPage)="paginate($event,dtSkin)" (onFilter)="onFilterData($event)" [rowsPerPageOptions]="[5,10,15]" [paginator]="true">
                 <ng-template pTemplate="caption">
                     <div class="p-d-flex p-ai-center p-jc-between">
-                        <h5 class="p-m-0">Total: {{totalSkin>1 ? totalSkin+' skins': totalSkin+' skin'}} </h5>
+                        <h5 class="p-m-0">Total: {{this.skins.length>1 ? this.skins.length+' skins': this.skins.length+' skin'}} </h5>
                         <span class="p-input-icon-left">
               <i class="pi pi-search"></i>
               <input type="text" pInputText placeholder="Search (Hero Name, Skin Name, Type)" (input)="dtSkin.filterGlobal($event.target.value, 'contains')">
@@ -74,5 +75,6 @@
             </p-table>
         </p-card>
     </div>
-    <app-skin-dialog (hideDialog)="onHideDialog($event)" (newSkin)="addNewSkin($event)" [typeDialog]="typeDialog" [showDialog]="showDialog" [skin]="skinChosen" [txtHeader]="txtHeader"></app-skin-dialog>
+    <app-skin-dialog (hideDialog)="onHideDialog($event)" (updateSkin)="updateSkin($event)" (newSkin)="addNewSkin($event)" [typeDialog]="typeDialog" [showDialog]="showDialog" [skin]="skinChosen" [txtHeader]="txtHeader"></app-skin-dialog>
 </div>
+<app-lazy-loading [state]="lazyUpload"></app-lazy-loading>

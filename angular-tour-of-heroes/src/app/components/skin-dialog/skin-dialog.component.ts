@@ -4,6 +4,7 @@ import { SKINTYPE } from '../../data/skin-type';
 import { HEROES } from '../../data/mock-heroes';
 import { DomSanitizer } from '@angular/platform-browser';
 import { SkinService } from '../../service/skin/skin.service';
+
 @Component({
   selector: 'app-skin-dialog',
   templateUrl: './skin-dialog.component.html',
@@ -17,6 +18,7 @@ export class SkinDialogComponent implements OnInit {
   @Input() typeDialog: Number;
   @Output() hideDialog = new EventEmitter<any>();
   @Output() newSkin = new EventEmitter<any>();
+  @Output() updateSkin = new EventEmitter<any>();
 
   submitted = false;
   skinTypes = SKINTYPE;
@@ -69,6 +71,14 @@ export class SkinDialogComponent implements OnInit {
       this.skinService.addSkin(this.skin as Skin).subscribe(
         skin => {
           this.newSkin.emit(skin);
+          this.hideDialog.emit(false);
+        }
+      )
+    }
+    else {
+      this.skinService.updateSkin(this.skin as Skin).subscribe(
+        skin => {
+          this.updateSkin.emit(skin);
           this.hideDialog.emit(false);
         }
       )

@@ -5,11 +5,11 @@ import { Skin } from '../../model/skin';
 import { MessageService, ConfirmationService } from 'primeng/api';
 import { SKINTYPE } from '../../data/skin-type';
 import { SkinType } from '../../model/skinType';
-import { switchMap, tap } from 'rxjs/operators';
-import { pipe, Subject, Observable } from 'rxjs';
-import { map } from 'jquery';
 import { SKINS } from 'src/app/data/mock-skins';
 import { DomSanitizer } from '@angular/platform-browser';
+import { TransferService } from '../../service/transfer/transfer.service';
+import * as FileSaver from 'file-saver';
+import * as XLSX from 'xlsx';
 
 @Component({
   selector: 'app-skins',
@@ -22,18 +22,20 @@ export class SkinsComponent implements OnInit {
   skins: Skin[];
   cols: any[];
   selectedskins: Skin[];
-  totalSkin = 0;
   skinTypes = SKINTYPE;
   showDialog = false;
   txtHeader: string;
   skinChosen: Skin;
   typeDialog = 0;
+  skinsFile: Skin[];
+  lazyUpload = false;
 
   constructor(
     private skinService: SkinService,
     private messageService: MessageService,
     private confirmationService: ConfirmationService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private transferService: TransferService
   ) { }
 
   ngOnInit() {
@@ -47,8 +49,14 @@ export class SkinsComponent implements OnInit {
     ];
   }
 
-  addSingleNotify(stt, title, content) {
-    this.messageService.add({ severity: stt, summary: title, detail: content, life: 2000 });
+  addSingleNotify(stt, title, content, time?: number) {
+    if (time != undefined) {
+      console.log(time);
+      this.messageService.add({ severity: stt, summary: title, detail: content, life: time });
+    }
+    else {
+      this.messageService.add({ severity: stt, summary: title, detail: content, life: 2000 });
+    }
   }
   clear() {
     this.messageService.clear();
@@ -58,7 +66,7 @@ export class SkinsComponent implements OnInit {
   }
 
   onFilterData(event) {
-    this.totalSkin = event.filteredValue.length;
+    // this.totalSkin = event.filteredValue.length;
   }
   paginate(event, tb) {
     var element = document.querySelector(".p-card-body");
@@ -66,7 +74,7 @@ export class SkinsComponent implements OnInit {
   }
   getSkins(): void {
     this.skinService.getSkins()
-      .subscribe(skins => (this.skins = skins,this.totalSkin = skins.length));
+      .subscribe(skins => (this.skins = skins));
   }
   deleteSelectedSkins(event) {
     if (event.currentTarget.getAttribute("ng-reflect-disabled") != "true") {
@@ -89,7 +97,7 @@ export class SkinsComponent implements OnInit {
   }
   editSkin(val) {
     this.showDialog = true;
-    this.txtHeader = "New Skin";
+    this.txtHeader = "Skin Detai";
     this.skinChosen = val;
     this.typeDialog = 1;
   }
@@ -107,7 +115,7 @@ export class SkinsComponent implements OnInit {
   }
   onNewSkin() {
     this.showDialog = true;
-    this.txtHeader = "Skin Detail";
+    this.txtHeader = "New Skinl";
     this.skinChosen = {
       name: "",
       nameHero: "",
@@ -123,6 +131,57 @@ export class SkinsComponent implements OnInit {
   addNewSkin(val) {
     this.skins.unshift(val);
     this.addSingleNotify("success", "Successful", "Add new skin success");
-    this.totalSkin = this.skins.length;
+  }
+  updateSkin(val) {
+    this.addSingleNotify("success", "Successful", "Update skin success");
+  }
+  exportExcel() {
+    this.transferService.exportExcel(this.skins);
+  }
+  onImportFile(val, iFile) {
+    var self = this;
+    if (val.currentFiles[0]) {
+      this.confirmationService.confirm({
+        header: 'Upload data',
+        message: `Do you want to upload data to table?`,
+        accept: () => {
+          self.lazyUpload = true;
+          setTimeout(() => {
+            self.transferService.uploadFileExcel(iFile, (e) => {
+              self.callbackUpload(e, iFile);
+            });
+          }, 2000);
+          setTimeout(() => {
+            if (self.lazyUpload) {
+              self.lazyUpload = false;
+            }
+           },5000);
+        },
+        reject: () => {
+          iFile.clear();
+        }
+      });
+    }
+    else {
+      if (val.files[0]) {
+        this.addSingleNotify("error", "Error", "Invalid file type. Allow: .xlsx, .xls", 5000);
+      }
+    }
+  }
+  callbackUpload(data, tb) {
+    var self = this;
+    self.skinsFile = data as Skin[];
+    self.skinsFile.forEach(el => {
+      el.id = null;
+      self.skinService.addSkin(el as Skin).subscribe(
+        skin => {
+          self.skins.unshift(skin);
+        }
+      )
+    });
+    tb.clear();
+    self.skinsFile = [];
+    self.lazyUpload = false;
+    self.addSingleNotify("success", "Successful", "Upload file success");
   }
 }

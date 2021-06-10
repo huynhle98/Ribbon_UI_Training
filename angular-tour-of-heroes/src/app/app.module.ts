@@ -20,6 +20,7 @@ import { HeroTypeListComponent } from './components/hero-type-list/hero-type-lis
 import { HeroFormAddComponent } from './components/hero-form-add/hero-form-add.component';
 import { SkinsComponent } from './components/skins/skins.component'
 import { SkinDialogComponent } from './components/skin-dialog/skin-dialog.component';
+import { ChartComponent } from './components/chart/chart.component';
 
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
@@ -35,6 +36,8 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { DropdownModule } from 'primeng/dropdown';
 import { DialogModule } from 'primeng/dialog';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { ChartModule } from 'primeng/chart';
+import { LazyLoadingComponent } from './components/lazy-loading/lazy-loading.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +53,9 @@ import { InputNumberModule } from 'primeng/inputnumber';
     HeroTypeListComponent,
     HeroFormAddComponent,
     SkinsComponent,
-    SkinDialogComponent
+    SkinDialogComponent,
+    ChartComponent,
+    LazyLoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +80,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
     ConfirmDialogModule,
     DropdownModule,
     DialogModule,
-    InputNumberModule
+    InputNumberModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent],
