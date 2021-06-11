@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'lib-loading-over',
@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoadingOverComponent implements OnInit {
 
-  constructor() { }
+  @Input() state: Boolean;
+  cls = "";
+
+  constructor() {
+    this.state = false;
+  }
 
   ngOnInit() {
+    if (this.state) {
+      this.cls = " active";
+    }
+    else {
+      this.cls = "";
+    }
   }
 
 }
