@@ -74,7 +74,7 @@ export class SkinsComponent implements OnInit {
   }
   getSkins(): void {
     this.skinService.getSkins()
-      .subscribe(skins => (this.skins = skins));
+      .subscribe(skins => (this.skins = skins.reverse()));
   }
   deleteSelectedSkins(event) {
     if (event.currentTarget.getAttribute("ng-reflect-disabled") != "true") {
@@ -89,7 +89,7 @@ export class SkinsComponent implements OnInit {
                 this.selectedskins = [];
                 this.addSingleNotify("success", "Successful", "Skin Deleted");
               }
-            });
+            }).subscribe();
           }
         }
       });
@@ -106,16 +106,18 @@ export class SkinsComponent implements OnInit {
       header: 'Delete Skin',
       message: `Are you sure that you want to delete ` + val.name.bold() +` skin?`,
       accept: () => {
-        this.skins = this.skins.filter(s => s != val);
+
+        // this.skinService.deleteSkin
         this.skinService.deleteSkin(val.id, () => {
+          this.skins = this.skins.filter(s => s != val);
           this.addSingleNotify("success", "Successful", "Skin Deleted");
-        });
+        }).subscribe();
       }
     });
   }
   onNewSkin() {
     this.showDialog = true;
-    this.txtHeader = "New Skinl";
+    this.txtHeader = "New Skin";
     this.skinChosen = {
       name: "",
       nameHero: "",
@@ -172,9 +174,12 @@ export class SkinsComponent implements OnInit {
     var self = this;
     self.skinsFile = data as Skin[];
     self.skinsFile.forEach(el => {
-      el.id = null;
+      if (this.skins.length > 0) {
+        el.id = null;
+      }
       self.skinService.addSkin(el as Skin).subscribe(
         skin => {
+          console.log(skin);
           self.skins.unshift(skin);
         }
       )
@@ -183,5 +188,11 @@ export class SkinsComponent implements OnInit {
     self.skinsFile = [];
     self.lazyUpload = false;
     self.addSingleNotify("success", "Successful", "Upload file success");
+  }
+  resetTable(tb) {
+    tb.clear();
+  }
+  onSearchTable(tb, e) {
+    tb.filterGlobal(e.target.value, 'contains');
   }
 }

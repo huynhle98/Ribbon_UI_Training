@@ -25,10 +25,13 @@
             <p-table #dtSkin [globalFilterFields]="['nameHero','name','type']" [value]="skins" [(selection)]="selectedskins" [rowHover]="true" [rows]="5" (onPage)="paginate($event,dtSkin)" (onFilter)="onFilterData($event)" [rowsPerPageOptions]="[5,10,15]" [paginator]="true">
                 <ng-template pTemplate="caption">
                     <div class="p-d-flex p-ai-center p-jc-between">
-                        <h5 class="p-m-0">Total: {{this.skins.length>1 ? this.skins.length+' skins': this.skins.length+' skin'}} </h5>
+                        <div class="p-d-flex p-align-center">
+                            <h5 class="p-m-0">Total: {{this.skins.length>1 ? this.skins.length+' skins': this.skins.length+' skin'}} </h5>
+                            <button pButton type="button" (click)="resetTable(dtSkin)" label="Reset Table" class="p-button-warning p-ml-2"></button>
+                        </div>
                         <span class="p-input-icon-left">
               <i class="pi pi-search"></i>
-              <input type="text" pInputText placeholder="Search (Hero Name, Skin Name, Type)" (input)="dtSkin.filterGlobal($event.target.value, 'contains')">
+              <input type="text" pInputText placeholder="Search (Hero Name, Skin Name, Type)" (input)="onSearchTable(dtSkin, $event)">
             </span>
                     </div>
                 </ng-template>
@@ -78,3 +81,4 @@
     <app-skin-dialog (hideDialog)="onHideDialog($event)" (updateSkin)="updateSkin($event)" (newSkin)="addNewSkin($event)" [typeDialog]="typeDialog" [showDialog]="showDialog" [skin]="skinChosen" [txtHeader]="txtHeader"></app-skin-dialog>
 </div>
 <app-lazy-loading [state]="lazyUpload"></app-lazy-loading>
+<!-- <lib-loading-over [state]="lazyUpload"></lib-loading-over> -->

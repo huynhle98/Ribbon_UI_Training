@@ -39,6 +39,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { ChartModule } from 'primeng/chart';
 import { LazyLoadingComponent } from './components/lazy-loading/lazy-loading.component';
 
+//my library
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -81,7 +83,7 @@ import { LazyLoadingComponent } from './components/lazy-loading/lazy-loading.com
     DropdownModule,
     DialogModule,
     InputNumberModule,
-    ChartModule
+    ChartModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

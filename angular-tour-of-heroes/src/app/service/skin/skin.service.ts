@@ -49,7 +49,7 @@ export class SkinService {
     const url = `${this.skinsUrl}/${id}`;
 
     return this.http.delete<Skin>(url, this.httpOptions).pipe(
-      tap(_ => this.log(`deleted skin id=${id}`),callback()),
+      tap(_ => (callback(), this.log(`deleted hero id=${id}`)) ),
       catchError(this.handleError<Skin>('deleteSkin'))
     );
   }
@@ -66,14 +66,14 @@ export class SkinService {
   }
   addSkin(skin: Skin): Observable<Skin> {
     return this.http.post<Skin>(this.skinsUrl, skin, this.httpOptions).pipe(
-      tap((newHero: Skin) => this.log(`added hero w/ id=${newHero.id}`)),
-      catchError(this.handleError<Skin>('addHero'))
+      tap((newskin: Skin) => this.log(`added skin w/ id=${newskin.id}`)),
+      catchError(this.handleError<Skin>('addSkin'))
     );
   }
   updateSkin(skin: Skin): Observable<Skin> {
     return this.http.put<Skin>(this.skinsUrl, skin, this.httpOptions).pipe(
-      tap((newHero: Skin) => this.log(`updated hero w/ id=${newHero.id}`)),
-      catchError(this.handleError<Skin>('addHero'))
+      tap(_ => (this.log(`updated skin w/ id=${skin.id}`))),
+      catchError(this.handleError<Skin>('updateSkin'))
     );
   }
 }
