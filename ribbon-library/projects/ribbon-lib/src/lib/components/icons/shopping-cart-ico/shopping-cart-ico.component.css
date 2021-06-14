@@ -1,0 +1,12 @@
+.ngico-shopping-cart::before {
+    position: absolute;
+    /* color: var(--fa-primary-color, inherit); */
+    opacity: 1;
+    /* opacity: var(--fa-primary-opacity, 1); */
+    content: "\f07a";
+}
+
+.ngico-shopping-cart::after {
+    content: "\10f07a";
+    opacity: .4;
+}

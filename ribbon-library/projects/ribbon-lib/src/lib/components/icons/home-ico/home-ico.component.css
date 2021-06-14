@@ -1,0 +1,4 @@
+@import url('/assets/css/ngicon.css');
+.ngico-home::before {
+    content: "\f015";
+}

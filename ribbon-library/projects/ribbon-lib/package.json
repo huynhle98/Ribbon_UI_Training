@@ -1,9 +1,6 @@
 {
     "name": "ribbon-lib",
     "version": "0.0.1",
-    "scripts": {
-        "postinstall": "ngcc"
-    },
     "peerDependencies": {
         "@angular/common": "^12.0.4",
         "@angular/core": "^12.0.4"

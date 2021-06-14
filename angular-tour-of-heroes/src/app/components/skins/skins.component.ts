@@ -51,7 +51,6 @@ export class SkinsComponent implements OnInit {
 
   addSingleNotify(stt, title, content, time?: number) {
     if (time != undefined) {
-      console.log(time);
       this.messageService.add({ severity: stt, summary: title, detail: content, life: time });
     }
     else {
@@ -179,7 +178,6 @@ export class SkinsComponent implements OnInit {
       }
       self.skinService.addSkin(el as Skin).subscribe(
         skin => {
-          console.log(skin);
           self.skins.unshift(skin);
         }
       )

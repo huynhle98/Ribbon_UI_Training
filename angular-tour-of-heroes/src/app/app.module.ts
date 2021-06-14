@@ -40,6 +40,7 @@ import { ChartModule } from 'primeng/chart';
 import { LazyLoadingComponent } from './components/lazy-loading/lazy-loading.component';
 
 //my library
+import { RibbonLibModule } from 'ribbon-lib';
 
 @NgModule({
   declarations: [
@@ -84,6 +85,7 @@ import { LazyLoadingComponent } from './components/lazy-loading/lazy-loading.com
     DialogModule,
     InputNumberModule,
     ChartModule,
+    RibbonLibModule
   ],
   providers: [],
   bootstrap: [AppComponent],

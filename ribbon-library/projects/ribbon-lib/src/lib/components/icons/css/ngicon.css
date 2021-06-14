@@ -1,0 +1,15 @@
+.ngico {
+  font-weight: 900;
+  font-family: "Font NgIcon";
+}
+
+@font-face {
+  font-family: "Font NgIcon";
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url(./font/light-300-5.0.1.eot);
+  src: url(./font/light-300-5.0.1.eot) format("embedded-opentype"), url("./font/light-300-5.0.1.woff2") format("woff2"), url(../webfonts/pro-fa-light-300-5.0.1.woff) format("woff"), url(./font//pro-fa-light-300-5.0.1.ttf) format("truetype"), url(../css/font/light-300-5.0.1.svg) format("svg");
+  unicode-range: U+f3c1;
+}
+/*# sourceMappingURL=ngicon.css.map */

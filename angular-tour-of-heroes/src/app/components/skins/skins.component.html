@@ -80,5 +80,5 @@
     </div>
     <app-skin-dialog (hideDialog)="onHideDialog($event)" (updateSkin)="updateSkin($event)" (newSkin)="addNewSkin($event)" [typeDialog]="typeDialog" [showDialog]="showDialog" [skin]="skinChosen" [txtHeader]="txtHeader"></app-skin-dialog>
 </div>
-<app-lazy-loading [state]="lazyUpload"></app-lazy-loading>
-<!-- <lib-loading-over [state]="lazyUpload"></lib-loading-over> -->
+<!-- <app-lazy-loading [state]="lazyUpload"></app-lazy-loading> -->
+<lib-loading-over [state]="lazyUpload"></lib-loading-over>
