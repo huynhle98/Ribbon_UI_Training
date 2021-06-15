@@ -1,14 +1,15 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
+  // tslint:disable-next-line: component-selector
   selector: 'lib-loading-over',
   templateUrl: './loading-over.component.html',
   styleUrls: ['./loading-over.component.css']
 })
-export class LoadingOverComponent implements OnInit {
+export class LoadingOverComponent implements OnInit, OnChanges {
 
-  @Input() state: Boolean;
-  cls = "";
+  @Input() state: boolean;
+  cls = '';
 
   constructor() {
     this.state = false;
@@ -19,10 +20,10 @@ export class LoadingOverComponent implements OnInit {
   }
   ngOnChanges(): void {
     if (this.state) {
-      this.cls = " active";
+      this.cls = ' active';
     }
     else {
-      this.cls = "";
+      this.cls = '';
     }
   }
 
