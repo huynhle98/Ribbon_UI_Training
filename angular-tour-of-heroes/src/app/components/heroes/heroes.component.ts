@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../../model/hero'
-import { HeroType } from '../../model/heroType'
-import { HEROES } from '../../data/mock-heroes'
+import { Hero } from '../../model/hero';
+import { HeroType } from '../../model/heroType';
+import { HEROES } from '../../data/mock-heroes';
 import { HeroService } from '../../service/hero.service';
 import { MessageService } from '../../service/message.service';
 import { trigger, style, animate, transition } from '@angular/animations';
@@ -81,25 +81,26 @@ export class HeroesComponent implements OnInit {
     this.heroes.push(val);
   }
   onHeroesSearch(val) {
-    const valType = document.getElementById("btnSortType").getAttribute("value");
-    if (val != false) {
+    const valType = document.getElementById('btnSortType').getAttribute('value');
+    const valTypeNum = parseInt(valType, 10);
+    if (val !== false) {
       this.heroes = val;
       this.heroesTemp = val;
-      if (parseInt(valType) != 0) {
-        this.heroes = this.heroes.filter(hero => hero.type == document.getElementById("btnSortType").textContent);
+      if (valTypeNum !== 0) {
+        this.heroes = this.heroes.filter(hero => hero.type === document.getElementById('btnSortType').textContent);
       }
     }
     else {
       const typeVal = typeof val;
-      if (typeVal == 'object') {
+      if (typeVal === 'object') {
         this.heroes = val;
       }
       else {
         this.heroes = this.heroesAll;
-        if (parseInt(valType) != 0) {
-          this.heroes = this.heroes.filter(hero => hero.type == document.getElementById("btnSortType").textContent);
+        if (valTypeNum !== 0) {
+          this.heroes = this.heroes.filter(hero => hero.type === document.getElementById('btnSortType').textContent);
         }
-        this.heroesTemp = this.heroesAll
+        this.heroesTemp = this.heroesAll;
       }
     }
   }
@@ -109,19 +110,19 @@ export class HeroesComponent implements OnInit {
   sortToType(val: HeroType) {
     switch (val.id) {
       case 0:
-        document.getElementById("btnSortType").textContent = val.type;
-        document.getElementById("btnSortType").setAttribute("value", "" + val.id);
+        document.getElementById('btnSortType').textContent = val.type;
+        document.getElementById('btnSortType').setAttribute('value', '' + val.id);
         this.heroes = this.heroesTemp;
         break;
       case 1:
-        document.getElementById("btnSortType").textContent = val.type;
-        document.getElementById("btnSortType").setAttribute("value", "" + val.id);
-        this.heroes = this.heroesTemp.filter(hero => hero.type == val.type);
+        document.getElementById('btnSortType').textContent = val.type;
+        document.getElementById('btnSortType').setAttribute('value', '' + val.id);
+        this.heroes = this.heroesTemp.filter(hero => hero.type === val.type);
         break;
       case 2:
-        document.getElementById("btnSortType").textContent = val.type;;
-        document.getElementById("btnSortType").setAttribute("value", "" + val.id);
-        this.heroes = this.heroesTemp.filter(hero => hero.type == val.type)
+        document.getElementById('btnSortType').textContent = val.type;
+        document.getElementById('btnSortType').setAttribute('value', '' + val.id);
+        this.heroes = this.heroesTemp.filter(hero => hero.type === val.type);
         break;
       default:
         break;

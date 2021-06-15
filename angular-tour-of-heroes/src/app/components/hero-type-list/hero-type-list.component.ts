@@ -8,7 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class HeroTypeListComponent implements OnInit {
 
-  @Input() heroInfo?: Hero
+  @Input() heroInfo?: Hero;
 
   constructor(private sanitizer: DomSanitizer) { }
 

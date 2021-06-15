@@ -13,7 +13,7 @@ export const HEROES: Hero[] = [
     magicResist: 32,
     moveSpeed: 345,
     type: 'Physical',
-    img:"/assets/img/heroes/RiotX_ChampionList_aatrox.jpg"
+    img: '/assets/img/heroes/RiotX_ChampionList_aatrox.jpg'
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ export const HEROES: Hero[] = [
     magicResist: 30,
     moveSpeed: 330,
     type: 'Magic',
-    img: "/assets/img/heroes/RiotX_ChampionList_ahri.jpg"
+    img: '/assets/img/heroes/RiotX_ChampionList_ahri.jpg'
   },
   {
     id: 3,
@@ -41,7 +41,7 @@ export const HEROES: Hero[] = [
     magicResist: 37,
     moveSpeed: 345,
     type: 'Physical',
-    img: "/assets/img/heroes/RiotX_ChampionList_akali.jpg"
+    img: '/assets/img/heroes/RiotX_ChampionList_akali.jpg'
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ export const HEROES: Hero[] = [
     magicResist: 32,
     moveSpeed: 330,
     type: 'Magic',
-    img: "/assets/img/heroes/RiotX_ChampionList_alistar.jpg"
+    img: '/assets/img/heroes/RiotX_ChampionList_alistar.jpg'
   },
   {
     id: 5,
@@ -69,7 +69,7 @@ export const HEROES: Hero[] = [
     magicResist: 32,
     moveSpeed: 335,
     type: 'Magic',
-    img: "/assets/img/heroes/RiotX_ChampionList_amumu.jpg"
+    img: '/assets/img/heroes/RiotX_ChampionList_amumu.jpg'
   },
   {
     id: 6,
@@ -83,7 +83,7 @@ export const HEROES: Hero[] = [
     magicResist: 26,
     moveSpeed: 325,
     type: 'Physical',
-    img: "/assets/img/heroes/RiotX_ChampionList_aphelios.jpg"
+    img: '/assets/img/heroes/RiotX_ChampionList_aphelios.jpg'
   },
   {
     id: 7,
@@ -97,11 +97,11 @@ export const HEROES: Hero[] = [
     magicResist: 30,
     moveSpeed: 325,
     type: 'Physical',
-    img: "/assets/img/heroes/RiotX_ChampionList_ashe.jpg"
+    img: '/assets/img/heroes/RiotX_ChampionList_ashe.jpg'
   },
   {
     id: 8,
-    name: "kai'Sa",
+    name: `kai'Sa`,
     health: 600,
     healthRegen: 3.5,
     attackRange: 525,
@@ -111,11 +111,11 @@ export const HEROES: Hero[] = [
     magicResist: 30,
     moveSpeed: 335,
     type: 'Magic',
-    img: "/assets/img/heroes/RiotX_ChampionList_kaisa.jpg"
+    img: '/assets/img/heroes/RiotX_ChampionList_kaisa.jpg'
   },
   {
     id: 9,
-    name: "Lee Sin",
+    name: 'Lee Sin',
     health: 575,
     healthRegen: 7.5,
     attackRange: 125,
@@ -125,11 +125,11 @@ export const HEROES: Hero[] = [
     magicResist: 32,
     moveSpeed: 345,
     type: 'Physical',
-    img: "/assets/img/heroes/RiotX_ChampionList_leesin.jpg"
+    img: '/assets/img/heroes/RiotX_ChampionList_leesin.jpg'
   },
   {
     id: 10,
-    name: "yasuo",
+    name: 'yasuo',
     health: 490,
     healthRegen: 6.5,
     attackRange: 175,
@@ -139,11 +139,11 @@ export const HEROES: Hero[] = [
     magicResist: 32,
     moveSpeed: 345,
     type: 'Physical',
-    img: "/assets/img/heroes/RiotX_ChampionList_yasuo.jpg"
+    img: '/assets/img/heroes/RiotX_ChampionList_yasuo.jpg'
   },
   {
     id: 11,
-    name: "Ezreal",
+    name: 'Ezreal',
     health: 530,
     healthRegen: 4,
     attackRange: 550,
@@ -153,11 +153,11 @@ export const HEROES: Hero[] = [
     magicResist: 30,
     moveSpeed: 325,
     type: 'Physical',
-    img: "/assets/img/heroes/RiotX_ChampionList_ezreal.jpg"
+    img: '/assets/img/heroes/RiotX_ChampionList_ezreal.jpg'
   },
   {
     id: 12,
-    name: "Udyr",
+    name: 'Udyr',
     health: 594,
     healthRegen: 6,
     attackRange: 125,
@@ -167,11 +167,11 @@ export const HEROES: Hero[] = [
     magicResist: 32,
     moveSpeed: 350,
     type: 'Physical',
-    img: "/assets/img/heroes/RiotX_ChampionList_udyr.jpg"
+    img: '/assets/img/heroes/RiotX_ChampionList_udyr.jpg'
   },
   {
     id: 13,
-    name: "Darius",
+    name: 'Darius',
     health: 582,
     healthRegen: 10,
     attackRange: 175,
@@ -181,11 +181,11 @@ export const HEROES: Hero[] = [
     magicResist: 32,
     moveSpeed: 340,
     type: 'Physical',
-    img: "/assets/img/heroes/RiotX_ChampionList_darius.jpg"
+    img: '/assets/img/heroes/RiotX_ChampionList_darius.jpg'
   },
   {
     id: 14,
-    name: "Sett",
+    name: 'Sett',
     health: 600,
     healthRegen: 7,
     attackRange: 125,
@@ -195,6 +195,6 @@ export const HEROES: Hero[] = [
     magicResist: 32,
     moveSpeed: 340,
     type: 'Physical',
-    img: "/assets/img/heroes/RiotX_ChampionList_sett.jpg"
+    img: '/assets/img/heroes/RiotX_ChampionList_sett.jpg'
   },
 ];

@@ -20,8 +20,8 @@ export class ChartComponent implements OnInit {
       datasets: [
         {
           data: this.dataChart.data,
-          backgroundColor: this.dataChart['colors'],
-          hoverBackgroundColor: this.dataChart['hoverColors']
+          backgroundColor: this.dataChart.colors,
+          hoverBackgroundColor: this.dataChart.hoverColors
         }]
     };
     this.options = {
@@ -32,7 +32,7 @@ export class ChartComponent implements OnInit {
       },
       legend: {
         position: 'bottom',
-        align:'center',
+        align: 'center',
         labels: {
           fontSize: 15,
           padding: 20
@@ -45,17 +45,18 @@ export class ChartComponent implements OnInit {
   }
 
   handleData() {
-    var newData = {};
-    newData['labels'] = [];
-    newData['data'] = [];
-    newData['colors'] = [];
-    newData['hoverColors'] = [];
+    const newData = {
+      labels: [],
+      data : [],
+      colors: [],
+      hoverColors: []
+    };
     for (let i = 0; i < SKINTYPE.length; i++) {
-      newData['labels'][i] = SKINTYPE[i].label;
-      newData['colors'][i] = SKINTYPE[i].color;
-      newData['hoverColors'][i] = SKINTYPE[i].hoverColor;
-      const result = SKINS.filter(val => val.type == SKINTYPE[i].label);
-      newData['data'][i] = result.length;
+      newData.labels[i] = SKINTYPE[i].label;
+      newData.colors[i] = SKINTYPE[i].color;
+      newData.hoverColors[i] = SKINTYPE[i].hoverColor;
+      const result = SKINS.filter(val => val.type === SKINTYPE[i].label);
+      newData.data[i] = result.length;
     }
     this.dataChart = newData;
     // console.log(newData);

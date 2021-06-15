@@ -22,7 +22,7 @@ export class HeroSearchComponent implements OnInit {
   constructor(private heroService: HeroService, private sanitizer: DomSanitizer) {
   }
   ngOnInit(): void {
-    var self = this;
+    const self = this;
     this.heroes$ = this.searchTerms.pipe(
       // wait 300ms after each keystroke before considering the term
       debounceTime(100),
@@ -52,13 +52,13 @@ export class HeroSearchComponent implements OnInit {
   }
   focusIn() {
     this.stateSearch.emit(true);
-    this.stateCls = "";
+    this.stateCls = '';
   }
   focusOut(term: string) {
     setTimeout(() => {
-      this.stateCls = "hidden";
+      this.stateCls = 'hidden';
     }, 500);
-    if (term.length == 0) {
+    if (term.length === 0) {
       this.stateSearch.emit(false);
     }
     else {

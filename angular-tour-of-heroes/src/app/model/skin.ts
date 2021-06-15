@@ -5,5 +5,5 @@ export interface Skin {
   nameHero: string ;
   price: number ;
   type: string;
-  img: string
+  img: string;
 }

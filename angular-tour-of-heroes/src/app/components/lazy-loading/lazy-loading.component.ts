@@ -1,14 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-lazy-loading',
   templateUrl: './lazy-loading.component.html',
   styleUrls: ['./lazy-loading.component.css']
 })
-export class LazyLoadingComponent implements OnInit {
+export class LazyLoadingComponent implements OnInit, OnChanges {
 
-  @Input() state: Boolean;
-  cls = "";
+  @Input() state: boolean;
+  cls = '';
 
   constructor() {
     this.state = false;
@@ -19,10 +19,10 @@ export class LazyLoadingComponent implements OnInit {
 
   ngOnChanges(): void{
     if (this.state) {
-      this.cls = " active";
+      this.cls = ' active';
     }
     else {
-      this.cls = "";
+      this.cls = '';
     }
   }
 

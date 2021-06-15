@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
-import { Router, Event } from '@angular/router'
+import { Router, Event } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -17,8 +17,7 @@ export class LayoutComponent implements OnInit {
   ) {
     this.router.events.subscribe((event: Event) => {
       this.pathCurrent = this.location.path();
-    })
-
+    });
   }
 
   ngOnInit() {

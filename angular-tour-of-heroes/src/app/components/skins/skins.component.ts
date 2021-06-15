@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TableModule } from 'primeng/table';
-import { SkinService } from '../../service/skin/skin.service'
+import { SkinService } from '../../service/skin/skin.service';
 import { Skin } from '../../model/skin';
 import { MessageService, ConfirmationService } from 'primeng/api';
 import { SKINTYPE } from '../../data/skin-type';
@@ -43,14 +43,14 @@ export class SkinsComponent implements OnInit {
     this.cols = [
       { field: 'nameHero', header: 'Hero Name', width: '16%' },
       { field: 'img', header: 'Image', width: '18%' },
-      { field: 'name', header: 'Skin Name', width:'16%' },
+      { field: 'name', header: 'Skin Name', width: '16%' },
       { field: 'price', header: 'Price(RP)', width: '15%' },
       { field: 'type', header: 'Type', width: '19%' }
     ];
   }
 
   addSingleNotify(stt, title, content, time?: number) {
-    if (time != undefined) {
+    if (time !== undefined) {
       this.messageService.add({ severity: stt, summary: title, detail: content, life: time });
     }
     else {
@@ -68,7 +68,7 @@ export class SkinsComponent implements OnInit {
     // this.totalSkin = event.filteredValue.length;
   }
   paginate(event, tb) {
-    var element = document.querySelector(".p-card-body");
+    const element = document.querySelector('.p-card-body');
     element.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
   getSkins(): void {
@@ -76,17 +76,17 @@ export class SkinsComponent implements OnInit {
       .subscribe(skins => (this.skins = skins.reverse()));
   }
   deleteSelectedSkins(event) {
-    if (event.currentTarget.getAttribute("ng-reflect-disabled") != "true") {
+    if (event.currentTarget.getAttribute('ng-reflect-disabled') !== 'true') {
       this.confirmationService.confirm({
         header: 'Delete Selected Skins',
         message: `Are you sure that you want to delete selected skins?`,
         accept: () => {
           for (let i = 0; i < this.selectedskins.length; i++) {
             this.skinService.deleteSkin(this.selectedskins[i].id, () => {
-              this.skins = this.skins.filter(s => s != this.selectedskins[i]);
-              if (i == this.selectedskins.length - 1) {
+              this.skins = this.skins.filter(s => s !== this.selectedskins[i]);
+              if (i === this.selectedskins.length - 1) {
                 this.selectedskins = [];
-                this.addSingleNotify("success", "Successful", "Skin Deleted");
+                this.addSingleNotify('success', 'Successful', 'Skin Deleted');
               }
             }).subscribe();
           }
@@ -96,33 +96,33 @@ export class SkinsComponent implements OnInit {
   }
   editSkin(val) {
     this.showDialog = true;
-    this.txtHeader = "Skin Detai";
+    this.txtHeader = 'Skin Detai';
     this.skinChosen = val;
     this.typeDialog = 1;
   }
   deleteSkin(val) {
     this.confirmationService.confirm({
       header: 'Delete Skin',
-      message: `Are you sure that you want to delete ` + val.name.bold() +` skin?`,
+      message: `Are you sure that you want to delete ` + val.name.bold() + ` skin?`,
       accept: () => {
 
         // this.skinService.deleteSkin
         this.skinService.deleteSkin(val.id, () => {
-          this.skins = this.skins.filter(s => s != val);
-          this.addSingleNotify("success", "Successful", "Skin Deleted");
+          this.skins = this.skins.filter(s => s !== val);
+          this.addSingleNotify('success', 'Successful', 'Skin Deleted');
         }).subscribe();
       }
     });
   }
   onNewSkin() {
     this.showDialog = true;
-    this.txtHeader = "New Skin";
+    this.txtHeader = 'New Skin';
     this.skinChosen = {
-      name: "",
-      nameHero: "",
+      name: '',
+      nameHero: '',
       price: 1,
-      type: "",
-      img: ""
+      type: '',
+      img: ''
     };
     this.typeDialog = 0;
   }
@@ -131,16 +131,16 @@ export class SkinsComponent implements OnInit {
   }
   addNewSkin(val) {
     this.skins.unshift(val);
-    this.addSingleNotify("success", "Successful", "Add new skin success");
+    this.addSingleNotify('success', 'Successful', 'Add new skin success');
   }
   updateSkin(val) {
-    this.addSingleNotify("success", "Successful", "Update skin success");
+    this.addSingleNotify('success', 'Successful', 'Update skin success');
   }
   exportExcel() {
     this.transferService.exportExcel(this.skins);
   }
   onImportFile(val, iFile) {
-    var self = this;
+    const self = this;
     if (val.currentFiles[0]) {
       this.confirmationService.confirm({
         header: 'Upload data',
@@ -156,7 +156,7 @@ export class SkinsComponent implements OnInit {
             if (self.lazyUpload) {
               self.lazyUpload = false;
             }
-           },5000);
+           }, 5000);
         },
         reject: () => {
           iFile.clear();
@@ -165,12 +165,12 @@ export class SkinsComponent implements OnInit {
     }
     else {
       if (val.files[0]) {
-        this.addSingleNotify("error", "Error", "Invalid file type. Allow: .xlsx, .xls", 5000);
+        this.addSingleNotify('error', 'Error', 'Invalid file type. Allow: .xlsx, .xls', 5000);
       }
     }
   }
   callbackUpload(data, tb) {
-    var self = this;
+    const self = this;
     self.skinsFile = data as Skin[];
     self.skinsFile.forEach(el => {
       if (this.skins.length > 0) {
@@ -180,12 +180,12 @@ export class SkinsComponent implements OnInit {
         skin => {
           self.skins.unshift(skin);
         }
-      )
+      );
     });
     tb.clear();
     self.skinsFile = [];
     self.lazyUpload = false;
-    self.addSingleNotify("success", "Successful", "Upload file success");
+    self.addSingleNotify('success', 'Successful', 'Upload file success');
   }
   resetTable(tb) {
     tb.clear();
