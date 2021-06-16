@@ -12,7 +12,7 @@ export class HighlightDirective implements OnChanges {
   }
 
   ngOnChanges(){
-    if(this.defaultColor){
+    if (this.defaultColor){
       this.highlight(this.defaultColor);
     }
   }

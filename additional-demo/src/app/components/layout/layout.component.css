@@ -1,0 +1,22 @@
+.p-grid {
+    font-size: 16px;
+    font-family: var(--font-family);
+}
+
+.menu-bar {
+    min-height: 100vh;
+    border-right: 1px solid var(--surface-300);
+}
+
+.menu-bar li {
+    list-style: none;
+    padding: 0.6rem 0.5rem;
+    user-select: none;
+    border: 3px solid transparent;
+    border-radius: 0.3rem;
+}
+
+.menu-bar li:hover {
+    background: var(--surface-b);
+    cursor: pointer;
+}

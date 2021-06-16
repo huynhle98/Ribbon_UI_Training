@@ -29,7 +29,7 @@
     "primeflex": "^2.0.0",
     "primeicons": "^4.1.0",
     "primeng": "^12.0.0-rc.1",
-    "ribbon-lib": "0.0.3",
+    "ribbon-lib": "file:../ribbon-library/dist/ribbon-lib/ribbon-lib-0.0.1.tgz",
     "rxjs": "~6.6.7",
     "tslib": "^2.3.0",
     "xlsx": "^0.17.0",

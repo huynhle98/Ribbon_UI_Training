@@ -1,0 +1,58 @@
+<div class="p-grid angular-form">
+    <div class="p-col-12 p-text-center p-mt-3">
+        Hero: {{ model | json }}
+    </div>
+    <p-card class="p-col p-m-5" header="Reactive">
+        <form [formGroup]="updateForm" (ngSubmit)="onSubmitReactive()" class="p-grid p-mt-1">
+            <div class="p-field p-col-12">
+                <span class="p-float-label">
+                  <input type="text" id="name" pInputText formControlName="name" style="width: 100%;"/>
+                  <label for="name">Name</label>
+                </span>
+            </div>
+            <div class="p-field p-col-12">
+                <span class="p-float-label">
+                  <input type="text" id="alterEgo" pInputText formControlName="alterEgo" style="width: 100%;" />
+                  <label for="alterEgo">Alter Ego</label>
+                </span>
+            </div>
+            <div class="p-field p-col-12">
+                <span class="p-float-label">
+                <p-cascadeSelect inputId="hero-power" formControlName="power" [options]="powersObj" optionLabel="label"
+                  optionGroupLabel="" [optionGroupChildren]="[]" optionValue="label"></p-cascadeSelect>
+                <label for="hero-power">Hero Power</label>
+              </span>
+            </div>
+
+            <div class="p-col-12 p-text-center">
+                <button pButton type="submit" label="Submit" class="p-col-6"></button>
+            </div>
+        </form>
+    </p-card>
+    <p-card class="p-col p-m-5" header="Template-Driven">
+        <form #heroForm="ngForm" class="p-grid p-mt-1" (ngSubmit)="onSubmitTemplate()">
+            <div class="p-field p-col-12">
+                <span class="p-float-label">
+              <input type="text" id="name2" pInputText required [(ngModel)]="model.name" name="name" [ngModelOptions]="{standalone: true}" style="width: 100%;" />
+              <label for="name2">Name</label>
+            </span>
+            </div>
+            <div class="p-field p-col-12">
+                <span class="p-float-label">
+              <input type="text" id="alterEgo2" pInputText [(ngModel)]="model.alterEgo" name="alterEgo" style="width: 100%;" />
+              <label for="alterEgo2">Alter Ego</label>
+            </span>
+            </div>
+            <div class="p-field p-col-12">
+                <span class="p-float-label">
+              <p-cascadeSelect inputId="hero-power2" [(ngModel)]="model.power" name="power" [options]="powersObj" optionLabel="label"
+                optionGroupLabel="" [optionGroupChildren]="[]" optionValue="label"></p-cascadeSelect>
+              <label for="hero-power2">Hero Power</label>
+            </span>
+            </div>
+            <div class="p-col-12 p-text-center">
+                <button pButton type="submit" label="Submit" class="p-col-6"></button>
+            </div>
+        </form>
+    </p-card>
+</div>

@@ -1,0 +1,31 @@
+<div class="p-grid p-p-2 p-mt-5 library">
+    <div class="p-card p-col-12" *ngIf="data">
+        <div class="p-grid p-d-flex p-align-center p-justify-center">
+            <div class="p-col country">
+                <img [src]="data.countryInfo.flag" style="object-fit: contain" class="flag">
+                <p class="p-col" style="color: #DA251D;">{{data.country | uppercase}}</p>
+            </div>
+            <p class="p-col p-text-right">{{'Updated: '+updated}}</p>
+        </div>
+
+        <div class="p-grid">
+            <div class="p-col-3 p-text-center">
+                <p [ngStyle]="{color:'#C9302C'}">{{'Cases'| uppercase}}</p>
+                <p [ngStyle]="{color:'#C9302C',fontSize:'20px'}" class="p-text-bold">{{data.cases}}</p>
+            </div>
+            <div class="p-col-3 p-text-center">
+                <p [ngStyle]="{color:'#FDA300'}">{{'Being treated'| uppercase}}</p>
+                <p [ngStyle]="{color:'#FDA300',fontSize:'20px'}" class="p-text-bold">{{data.active}}</p>
+            </div>
+            <div class="p-col-3 p-text-center">
+                <p [ngStyle]="{color:'#28A745'}">{{'Recovered'| uppercase}}</p>
+                <p [ngStyle]="{color:'#28A745',fontSize:'20px'}" class="p-text-bold">{{data.recovered}}</p>
+            </div>
+            <div class="p-col-3 p-text-center">
+                <p [ngStyle]="{color:'#666666'}">{{'deaths'| uppercase}}</p>
+                <p [ngStyle]="{color:'#666666',fontSize:'20px'}" class="p-text-bold">{{data.deaths}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+<lib-loading-over [state]="loading"></lib-loading-over>

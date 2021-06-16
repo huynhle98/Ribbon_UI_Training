@@ -12,6 +12,10 @@ import { HEROES } from '../data/mock-heroes';
 })
 export class HeroService {
 
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
   private heroesUrl = '/api/heroes';
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -26,9 +30,7 @@ export class HeroService {
       return of(result as T);
     };
   }
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  };
+
   // getHeroes(): Observable<Hero[]> {
   //   const heroes = of(HEROES);
   //   this.messageService.add('HeroService: fetched heroes');

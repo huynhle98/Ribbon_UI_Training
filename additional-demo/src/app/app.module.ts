@@ -8,24 +8,43 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { AppRoutingModule } from './router/app-routing.module';
 import { HighlightDirective } from './directive/highlight.directive';
 import { ActiveDirective } from './directive/active/active.directive';
+import { FormComponent } from './components/form/form.component';
 
 import {MenuModule} from 'primeng/menu';
 import {MenuItem} from 'primeng/api';
+import { DirectiveComponent } from './components/directive/directive.component';
+import { LibraryComponent } from './components/library/library.component';
+import { InputTextModule } from 'primeng/inputtext';
+import { DropdownModule } from 'primeng/dropdown';
+import { CascadeSelectModule } from 'primeng/cascadeselect';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
 
+import { RibbonLibModule } from 'ribbon-lib';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     HighlightDirective,
-    ActiveDirective
+    ActiveDirective,
+    DirectiveComponent,
+    LibraryComponent,
+    FormComponent
   ],
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    MenuModule
+    MenuModule,
+    RibbonLibModule,
+    InputTextModule,
+    DropdownModule,
+    CascadeSelectModule,
+    ButtonModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent],

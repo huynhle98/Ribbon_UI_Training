@@ -11,6 +11,7 @@ export class LayoutComponent implements OnInit {
 
   title = 'Tour of Heroes';
   pathCurrent = '';
+
   constructor(
     private location: Location,
     private router: Router
