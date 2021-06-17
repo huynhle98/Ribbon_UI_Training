@@ -5,6 +5,7 @@ import { LayoutComponent } from '../components/layout/layout.component';
 import { DirectiveComponent } from '../components/directive/directive.component';
 import { LibraryComponent } from '../components/library/library.component';
 import { FormComponent } from '../components/form/form.component';
+import { RxjsComponent } from '../components/rxjs/rxjs.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
       // { path: '', redirectTo: '/skins', pathMatch: 'full'},
       { path: 'directive', component: DirectiveComponent },
       { path: 'library', component: LibraryComponent },
-      { path: 'form', component: FormComponent }
+      { path: 'form', component: FormComponent },
+      { path: 'rxjs', component: RxjsComponent }
   ] },
 
   // { path: '**', component: NotFoundPageComponent },

@@ -1,0 +1,46 @@
+<div class="p-grid rxjs">
+    <!-- <p-card header="Subject" class="p-col-6">
+    </p-card> -->
+    <!-- <p-inputSwitch [(ngModel)]="checked" (onChange)="changeAll($event)"></p-inputSwitch> -->
+    <p-card header="ForkJoin" class="p-col-12">
+        <div class="p-grid">
+            <div class="p-col-5 p-card p-ml-auto p-mr-5">
+                <h3>Normal</h3>
+                <div class="p-d-flex">
+                    <p>Vietnam:&nbsp;</p>
+                    <p>{{dataNormal.vn | json}}</p>
+                </div>
+                <div class="p-d-flex">
+                    <p>USA:&nbsp;</p>
+                    <p>{{dataNormal.us | json}}</p>
+                </div>
+                <div class="p-d-flex">
+                    <p>Japan:&nbsp;</p>
+                    <p>{{dataNormal.jp | json}}</p>
+                </div>
+            </div>
+            <div class="p-col-5 p-card p-mr-auto p-ml-5">
+                <h3>ForkJoin</h3>
+                <div *ngIf="!loading">
+                    <div class="p-d-flex">
+                        <p>Vietnam:&nbsp;</p>
+                        <p>{{vn | json}}</p>
+                    </div>
+                    <div class="p-d-flex">
+                        <p>USA:&nbsp;</p>
+                        <p>{{us | json}}</p>
+                    </div>
+                    <div class="p-d-flex">
+                        <p>Japan:&nbsp;</p>
+                        <p>{{jp | json}}</p>
+                    </div>
+                </div>
+                <p-progressSpinner strokeWidth="4" [style]="{width: '40px', height: '40px'}" *ngIf="loading"></p-progressSpinner>
+            </div>
+
+        </div>
+        <div class="p-grid p-mt-5 p-d-flex" style="justify-content: center;">
+            <button pButton type="button" class="p-col-3" label="Reload" (click)="reload()"></button>
+        </div>
+    </p-card>
+</div>

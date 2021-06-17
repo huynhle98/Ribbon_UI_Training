@@ -9,6 +9,7 @@ import { AppRoutingModule } from './router/app-routing.module';
 import { HighlightDirective } from './directive/highlight.directive';
 import { ActiveDirective } from './directive/active/active.directive';
 import { FormComponent } from './components/form/form.component';
+import { RxjsComponent } from './components/rxjs/rxjs.component';
 
 import {MenuModule} from 'primeng/menu';
 import {MenuItem} from 'primeng/api';
@@ -19,6 +20,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 import { RibbonLibModule } from 'ribbon-lib';
 
@@ -30,7 +33,8 @@ import { RibbonLibModule } from 'ribbon-lib';
     ActiveDirective,
     DirectiveComponent,
     LibraryComponent,
-    FormComponent
+    FormComponent,
+    RxjsComponent
   ],
   imports: [
     FormsModule,
@@ -44,7 +48,9 @@ import { RibbonLibModule } from 'ribbon-lib';
     DropdownModule,
     CascadeSelectModule,
     ButtonModule,
-    CardModule
+    CardModule,
+    ProgressSpinnerModule,
+    InputSwitchModule
   ],
   providers: [],
   bootstrap: [AppComponent],
