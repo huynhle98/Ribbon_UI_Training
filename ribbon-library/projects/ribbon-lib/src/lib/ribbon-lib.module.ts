@@ -5,23 +5,28 @@ import { HomeIcoComponent } from './components/icons/home-ico/home-ico.component
 import { ShoppingCartIcoComponent } from './components/icons/shopping-cart-ico/shopping-cart-ico.component';
 import { ApiHelperService } from './service/api-helper/api-helper.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ButtonComponent } from './components/button/button.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
     RibbonLibComponent,
     LoadingOverComponent,
     HomeIcoComponent,
-    ShoppingCartIcoComponent
+    ShoppingCartIcoComponent,
+    ButtonComponent
   ],
   imports: [
-    HttpClientModule
+    HttpClientModule,
+    BrowserModule
     // ProgressSpinnerModule
   ],
   exports: [
     RibbonLibComponent,
     LoadingOverComponent,
     HomeIcoComponent,
-    ShoppingCartIcoComponent
+    ShoppingCartIcoComponent,
+    ButtonComponent
   ],
   providers: [
     ApiHelperService
