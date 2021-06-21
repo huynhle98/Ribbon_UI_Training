@@ -1,0 +1,22 @@
+<div class="cart">
+    <div *ngIf="items.length > 0">
+        <div *ngFor="let item of items" class="cart-item">
+            <img [src]="item.img" alt="" class="cart-item--img">
+            <div class="cart-item--content">
+                <span class="cart-item--info">{{item.name}}</span>
+                <span class="cart-item--price">{{item.price * item.count | currency:'USD'}}</span>
+                <div class="cart-item--count">
+                    <span (click)="onMinusItem($event)">-</span>
+                    <input type="text" [value]="item.count">
+                    <span (click)="onPlusItem($event)">+</span>
+                </div>
+                <span class="cart-item--remove" (click)="onRemoveItem($event)">Remove</span>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="items.length === 0" class="cart-empty">
+        <h3>Your cart is empty</h3>
+        <i class="ngico ngico-cart-arrow-down"></i>
+        <app-lib-button [primary]="true" type="lb-btn--primary" backgroundColor="undefined" size="medium" label="Shopping Now" (click)="onShopping($event)"></app-lib-button>
+    </div>
+</div>

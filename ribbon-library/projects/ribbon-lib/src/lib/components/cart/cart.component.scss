@@ -1,0 +1,129 @@
+@import '../../../../../../src/assets/css/ngicon.scss';
+.cart {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    max-width: 1280px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    &-item {
+        display: flex;
+        border-bottom: 1px solid #dddddd;
+        padding: 0 1rem;
+        $width: 150px;
+        align-items: center;
+        &--img {
+            width: $width;
+            height: $width;
+            object-fit: cover;
+        }
+        &--content {
+            display: flex;
+            width: calc(100% - #{$width});
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0.5rem 1rem;
+        }
+        &--info {
+            width: 40%;
+            font-weight: 600;
+            font-size: 18px;
+        }
+        &--count {
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            input {
+                width: 25px;
+                text-align: center;
+                border: none;
+            }
+            input:focus {
+                outline: none;
+            }
+            span {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                border: 1px solid #c5c5c5;
+                background: #eeeeee;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                user-select: none;
+            }
+        }
+        &--price {
+            width: 25%;
+            text-align: right;
+        }
+        &--remove {
+            width: 10%;
+            cursor: pointer;
+            text-align: right;
+        }
+        &--remove:hover {
+            color: red;
+        }
+    }
+    &-empty {
+        width: 100%;
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20vh;
+    }
+}
+
+.ngico-cart-arrow-down {
+    font-size: 30px;
+    color: #818181;
+    margin-bottom: 1rem;
+}
+
+.ngico-cart-arrow-down::before {
+    content: "\f218";
+}
+
+@media screen and (max-width: 575.98px) {
+    .cart {
+        &-item {
+            $width: 70px;
+            padding: 0 0.5rem;
+            &--img {
+                width: $width;
+                height: $width;
+            }
+            &--content {
+                width: calc(100% - #{$width});
+            }
+            &--info {
+                width: 100%;
+                font-size: 15px;
+                margin-bottom: 0.1rem;
+            }
+            &--count {
+                width: 50%;
+                justify-content: start;
+                span {
+                    width: 15px;
+                    height: 15px;
+                }
+                input {
+                    font-size: 13px;
+                }
+            }
+            &--price {
+                width: 100%;
+                text-align: left;
+                font-size: 13px;
+                margin-bottom: 0.4rem;
+            }
+            &--remove {
+                width: 50%;
+                font-size: 13px;
+            }
+        }
+    }
+}

@@ -7,6 +7,8 @@ import { ApiHelperService } from './service/api-helper/api-helper.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ButtonComponent } from './components/button/button.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { CartComponent } from './components/cart/cart.component';
+import { TestComponent } from './components/test/test.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { BrowserModule } from '@angular/platform-browser';
     LoadingOverComponent,
     HomeIcoComponent,
     ShoppingCartIcoComponent,
-    ButtonComponent
+    ButtonComponent,
+    CartComponent,
+    TestComponent
   ],
   imports: [
     HttpClientModule,
-    BrowserModule
+    BrowserModule,
     // ProgressSpinnerModule
   ],
   exports: [
@@ -26,7 +30,8 @@ import { BrowserModule } from '@angular/platform-browser';
     LoadingOverComponent,
     HomeIcoComponent,
     ShoppingCartIcoComponent,
-    ButtonComponent
+    ButtonComponent,
+    CartComponent
   ],
   providers: [
     ApiHelperService
