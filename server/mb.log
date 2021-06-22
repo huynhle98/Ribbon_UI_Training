@@ -1,0 +1,26 @@
+{"message":"[mb:5000] mountebank v2.4.0 now taking orders - point your browser to http://localhost:5000/ for help","level":"info","timestamp":"2021-06-22T09:15:18.407Z"}
+{"message":"[mb:5000] POST /imposters","level":"info","timestamp":"2021-06-22T09:15:18.432Z"}
+{"message":"[http:5001 hello] Open for business...","level":"info","timestamp":"2021-06-22T09:15:18.466Z"}
+{"message":"[mb:5000] POST /imposters","level":"info","timestamp":"2021-06-22T09:15:18.477Z"}
+{"message":"[http:5555 login] Open for business...","level":"info","timestamp":"2021-06-22T09:15:18.492Z"}
+{"message":"[mb:5000] GET /images/book.jpg","level":"info","timestamp":"2021-06-22T09:16:05.276Z"}
+{"message":"[mb:5000] GET /images/book.jpg","level":"info","timestamp":"2021-06-22T09:16:13.791Z"}
+{"message":"[mb:5000] GET /images/book.jpg","level":"info","timestamp":"2021-06-22T09:16:16.124Z"}
+{"message":"[mb:5000] GET /images/book.jpg","level":"info","timestamp":"2021-06-22T09:16:22.997Z"}
+{"message":"[http:5555 login] ::1:51365 => POST /login","level":"info","timestamp":"2021-06-22T09:16:27.701Z"}
+{"message":"[mb:5000] GET /images/book.jpg","level":"info","timestamp":"2021-06-22T09:16:32.138Z"}
+{"message":"[mb:5000] GET /images/book.jpg","level":"info","timestamp":"2021-06-22T09:16:34.253Z"}
+{"message":"[http:5555 login] ::1:55569 => POST /login","level":"info","timestamp":"2021-06-22T09:17:01.674Z"}
+{"message":"[mb:5000] GET /images/book.jpg","level":"info","timestamp":"2021-06-22T09:17:05.445Z"}
+{"message":"[http:5555 login] ::1:56759 => POST /login","level":"info","timestamp":"2021-06-22T09:17:13.135Z"}
+{"message":"[mb:5000] GET /images/book.jpg","level":"info","timestamp":"2021-06-22T09:17:14.915Z"}
+{"message":"[http:5555 login] ::1:56289 => GET /login","level":"info","timestamp":"2021-06-22T09:17:43.203Z"}
+{"message":"[http:5555 login] no predicate match, using default response","level":"info","timestamp":"2021-06-22T09:17:43.207Z"}
+{"message":"[mb:5000] GET /images/book.jpg","level":"info","timestamp":"2021-06-22T09:17:44.676Z"}
+{"message":"[http:5555 login] ::1:57083 => POST /login/aaa","level":"info","timestamp":"2021-06-22T09:18:06.452Z"}
+{"message":"[http:5555 login] no predicate match, using default response","level":"info","timestamp":"2021-06-22T09:18:06.461Z"}
+{"message":"[mb:5000] GET /images/book.jpg","level":"info","timestamp":"2021-06-22T09:18:08.540Z"}
+{"message":"[mb:5000] GET /images/book.jpg","level":"info","timestamp":"2021-06-22T09:20:17.455Z"}
+{"message":"[http:5555 login] ::1:50461 => GET /","level":"info","timestamp":"2021-06-22T09:21:15.290Z"}
+{"message":"[http:5555 login] no predicate match, using default response","level":"info","timestamp":"2021-06-22T09:21:15.293Z"}
+{"message":"[mb:5000] GET /","level":"info","timestamp":"2021-06-22T09:21:25.758Z"}

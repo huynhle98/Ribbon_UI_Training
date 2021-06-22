@@ -14,8 +14,10 @@ export class AppComponent {
   constructor(private apiHelperService: ApiHelperService) {
     // this.data = this.apiHelperService.sendRequest('get', 'https://jsonplaceholder.typicode.com/posts', null,
     // console.log(this.data);
-    this.apiHelperService.sendRequest('get', 'https://corona.lmao.ninja/v2/countries/vn', null, (res) => {
-      this.data = JSON.stringify(res);
+    // const url = 'https://corona.lmao.ninja/v2/countries/vn';
+    const url = 'http://localhost:5001';
+    this.apiHelperService.sendRequest('post', url, null, (res) => {
+      this.data = res;
     });
   }
 }
