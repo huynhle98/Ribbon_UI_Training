@@ -1,0 +1,50 @@
+{
+    "predicates": [
+        {
+            "contains": {
+                "method": "GET",
+                "path": "/forwarding-service/v1.0/filter-profile/1"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../../headers.json %>,
+                "body": {
+                  "id": 0,
+                  "profileName": "profile-1",
+                  "description": "profile sample",
+                  "isFilterEnabled": true,
+                  "nodesAvailable": [
+                    { "id": 1, "name": "192.168.0.1" },
+                    { "id": 2, "name": "192.168.0.2" }
+                  ],
+                  "typesAvailable": [
+                    { "id": 2, "name": "Warning" },
+                    { "id": 3, "name": "Critical" }
+                  ],
+                  "severity": [
+                    "Critical",
+                    "Major",
+                    "Minor"
+                  ],
+                  "eventClass": [
+                    "Need attention"
+                  ],
+                  "eventLevel": [
+                    "3"
+                  ],
+                  "nodeId": [
+                    "Administrator"
+                  ],
+                  "eventName": [
+                    "sonusPolicyServerDbError",
+                    "sonusPolicyServerDbWarning"
+                  ]
+                }
+            }
+        }
+    ]
+}

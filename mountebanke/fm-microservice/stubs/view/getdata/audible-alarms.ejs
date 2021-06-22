@@ -1,0 +1,32 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/view-service/v1.0/views/audible-alarms"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": [
+					{
+						"id": 1,
+						"name": "alarm1.mp3"
+					},
+					{
+						"id": 2,
+						"name": "alarm2.mp3"
+					},
+					{
+						"id": 3,
+						"name": "alarm3.mp3"
+					}
+				]
+			}
+		}
+  ]
+}

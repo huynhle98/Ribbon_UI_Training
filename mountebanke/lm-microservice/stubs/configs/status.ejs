@@ -1,0 +1,25 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+				"path": "/lm/v1.0/expiryStatus"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body":{
+					"expired": 951,
+					"soon": 130
+				}
+			}
+		}
+  ]
+}

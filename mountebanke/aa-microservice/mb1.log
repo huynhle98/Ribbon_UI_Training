@@ -1,0 +1,16 @@
+{"message":"[mb:2828] mountebank v2.4.0 now taking orders - point your browser to http://localhost:2828/ for help","level":"info","timestamp":"2021-04-02T03:24:28.420Z"}
+{"message":"[mb:2828] PUT /imposters","level":"info","timestamp":"2021-04-02T03:24:28.554Z"}
+{"message":"[http:4646 proto] Open for business...","level":"info","timestamp":"2021-04-02T03:24:28.649Z"}
+{"message":"[http:4646 proto] ::1:52840 => GET /auth/v1.0/config/users","level":"info","timestamp":"2021-04-02T03:25:49.889Z"}
+{"message":"[http:4646 proto] ::1:52843 => DELETE /auth/v1.0/config/users/1","level":"info","timestamp":"2021-04-02T03:25:52.010Z"}
+{"message":"[http:4646 proto] ::1:52872 => GET /auth/v1.0/config/users","level":"info","timestamp":"2021-04-02T03:26:11.613Z"}
+{"message":"[http:4646 proto] ::1:52883 => DELETE /auth/v1.0/config/users/2","level":"info","timestamp":"2021-04-02T03:26:15.161Z"}
+{"message":"[http:4646 proto] ::1:52924 => DELETE /auth/v1.0/config/users/1","level":"info","timestamp":"2021-04-02T03:26:29.961Z"}
+{"message":"[http:4646 proto] ::1:52948 => GET /auth/v1.0/config/users","level":"info","timestamp":"2021-04-02T03:26:54.462Z"}
+{"message":"[http:4646 proto] ::1:52952 => DELETE /auth/v1.0/config/users/1","level":"info","timestamp":"2021-04-02T03:26:55.986Z"}
+{"message":"[http:4646 proto] ::1:52979 => GET /auth/v1.0/config/users","level":"info","timestamp":"2021-04-02T03:27:08.827Z"}
+{"message":"[http:4646 proto] ::1:52981 => DELETE /auth/v1.0/config/users/1","level":"info","timestamp":"2021-04-02T03:27:10.778Z"}
+{"message":"[http:4646 proto] ::1:53020 => GET /auth/v1.0/config/users","level":"info","timestamp":"2021-04-02T03:27:39.487Z"}
+{"message":"[http:4646 proto] ::1:53028 => DELETE /auth/v1.0/config/user/1","level":"info","timestamp":"2021-04-02T03:27:47.580Z"}
+{"message":"[http:4646 proto] ::1:60363 => DELETE /auth/v1.0/config/user/2","level":"info","timestamp":"2021-04-02T03:28:01.750Z"}
+{"message":"[mb:2828] Adios - see you soon?","level":"info","timestamp":"2021-04-02T03:29:49.910Z"}

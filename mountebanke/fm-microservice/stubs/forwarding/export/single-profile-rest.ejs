@@ -1,0 +1,30 @@
+{
+    "predicates": [
+        {
+            "contains": {
+                "method": "GET",
+                "path": "/forwarding-service/v1.0/export-profile/0"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../../headers.json %>,
+                "body": {
+                  "id": 0,
+                  "name": "admin-profile",
+                  "description": "admin profile sample",
+                  "associatedFilterProfileId": 1,
+                  "isProfileEnabled": true,
+                  "ipAddress": "192.168.0.1",
+                  "port": "80",
+                  "dataFormat": "REST",
+                  "username": "admin",
+                  "password": "admin"
+                }
+            }
+        }
+    ]
+}

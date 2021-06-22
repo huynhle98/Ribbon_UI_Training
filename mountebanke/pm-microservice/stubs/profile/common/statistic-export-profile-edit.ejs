@@ -1,0 +1,17 @@
+{
+    "predicates": [
+      {
+        "equals": {
+          "method": "PUT",
+          "path": "/profile-service/v1/export/statistic/id01"
+        }
+      },
+      {
+        "exists": {"body": true},
+        "caseSensitive": true,
+        "jsonpath": { "selector": "$..id" },
+        "comment": "id property must exist in body"
+      }
+    ],
+    "responses": <% include ../../responses/responses-without-status.ejs %>
+  }

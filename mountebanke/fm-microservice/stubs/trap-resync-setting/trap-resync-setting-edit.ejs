@@ -1,0 +1,34 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "PUT",
+        "path": "/trap-resync-service/v1.0/trap-resync-setting/255.255.255.255"
+      }
+    },
+    {
+      "exists": {"body": true},
+      "caseSensitive": true,
+      "jsonpath": { "selector": "$..ossIpAddress" },
+      "comment": "id property must exist in body"
+    }
+  ],
+  "responses": <% include ../responses/responses-without-status.ejs %>
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "PUT",
+        "path": "/trap-resync-service/v1.0/trap-resync-setting/123.56.89.12"
+      }
+    },
+    {
+      "exists": {"body": true},
+      "caseSensitive": true,
+      "jsonpath": { "selector": "$..ossIpAddress" },
+      "comment": "id property must exist in body"
+    }
+  ],
+  "responses": <% include ../responses/responses-without-status.ejs %>
+}

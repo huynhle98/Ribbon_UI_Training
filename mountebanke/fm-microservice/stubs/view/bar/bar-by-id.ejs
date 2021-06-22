@@ -1,0 +1,205 @@
+{
+  "predicates": [
+		{
+			"equals": {
+			"method": "GET",
+			"path": "/view-service/v1.0/bar/2"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": 
+					{
+						"id": 2,
+						"name": "2-SBCs",
+						"viewId": 2,
+						"devices": {
+							"optionType": "DEVICE",
+							"seletedDevices": [
+								{
+									"id": 1,
+									"name": "SBX1K",
+									"type": "SBCEdge",
+									"isSelected": true
+								},
+								{
+									"id": 2,
+									"name": "sbc-edge-2",
+									"type": "SBCEdge",
+									"isSelected": true
+								},
+								{
+									"id": 3,
+									"name": "sbc-edge-3",
+									"type": "SBCEdge"
+								}
+							],
+							"seletedClusters": [
+							],
+							"seletedDeviceTypes": [
+							]
+						},
+						"rateTripwire": {
+							"isActiveTripWire": false,
+							"numberLimitedEvent": 0,
+							"numberSecondInterval": 0
+						},
+						"selectedEventTripWireInfo": [
+							{
+								"id": 1,
+								"name": "ADS: AccessDir01"
+							},
+							{
+								"id": 2,
+								"name": "ADS: AccessDir02"
+							}
+						],
+						"severity": [
+							{
+								"id": 1,
+								"name": "Critical",
+								"include": true,
+								"tripsWire": true
+							},
+							{
+								"id": 2,
+								"name": "Major",
+								"include": true,
+								"tripsWire": true
+							},
+							{
+								"id": 3,
+								"name": "Minor",
+								"include": true,
+								"tripsWire": false
+							},
+							{
+								"id": 4,
+								"name": "Warning",
+								"include": true,
+								"tripsWire": true
+							},
+							{
+								"id": 5,
+								"name": "Indeterminate",
+								"include": false,
+								"tripsWire": false
+							},
+							{
+								"id": 6,
+								"name": "Cleared",
+								"include": false,
+								"tripsWire": false
+							}
+						]
+					}
+			}
+		}
+  ]
+},
+{
+  "predicates": [
+		{
+			"equals": {
+			"method": "GET",
+			"path": "/view-service/v1.0/bar/1"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": 
+					{
+						"id": 1,
+						"name": "1-SBCs",
+						"viewId": 1,
+						"devices": {
+							"optionType": "DEVICE",
+							"seletedDevices": [
+							],
+							"seletedClusters": [
+							],
+							"seletedDeviceTypes": [
+								{
+									"id": 1,
+									"name": "SBCEdge1",
+									"isSelected": true
+								},
+								{
+									"id": 2,
+									"name": "SBCEdge2",
+									"isSelected": true
+								},
+								{
+									"id": 3,
+									"name": "SBCEdge3",
+									"isSelected": true
+								}
+							]
+						},
+						"rateTripwire": {
+							"isActiveTripWire": false,
+							"numberLimitedEvent": 0,
+							"numberSecondInterval": 0
+						},
+						"selectedEventTripWireInfo": [
+							{
+								"id": 1,
+								"name": "ADS: AccessDir01"
+							},
+							{
+								"id": 2,
+								"name": "ADS: AccessDir02"
+							}
+						],
+						"severity": [
+							{
+								"id": 1,
+								"name": "Critical",
+								"include": true,
+								"tripsWire": true
+							},
+							{
+								"id": 2,
+								"name": "Major",
+								"include": true,
+								"tripsWire": true
+							},
+							{
+								"id": 3,
+								"name": "Minor",
+								"include": true,
+								"tripsWire": false
+							},
+							{
+								"id": 4,
+								"name": "Warning",
+								"include": true,
+								"tripsWire": true
+							},
+							{
+								"id": 5,
+								"name": "Indeterminate",
+								"include": false,
+								"tripsWire": false
+							},
+							{
+								"id": 6,
+								"name": "Cleared",
+								"include": false,
+								"tripsWire": false
+							}
+						]
+					}
+			}
+		}
+  ]
+}
+

@@ -1,0 +1,42 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/administration-service/v1.0/process"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body": [
+					{
+						"name": "receiver",
+						"label": "Receiver",
+						"value": "Tester",
+						"valueType": "string",
+						"pattern": "[a-zA-Z]*"
+					},
+					{ 
+						"name": "converter",
+						"label": "Converter",
+						"value": "integer",
+						"valueType": "string",
+						"pattern": "[a-zA-Z]*"
+					},
+					{ 
+						"name": "exporter",
+						"label": "Exporter",
+						"value": 12,
+						"minValue": 1,
+						"maxValue": 30,
+						"valueType": "integer"
+					}
+				]
+			}
+		}
+  ]
+}

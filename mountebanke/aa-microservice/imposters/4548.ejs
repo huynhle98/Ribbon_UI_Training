@@ -1,0 +1,24 @@
+{
+  "port": 4548,
+  "protocol": "http",
+  "name": "proto",
+  "recordRequests": false,
+  "useCORS": true,
+  "allowCORS": true,
+  "stubs": [
+    <%# Requires an "Authorization" header of "123456789" %>
+
+    <% include ../stubs/options.ejs %>,
+	  
+    <% include ../stubs/users/index.ejs %>,
+    <% include ../stubs/user-groups/index.ejs %>,
+    <% include ../stubs/resource-groups/index.ejs %>,
+    <% include ../stubs/realms/index.ejs %>,
+    <% include ../stubs/certificates/index.ejs %>,
+    <% include ../stubs/admin/index.ejs %>,
+    <% include ../stubs/activity/index.ejs %>,
+    <% include ../stubs/roles/index.ejs %>,
+    <%# Include this last, if no other matches, then return a 404 %>
+    <% include ../stubs/404.ejs %>
+  ]
+}

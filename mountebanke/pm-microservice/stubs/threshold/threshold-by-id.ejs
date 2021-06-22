@@ -1,0 +1,51 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/threshold-service/v1/threshold/id01"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": {
+                    "id": "id01",
+                    "name": "CPU USAGE PERCENT",
+                    "category": "AppIResUsage",
+                    "trigger": 18.0,
+                    "clear": 15.0,
+                    "severity": "Major",
+                    "notifyOnClear": true,
+                    "enable": true,
+                    "nodeType": "PSX",
+                    "events": [
+                        {
+                            "nodeName": "node-abc",
+                            "location": "location",
+                            "thresholdValue": "Threshold Value"
+                        },
+                        {
+                            "nodeName": "node-xyz",
+                            "location": "location",
+                            "thresholdValue": "Threshold Value"
+                        },
+                        {
+                            "nodeName": "node-123",
+                            "location": "location",
+                            "thresholdValue": "Threshold Value"
+                        },
+                        {
+                            "nodeName": "node-456",
+                            "location": "location",
+                            "thresholdValue": "Threshold Value"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

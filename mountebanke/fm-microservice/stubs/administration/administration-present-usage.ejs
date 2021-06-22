@@ -1,0 +1,25 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/administration-service/v1.0/presentUsage"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body": [
+					{
+						"eventRecords": 6,
+  					"activeRealTimeManager": 10,
+  					"eventListsCurrently": 8
+					}
+				]
+			}
+		}
+  ]
+}

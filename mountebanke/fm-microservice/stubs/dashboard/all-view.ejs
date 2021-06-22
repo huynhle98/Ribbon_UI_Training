@@ -1,0 +1,60 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/dashboard-service/v1.0/views"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": [
+                    {
+                        "id": 1,
+                        "name": "EDGEview",
+                        "hasAudibleAlarms": false,
+                        "resourceGroupId": 1,
+                        "date": "01:03:40 PM -0400 05/17/2016",
+                        "order": 1
+                    },
+                    {
+                        "id": 2,
+                        "name": "TestView",
+                        "hasAudibleAlarms": true,
+                        "resourceGroupId": 1,
+                        "date": "03:40:50 PM -0600 05/19/2016",
+                        "order": 3
+                    },
+                    {
+                        "id": 3,
+                        "name": "eastcoast",
+                        "hasAudibleAlarms": true,
+                        "resourceGroupId": 2,
+                        "date": "12:05:45 AM -0200 05/21/2016",
+                        "order": 2
+                    },
+                    {
+                        "id": 4,
+                        "name": "westcoast",
+                        "hasAudibleAlarms": false,
+                        "resourceGroupId": 2,
+                        "date": "16:20:22 PM -0400 05/22/2016",
+                        "order": 4
+                    },
+                    {
+                        "id": 5,
+                        "name": "View-05",
+                        "hasAudibleAlarms": true,
+                        "resourceGroupId": 2,
+                        "date": "18:11:12 PM -0800 05/25/2016",
+                        "order": 5
+                    }
+                ]
+            }
+        }
+    ]
+}

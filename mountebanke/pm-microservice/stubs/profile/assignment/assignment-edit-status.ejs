@@ -1,0 +1,15 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "PUT",
+        "path": "/profile-service/v1/assignment/status"
+      }
+    },
+    {
+      "exists": { "query": { "type": true, "enabled": true } },
+      "comment": "Type of status, enabled are required"
+    }
+  ],
+  "responses": <% include ../../responses/responses-without-status.ejs %>
+}

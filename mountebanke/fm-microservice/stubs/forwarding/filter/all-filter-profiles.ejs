@@ -1,0 +1,41 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/forwarding-service/v1.0/filter-profiles"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../../headers.json %>,
+                "body": [
+                    {
+                        "id": 1,
+                        "name": "Administrator",
+                        "sourceAddress": "192.168.0.1",
+                        "trapType": "sonusExtendedSoftSwitchDbrepConnection",
+                        "trapEnabled": true
+                    },
+                    {
+                        "id": 2,
+                        "name": "Manager",
+                        "sourceAddress": "192.168.0.2",
+                        "trapType": "sonusExtendedSoftSwitchDbrepConnection",
+                        "trapEnabled": true
+                    },
+                    {
+                        "id": 3,
+                        "name": "User1",
+                        "sourceAddress": "192.168.0.3",
+                        "trapType": "sonusExtendedSoftSwitchDbrepConnection",
+                        "trapEnabled": false
+                    }
+                ]
+            }
+        }
+    ]
+}

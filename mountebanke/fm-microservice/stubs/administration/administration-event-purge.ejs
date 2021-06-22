@@ -1,0 +1,42 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/administration-service/v1.0/eventPurge"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body": [
+					{
+						"scheduled": {
+							"frequency": "weekly",
+							"startTime": "12:00:00",
+							"startDate": 0
+						},
+						"selection": {
+							"eventSelection": 1,
+							"olderThanHours": 10,
+							"eventMaxNumber": {
+								"maxNumber": "15",
+								"maxSize": "30%"
+							}
+						},
+						"severity": {
+							"critical": true,
+							"major": true,
+							"minor": true,
+							"warning": true,
+							"indeterminate": true
+						}
+					}
+				]
+			}
+		}
+  ]
+}

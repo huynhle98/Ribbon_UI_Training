@@ -1,0 +1,98 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "DELETE",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/cert/oktacert1"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": []
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "DELETE",
+        "path": "/auth/v1.0/cert/oktacert2"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": []
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "DELETE",
+        "path": "/auth/v1.0/cert/oktacert3"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": []
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "DELETE",
+        "path": "/auth/v1.0/cert/oktacert4"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": []
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "DELETE",
+        "path": "/auth/v1.0/cert/oktacert5"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": []
+      }
+    }
+  ]
+}

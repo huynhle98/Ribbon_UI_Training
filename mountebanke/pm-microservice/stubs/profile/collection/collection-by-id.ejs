@@ -1,0 +1,96 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/profile-service/v1/collection/id01"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../../headers.json %>,
+        "body": {
+          "id": "id01",
+          "name": "Default SBC Profile",
+          "deviceType": "SBC",
+          "interfaceType": "SFTP",
+          "generationFreq": "15 Minutes",
+          "collectionFreq": "15 Minutes",
+          "overrides": 10,
+          "devicesAssoc": 24,
+          "statistics": [
+            {
+              "id": "id01",
+              "name": "CallFailIntervalStats",
+              "deviceType": "SBC",
+              "generationStatus": true,
+              "generationFreq": "15 Minutes",
+              "collectionStatus": true,
+              "collectionFreq": "15 Minutes",
+              "aggregationStatus": false,
+              "isOverride": true
+            },
+            {
+              "id": "id02",
+              "name": "CallIntervalStats",
+              "deviceType": "SBC",
+              "generationStatus": true,
+              "generationFreq": "15 Minutes",
+              "collectionStatus": true,
+              "collectionFreq": "15 Minutes",
+              "aggregationStatus": false,
+              "isOverride": true
+            },
+            {
+              "id": "id03",
+              "name": "DnsGroupDnsServerStats",
+              "deviceType": "SBC",
+              "generationStatus": true,
+              "generationFreq": "15 Minutes",
+              "collectionStatus": true,
+              "collectionFreq": "15 Minutes",
+              "aggregationStatus": false,
+              "isOverride": true
+            },
+            {
+              "id": "id08",
+              "name": "H323SigPortStatisticsStats",
+              "deviceType": "SBC",
+              "generationStatus": true,
+              "generationFreq": "15 Minutes",
+              "collectionStatus": true,
+              "collectionFreq": "15 Minutes",
+              "aggregationStatus": true,
+              "isOverride": true
+            },
+            {
+              "id": "id09",
+              "name": "IcmpGeneralGroupStats",
+              "deviceType": "SBC",
+              "generationStatus": true,
+              "generationFreq": "15 Minutes",
+              "collectionStatus": true,
+              "collectionFreq": "15 Minutes",
+              "aggregationStatus": true,
+              "isOverride": true
+            },
+            {
+              "id": "id10",
+              "name": "IpAclOverallStats",
+              "deviceType": "SBC",
+              "generationStatus": true,
+              "generationFreq": "15 Minutes",
+              "collectionStatus": true,
+              "collectionFreq": "15 Minutes",
+              "aggregationStatus": true,
+              "isOverride": true
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

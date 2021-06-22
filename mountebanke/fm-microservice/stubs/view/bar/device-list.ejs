@@ -1,0 +1,160 @@
+{
+	"predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/view-service/v1.0/bars/devices", 
+				"query": {
+					"resourceGroupId": 1
+				}
+			}
+		},
+		{
+			"exists": {
+				"query": true
+			},
+			"caseSensitive": true,
+			"jsonpath": {
+				"selector": "$.resourceGroupId"
+			},
+			"comment": "resourceGroupId property must exist in query"
+		}
+	],
+	"responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": [
+					{
+						"id": 1,
+						"name": "SBX1K",
+						"type": "SBCEdge",
+						"isSelected": true
+					},
+					{
+						"id": 2,
+						"name": "sbc-edge-2",
+						"type": "SBCEdge",
+						"isSelected": true
+					},
+					{
+						"id": 3,
+						"name": "sbc-edge-3",
+						"type": "SBCEdge"
+					},
+					{
+						"id": 4,
+						"name": "sbc-edge-4",
+						"type": "SBCEdge"
+					},
+					{
+						"id": 5,
+						"name": "sbc-edge-5",
+						"type": "SBCEdge"
+					},
+					{
+						"id": 6,
+						"name": "sbc-edge-6",
+						"type": "SBCEdge"
+					},
+					{
+						"id": 7,
+						"name": "sbc-edge-7",
+						"type": "SBCEdge"
+					},
+					{
+						"id": 8,
+						"name": "sbc-edge-8",
+						"type": "SBCEdge"
+					},
+					{
+						"id": 9,
+						"name": "sbc-edge-9",
+						"type": "SBCEdge"
+					}
+				]
+			}
+		}
+	]
+},
+{
+	"predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/view-service/v1.0/bars/devices", 
+				"query": {
+					"resourceGroupId": 2
+				}
+			}
+		},
+		{
+			"exists": {
+				"query": true
+			},
+			"caseSensitive": true,
+			"jsonpath": {
+				"selector": "$.resourceGroupId"
+			},
+			"comment": "resourceGroupId property must exist in query"
+		}
+	],
+	"responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": [
+					{
+						"id": 1,
+						"name": "SBX1K",
+						"type": "SBCEdge",
+						"isSelected": true
+					},
+					{
+						"id": 2,
+						"name": "sbc-edge-2",
+						"type": "SBCEdge",
+						"isSelected": true
+					},
+					{
+						"id": 3,
+						"name": "sbc-edge-3",
+						"type": "SBCEdge"
+					},
+					{
+						"id": 4,
+						"name": "sbc-edge-4",
+						"type": "SBCEdge"
+					},
+					{
+						"id": 5,
+						"name": "sbc-edge-5",
+						"type": "SBCEdge"
+					},
+					{
+						"id": 6,
+						"name": "sbc-edge-6",
+						"type": "SBCEdge"
+					},
+					{
+						"id": 7,
+						"name": "sbc-edge-7",
+						"type": "SBCEdge"
+					},
+					{
+						"id": 8,
+						"name": "sbc-edge-8",
+						"type": "SBCEdge"
+					},
+					{
+						"id": 9,
+						"name": "sbc-edge-9",
+						"type": "SBCEdge"
+					}
+				]
+			}
+		}
+	]
+}

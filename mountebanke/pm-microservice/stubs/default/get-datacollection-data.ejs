@@ -1,0 +1,24 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/collection-service/v1/datacollection"
+			}
+    }
+  ],
+  "responses": [
+		{
+			"is": {
+        "headers": <% include ../headers.json %>,
+				"statusCode": 200,
+				"body": {
+          "enabled": 4,
+          "disabled": 2,
+          "successful": 4,
+          "failed": 3
+        }      
+			}
+		}
+  ]
+}

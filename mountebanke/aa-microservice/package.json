@@ -1,0 +1,12 @@
+{
+  "name": "aa-micro-app",
+  "description": "AA Mock API",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "scripts": {
+    "mock": "mb --configfile imposters.ejs --debug --port 2528"
+  },
+  "dependencies": {
+    "mountebank": "^2.1.0"
+  }
+}

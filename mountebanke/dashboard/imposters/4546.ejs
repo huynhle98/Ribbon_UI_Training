@@ -1,0 +1,21 @@
+{
+  "port": 4546,
+  "protocol": "http",
+  "name": "proto",
+  "recordRequests": false,
+  "useCORS": true,
+  "allowCORS": true,
+  "stubs": [
+
+     <%# Requires an "Authorization" header of "123456789" %>
+     <%# Returns a list of users %>
+     <% include ../stubs/users.json %>,
+     <% include ../stubs/options.ejs %>,
+
+     <%# get dashboard data %>
+     <% include ../stubs/dashboard/index.ejs %>,
+
+     <%# Include this last, if no other matches, then return a 404 %>
+     <% include ../stubs/404.ejs %>
+  ]
+}

@@ -1,0 +1,12 @@
+{
+    "name": "pm-micro-app",
+    "description": "PM Mock-api",
+    "version": "0.0.0",
+    "license": "UNLICENSED",
+    "scripts": {
+        "mock": "mb --configfile imposters.ejs --debug --port 2626"
+    },
+    "dependencies": {
+        "mountebank": "^2.1.0"
+    }
+}

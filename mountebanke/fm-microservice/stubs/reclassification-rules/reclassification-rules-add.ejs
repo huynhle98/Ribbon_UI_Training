@@ -1,0 +1,47 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "POST",
+                "path": "/fm/reclassificationRule/v1.0/reclassification-rules-service/reclassification-rules"
+            }
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..mibname" },
+            "comment": "mib property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..trapname" },
+            "comment": "trapName property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..severity" },
+            "comment": "severity property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..eventclass" },
+            "comment": "class property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..summary..usesystemdefined" },
+            "comment": "summary property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..summary..description" },
+            "comment": "summary property must exist in body"
+        }
+    ],
+    "responses": <% include ../responses/responses-without-status.ejs %>
+}

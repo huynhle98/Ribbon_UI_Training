@@ -1,0 +1,22 @@
+{
+  "port": 4547,
+  "protocol": "http",
+  "name": "proto",
+  "recordRequests": false,
+  "useCORS": true,
+  "allowCORS": true,
+  "stubs": [
+    <%# Requires an "Authorization" header of "123456789" %>
+
+    <% include ../stubs/options.ejs %>,
+	  
+    <% include ../stubs/configs/index.ejs %>,
+    <% include ../stubs/postpaid/index.ejs %>,
+    <% include ../stubs/feature-license/index.ejs %>,
+    <% include ../stubs/node-association/index.ejs %>,
+    <% include ../stubs/manual-reports/index.ejs %>,
+
+    <%# Include this last, if no other matches, then return a 404 %>
+    <% include ../stubs/404.ejs %>
+  ]
+}

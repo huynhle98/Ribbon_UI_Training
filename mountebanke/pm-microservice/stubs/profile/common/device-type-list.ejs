@@ -1,0 +1,40 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/profile-service/v1/device-type"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../../headers.json %>,
+        "body": [
+          {
+            "id": "id01",
+            "name": "SBC"
+          },
+          {
+            "id": "id02",
+            "name": "PSX"
+          },
+          {
+            "id": "id03",
+            "name": "DSC"
+          },
+          {
+            "id": "id04",
+            "name": "ASX"
+          },
+          {
+            "id": "id05",
+            "name": "EMS"
+          }
+      ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/view-service/v1.0/views/resource-group"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": [
+					{
+						"id": 1,
+						"name": "Any"
+					},
+					{
+						"id": 2,
+						"name": "WeastCoast_1"
+					},
+					{
+						"id": 3,
+						"name": "WeastCoast_2"
+					}
+				]
+			}
+		}
+  ]
+}

@@ -1,0 +1,29 @@
+{
+    "predicates": [
+        {
+            "contains": {
+                "method": "GET",
+                "path": "/view-service/v1.0/views/filter-data"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": {
+                    "ackStatus": [
+                      "All",
+					  "unacknowledged"
+                    ],
+                    "ownership": [
+                      "All",
+                      "self only"
+                    ],
+                    "resourceGroupId": [1, 2]
+                }
+            }
+        }
+    ]
+}

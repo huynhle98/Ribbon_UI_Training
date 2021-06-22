@@ -1,0 +1,52 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/config/user/1/token-details"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../../headers.json %>,
+        "body": [
+          {
+            "id": "1",
+            "authType": "LDAP",
+            "expiration": "2-23 22: 03: 25 IST 2021"
+          },
+          {
+            "id": "2",
+            "authType": "SAML",
+            "expiration": "2-23 22: 04: 30 IST 2021"
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/auth/v1.0/config/user/2/token-details"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../../headers.json %>,
+        "body": []
+      }
+    }
+  ]
+}

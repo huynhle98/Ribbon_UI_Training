@@ -1,0 +1,63 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/nodes"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          {
+            "id": "1",
+            "name": "localhost",
+            "nodeType": "INSIGHT",
+            "subtype": "Default",
+            "ip": "10.54.48.180",
+            "licenseType": 0
+          },
+          {
+            "id": "2",
+            "name": "SourceEms",
+            "nodeType": "INSIGHT",
+            "subtype": "Default",
+            "ip": "10.34.22.50",
+            "licenseType": 1
+          },
+          {
+            "id": "3",
+            "name": "Beigevm1",
+            "nodeType": "PSX",
+            "subtype": "Master",
+            "ip": "10.228.25.70",
+            "licenseType": 2
+          },
+          {
+            "id": "4",
+            "name": "psxOldversion",
+            "nodeType": "PSX",
+            "subtype": "Master",
+            "ip": "10.54.212.225",
+            "licenseType": 2
+          },
+          {
+            "id": "5",
+            "name": "sbclitecicd2",
+            "nodeType": "SBC",
+            "subtype": "Default",
+            "ip": "10.54.48.183",
+            "licenseType": 2
+          }
+        ]
+      }
+    }
+  ]
+}

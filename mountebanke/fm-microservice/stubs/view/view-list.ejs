@@ -1,0 +1,67 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/view-service/v1.0/views/"
+			}
+		},
+		{
+            "exists": {"query": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.pageNum" },
+            "comment": "pageNum property must exist in query"
+        },
+        {
+            "exists": {"query": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.recordPerPage" },
+            "comment": "recordPerPage property must exist in query"
+        }
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body":{
+					"iTotalViews": 10,
+					"viewTable":[
+						{
+							"id": 1,
+							"name": "EDGEview",
+							"ownership": "all",
+							"ackStatus": "all",
+							"description": "test 1k alarms",
+							"resourceGroupId": 1
+						},
+						{
+							"id": 2,
+							"name": "TestView",
+							"ownership": "all",
+							"ackStatus": "all",
+							"description": "all alarms",
+							"resourceGroupId": 1
+						},
+						{
+							"id": 3,
+							"name": "eastcoast",
+							"ownership": "self only",
+							"ackStatus": "all",
+							"description": "eastcoast alarms",
+							"resourceGroupId": 1
+						},
+						{
+							"id": 4,
+							"name": "westcoast",
+							"ownership": "all",
+							"ackStatus": "unacknowledged",
+							"description": "westcoast alarms",
+							"resourceGroupId": 1
+						}
+					]
+				}
+			}
+		}
+  ]
+}

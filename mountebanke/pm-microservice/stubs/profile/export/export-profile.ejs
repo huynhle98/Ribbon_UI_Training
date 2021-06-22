@@ -1,0 +1,122 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/profile-service/v1/export/profile"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../../headers.json %>,
+        "body": [
+          {
+            "id": "exp001",
+            "name": "Westcoast",
+            "exportAgreegatedData": true,
+            "collectionInfo": ["SBC|Default SBC Profile"],
+            "exportFreq": "15 Minutes",
+            "granularity": "All Data",
+            "startTime": "12:00",
+            "statistics": [
+              {
+                "id": "id01",
+                "name": "CallFailIntervalStats01",
+                "deviceType": "SBC",
+                "exportStatus": true,
+                "exportFreq": "15 Minutes",
+                "exportLocation": ["1", "2", "3"],
+                "granularity": "All",
+                "collectionFreq": "15 Minutes",
+                "aggregationStatus": false,
+                "isOverride": true
+              }
+            ],
+            "locations": [
+              {
+                "id": "1",
+                "name": "PM Archive",
+                "ipAddress": "localhost",
+                "directory": "opt/sonus/ems/weblogic/sounsEms/data/pm_archive",
+                "associatedProfiles": 3,
+                "username": "user01",
+                "password": "123456789"
+              }
+            ]
+          },
+          {
+            "id": "exp002",
+            "name": "Eastcoast",
+            "exportAgreegatedData": true,
+            "collectionInfo": ["SBC|SBC 1 Profile"],
+            "exportFreq": "15 Minutes",
+            "granularity": "All Data",
+            "startTime": "12:00",
+            "statistics": [
+              {
+                "id": "id02",
+                "name": "CallIntervalStats02",
+                "deviceType": "SBC",
+                "exportStatus": true,
+                "exportFreq": "15 Minutes",
+                "exportLocation": ["1", "2", "3"],
+                "granularity": "All",
+                "collectionFreq": "15 Minutes",
+                "aggregationStatus": false,
+                "isOverride": true
+              }
+            ],
+            "locations": [
+              {
+              "id": "2",
+              "name": "PM Archive2",
+              "ipAddress": "10.54.28.97",
+              "directory": "opt/sonus/ems/weblogic/sounsEms/data/pm_archive-2",
+              "associatedProfiles": 5,
+              "username": "user1",
+              "password": "123456789"
+              }
+            ]
+          },
+          {
+            "id": "exp003",
+            "name": "abc-xyz-SBC-s",
+            "exportAgreegatedData": true,
+            "collectionInfo":  ["SBC|SBC 1 Profile"],
+            "exportFreq": "15 Minutes",
+            "granularity": "All Data",
+            "startTime": "12:00",
+            "statistics": [
+              {
+                "id": "id03",
+                "name": "DnsGroupDnsServerStats03",
+                "deviceType": "SBC",
+                "exportStatus": true,
+                "exportFreq": "15 Minutes",
+                "exportLocation": ["1", "2", "3"],
+                "granularity": "All",
+                "collectionFreq": "15 Minutes",
+                "aggregationStatus": false,
+                "isOverride": true
+              }
+            ],
+            "locations": [
+            {
+              "id": "1",
+              "name": "PM Archive",
+              "ipAddress": "localhost",
+              "directory": "opt/sonus/ems/weblogic/sounsEms/data/pm_archive",
+              "associatedProfiles": 3,
+              "username": "user01",
+              "password": "123456789"
+            }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

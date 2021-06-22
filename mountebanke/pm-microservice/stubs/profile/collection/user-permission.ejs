@@ -1,0 +1,21 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/collection-service/v1/userPermissions"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../../headers.json %>,
+                "body": [
+                    "user1"
+                ]
+            }
+        }
+    ]
+}

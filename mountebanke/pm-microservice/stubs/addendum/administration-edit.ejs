@@ -1,0 +1,203 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "PUT",
+                "path": "/addendum-service/v1/administration"
+            }
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..statisticReportDirectory" },
+            "comment": "statisticReportDirectory property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..ranPollStartOffsetSecs" },
+            "comment": "ranPollStartOffsetSecs property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..ranPollEndOffsetSecs" },
+            "comment": "ranPollEndOffsetSecs property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..collectBacklogFiles" },
+            "comment": "collectBacklogFiles property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..numberBacklogFilesFetch" },
+            "comment": "numberBacklogFilesFetch property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..secureFTPPollerCorePoolSize" },
+            "comment": "secureFTPPollerCorePoolSize property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..secureFTPPollerMaxPoolSize" },
+            "comment": "secureFTPPollerMaxPoolSize property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..secureFTPPollerConnectionTimeout" },
+            "comment": "secureFTPPollerConnectionTimeout property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..secureFTPPollerSocketTimeout" },
+            "comment": "secureFTPPollerSocketTimeout property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..secureFTPPollerConnectionRetries" },
+            "comment": "secureFTPPollerConnectionRetries property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..secureFTPPollerFileRetries" },
+            "comment": "secureFTPPollerFileRetries property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..secureFTPPollerMinimumRetryDelay" },
+            "comment": "secureFTPPollerMinimumRetryDelay property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..exportFileBaseDirectory" },
+            "comment": "exportFileBaseDirectory property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..exportTimeLookbackMultiple" },
+            "comment": "exportTimeLookbackMultiple property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..exportAllNodesSingleCSVFile" },
+            "comment": "exportAllNodesSingleCSVFile property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..gzipExportCSVFilePerCollectionInterval" },
+            "comment": "gzipExportCSVFilePerCollectionInterval property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..useTimestampFromBeginningIntervalExport" },
+            "comment": "useTimestampFromBeginningIntervalExport property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..useGMTForTimestamp" },
+            "comment": "useGMTForTimestamp property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..exportFileNameDateTimeFormat" },
+            "comment": "exportFileNameDateTimeFormat property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..exportCustomDateTimeFormat" },
+            "comment": "exportCustomDateTimeFormat property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..exportFileSupplierID" },
+            "comment": "exportFileSupplierID property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..allNodesExporterPoolSize" },
+            "comment": "allNodesExporterPoolSize property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..probabilityBlockingForErlangBCalculation" },
+            "comment": "probabilityBlockingForErlangBCalculation property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..pmProfileAssignmentRetries" },
+            "comment": "pmProfileAssignmentRetries property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..delayBetweenProfileAssignmentRetries" },
+            "comment": "delayBetweenProfileAssignmentRetries property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..pmProfileAssignerTimeout" },
+            "comment": "pmProfileAssignerTimeout property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..enabledSecureFTPBasedCollectionForGSX" },
+            "comment": "enabledSecureFTPBasedCollectionForGSX property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..enabledSecureFTPBasedCollectionForSBC" },
+            "comment": "enabledSecureFTPBasedCollectionForSBC property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..enabledSecureFTPBasedCollectionForMRFP" },
+            "comment": "enabledSecureFTPBasedCollectionForMRFP property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..enabledSecureFTPBasedCollectionForPSX" },
+            "comment": "enabledSecureFTPBasedCollectionForPSX property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..enableAggregationThresholdsForSBC" },
+            "comment": "enableAggregationThresholdsForSBC property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..createProfileTimeout" },
+            "comment": "createProfileTimeout property must exist in body"
+        }
+    ],
+    "responses": <% include ../responses/responses-without-status.ejs %>
+}

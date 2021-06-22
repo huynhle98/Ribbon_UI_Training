@@ -1,0 +1,67 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/event-history-service/v1.0/event-history"
+			}
+		},
+		{
+			"exists": {"query": true},
+			"caseSensitive": true,
+			"jsonpath": { "selector": "$.pageNum" },
+			"comment": "pageNum property must exist in query"
+	},
+	{
+			"exists": {"query": true},
+			"caseSensitive": true,
+			"jsonpath": { "selector": "$.recordPerPage" },
+			"comment": "recordPerPage property must exist in query"
+	}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body": {
+				 "total": 4,
+					"data": [
+					{
+						"eventName": "All",
+						"severity": "warning",
+						"type": "DSC",
+						"node": "10.54.28.89-xyz",
+						"time": "05/22/2020 00:00:00",
+						"summary": "System-defined"
+					},
+					{
+						"eventName": "Self Only",
+						"severity": "minor",
+						"type": "PSX",
+						"node": "abc-123-dsc",
+						"time": "03/15/2020 23:00:00",
+						"summary": "System-defined"
+					},
+					{
+						"eventName": "Unackknowledged",
+						"severity": "cleared",
+						"type": "EMS",
+						"node": "px1-zzzzzz",
+						"time": "02/19/2020 20:45:00",
+						"summary": "test px1-zzzzzz"
+					},
+					{
+						"eventName": "Self Only",
+						"severity": "indeterminate",
+						"type": "EMS",
+						"node": "psxmste",
+						"time": "05/27/2020 23:45:20",
+						"summary": "test"
+					}
+					]
+				}
+			}
+		}
+  ]
+}

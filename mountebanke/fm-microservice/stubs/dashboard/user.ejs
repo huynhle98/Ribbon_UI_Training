@@ -1,0 +1,28 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/dashboard-service/v1.0/users"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": [
+                    {
+                        "id": 1,
+                        "name": "Administrator"
+                    },
+                    {
+                        "id": 2,
+                        "name": "User"
+                    }
+                ]
+            }
+        }
+    ]
+}

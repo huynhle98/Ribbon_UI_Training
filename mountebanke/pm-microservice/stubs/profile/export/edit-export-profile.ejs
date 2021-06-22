@@ -1,0 +1,53 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "PUT",
+        "path": "/profile-service/v1/export/profile/id01"
+      }
+    },
+    {
+      "exists": {"body": {"id": true}},
+      "caseSensitive": true,
+      "comment": "id property must exist in body"
+    },
+    {
+      "exists": {"body": {"name": true}},
+      "caseSensitive": true,
+      "comment": "name property must exist in body"
+    },
+    {
+      "exists": {"body": {"collectionInfo": true}},
+      "caseSensitive": true,
+      "comment": "collectionInfo property must exist in body"
+    },
+    {
+      "exists": {"body": {"exportFreq": true}},
+      "caseSensitive": true,
+      "comment": "exportFreq property must exist in body"
+    },
+    {
+      "exists": {"body": {"granularity": true}},
+      "caseSensitive": true,
+      "comment": "granularity property must exist in body"
+    },
+    {
+      "exists": {"body": {"startTime": true}},
+      "caseSensitive": true,
+      "comment": "startTime property must exist in body"
+    },
+    {
+      "exists": {"body": true},
+      "jsonpath": { "selector": "$.statistics..id" },
+      "caseSensitive": true,
+      "comment": "statistics id property must exist in body"
+    },
+    {
+      "exists": {"body": true},
+      "jsonpath": { "selector": "$.locations" },
+      "caseSensitive": true,
+      "comment": "locations id property must exist in body"
+    }
+  ],
+  "responses": <% include ../../responses/responses-without-status.ejs %>
+}

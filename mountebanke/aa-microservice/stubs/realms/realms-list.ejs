@@ -1,0 +1,68 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/config/realms"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          {
+            "id": "1",
+            "sequence": 1,
+            "name": "Radius",
+            "type": "SAML",
+            "enabled": false,
+            "connectedTestSuccess": true,
+            "value": {}
+          },
+          {
+            "id": "2",
+            "sequence": 2,
+            "name": "LDAP",
+            "type": "LDAP",
+            "enabled": true,
+            "connectedTestSuccess": true,
+            "value": {}
+          },
+          {
+            "id": "3",
+            "sequence": 3,
+            "name": "SAML",
+            "type": "LDAP",
+            "enabled": true,
+            "connectedTestSuccess": true,
+            "value": {}
+          },
+          {
+            "id": "4",
+            "sequence": 4,
+            "name": "Local Authentication",
+            "type": "LDAP",
+            "enabled": true,
+            "connectedTestSuccess": true,
+            "value": {}
+          },
+          {
+            "id": "5",
+            "sequence": 5,
+            "name": "realm-789",
+            "type": "LDAP",
+            "enabled": true,
+            "connectedTestSuccess": true,
+            "value": {}
+          }
+        ]
+      }
+    }
+  ]
+}

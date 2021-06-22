@@ -1,0 +1,31 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/fm/reclassificationRule/v1.0/reclassification-rules-service/reclassification-rules/sonusExtendedSoftSwitchDbrepConnection2"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body": 
+				{
+					"mibname": "PSX",
+					"trapname": "sonusExtendedSoftSwitchDbrepConnection2",
+					"severity": "Minor",
+					"eventclass": "Directory",
+					"summary": {
+						"usesystemdefined": false,
+						"description": "test summary"
+					},
+					"isenabbled": false
+				}
+				
+			}
+		}
+  ]
+}

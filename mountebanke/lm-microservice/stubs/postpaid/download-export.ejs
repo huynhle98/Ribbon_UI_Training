@@ -1,0 +1,27 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "PUT",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/postPaidReports"
+      }
+    },
+    {
+      "exists": {
+        "body": true
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>, 
+        "body": "{\"download\":\"GIF89a����ÿÿÿÿÿÿ!þCreated with GIMP�,�������D�;\"}"
+      }
+    }
+  ]
+}

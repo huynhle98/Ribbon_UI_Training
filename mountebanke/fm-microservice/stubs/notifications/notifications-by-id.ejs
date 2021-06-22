@@ -1,0 +1,45 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/notifications-service/v1.0/notifications/1"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body": 
+					{
+						"id": 1,
+						"name": "name1",
+						"description": "description",
+						"recipients": ["fred1232@gmail.com","sara123@test.com"],
+						"criteria": {
+							"severity": ["Major", "Minor"],
+							"networkVia": "SPECIFIC_ELEMENT",
+							"fieldsByVia" : {
+									"specificClusters": ["sbc-clust-2", "sbc-clust-3"]
+								}
+						},
+						"alarmList" : ["Critical2","Critical3"],
+						"alarmInfo": {
+							"infoIncluded": ["Time Stamp", "Alarm Name"],
+							"description": "notifications test"
+						},
+						"timeFrame": {
+							"anyTime": false,
+							"alarmBetweenTime" : {
+								"startTime":"15:30",
+								"endTime":"20:00"
+							},
+							"alarmDay":["Monday","Friday"]
+						}
+					}
+			}
+		}
+  ]
+}

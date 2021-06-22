@@ -1,0 +1,34 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "method": "GET",
+        "path": "/users"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "body": [
+          {
+            "name": "Fred Smith",
+            "email": "fred@gmail.com"
+          },
+          {
+            "name": "Joe Brown",
+            "email": "joe@gmail.com"
+          },
+          {
+            "name": "Mike Jones",
+            "email": "mike@gmail.com"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/dashboard-service/v1.0/bar-events/3"
+            }
+        },
+        {
+            "exists": {"query": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.pageNum" },
+            "comment": "pageNum property must exist in query"
+        },
+        {
+            "exists": {"query": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.recordPerPage" },
+            "comment": "recordPerPage property must exist in query"
+        },
+        {
+            "exists": {"query": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.unique" },
+            "comment": "unique property must exist in query"
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": {
+                    "id": 3,
+                    "name": "Chart-3",
+                    "totalRecords": 1,
+                    "eventData": [
+                        {
+                            "eventID": "7",
+                            "eventName": "sonusPolicyServerDbConnectionWarning",
+                            "type": 1,
+                            "protocol": "unknow",
+                            "version": 1,
+                            "deviceID": "device-1",
+                            "deviceType": "GSX9000",
+                            "eventKey": "unknow",
+                            "eventGroup": "unknow",
+                            "eventTime": 1,
+                            "summary": "Call Admission Suspended For Shelf Due To: No NTP Server Available",
+                            "severity": 1,
+                            "eventClass": "Sonus",
+                            "ack": true,
+                            "lastOccurrence": 0,
+                            "firstOccurrence": 0,
+                            "count": 0,
+                            "ackTimestamp": 1594971483,
+                            "cancelledTimestamp": 1594993083,
+                            "ackedBy": "unknow",
+                            "eventSourceIP": "192.168.0.0",
+                            "additionalInfo": "unknow",
+                            "sequenceId": "chart-3-event-7",
+                            "timeToCancel": 0,
+                            "deviceName": "unknow",
+                            "cancelledBy": "NA",
+                            "owner": "nobody",
+                            "journalEntry": [{
+                                "timestamp": "2020-07-17T08:01:26.907Z",
+                                "user": "user123",
+                                "comment": "123456"
+                            }]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

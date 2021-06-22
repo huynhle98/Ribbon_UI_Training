@@ -1,0 +1,803 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/config/realms/LDAP"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "componentList": [
+            {
+              "fieldGroup": [
+                {
+                  "defaultValue": "ldap://",
+                  "id": "ldap.url",
+                  "key": "ldap.url",
+                  "templateOptions": {
+                    "description": "The fully qualified domain name of LDAP server",
+                    "label": "LDAP server URL",
+                    "required": true,
+                    "type": "text"
+                  },
+                  "type": "rbn-input"
+                },
+                {
+                  "id": "ldap.systemUsername",
+                  "key": "ldap.systemUsername",
+                  "templateOptions": {
+                    "description": "The system username required to connect to the LDAP server.",
+                    "label": "System Username",
+                    "required": true,
+                    "type": "text"
+                  },
+                  "type": "rbn-input"
+                },
+                {
+                  "id": "ldap.systemPassword",
+                  "key": "ldap.systemPassword",
+                  "templateOptions": {
+                    "description": "The system password required to connect to the LDAP server.",
+                    "label": "System Password",
+                    "required": true,
+                    "type": "password"
+                  },
+                  "type": "rbn-input"
+                },
+                {
+                  "id": "ldap.userDnTemplate",
+                  "key": "ldap.userDnTemplate",
+                  "templateOptions": {
+                    "description": "The template for mapping the structure of the data as defined within the LDAP.",
+                    "label": "User DN Template",
+                    "required": true,
+                    "type": "text"
+                  },
+                  "type": "rbn-input"
+                },
+                {
+                  "id": "ldap.searchBase",
+                  "key": "ldap.searchBase",
+                  "templateOptions": {
+                    "description": "The base search filter to search for users in LDAP.",
+                    "label": "Search Base",
+                    "required": true,
+                    "type": "text"
+                  },
+                  "type": "rbn-input"
+                },
+                {
+                  "id": "ldap.searchFilter",
+                  "key": "ldap.searchFilter",
+                  "templateOptions": {
+                    "description": "The search filter to find users on LDAP server.",
+                    "label": "Search Filter",
+                    "required": true,
+                    "type": "text"
+                  },
+                  "type": "rbn-input"
+                },
+                {
+                  "defaultValue": "ignore",
+                  "id": "ldap.referral",
+                  "key": "ldap.referral",
+                  "templateOptions": {
+                    "description": "The flag to enable referrals.",
+                    "label": "Referral",
+                    "required": true,
+                    "type": "text"
+                  },
+                  "type": "rbn-input"
+                },
+                {
+                  "defaultValue": "true",
+                  "id": "ldap.ignorePartialResultException",
+                  "key": "ldap.ignorePartialResultException",
+                  "templateOptions": {
+                    "description": "The flag for LDAP to ignore partial result exception.",
+                    "label": "Ignore Partial Result Exception",
+                    "required": true
+                  },
+                  "type": "rbn-switch"
+                },
+                {
+                  "id": "ldap.returningAttribute",
+                  "key": "ldap.returningAttribute",
+                  "templateOptions": {
+                    "description": "The name of the attribute used to retrieve the User Group value from the LDAP search.",
+                    "label": "Returning Attribute",
+                    "required": true,
+                    "type": "text"
+                  },
+                  "type": "rbn-input"
+                },
+                {
+                  "action": "/v1.0/auth/test",
+                  "id": "ldap.testConnectionButton",
+                  "key": "ldap.testConnectionButton",
+                  "templateOptions": {
+                    "icon": "pi pi-pw pi-check",
+                    "text": "Test Connection"
+                  },
+                  "type": "rbn-button"
+                }
+              ],
+              "name": "LDAP",
+              "templateOptions": {
+                "label": "LDAP Realm Properties"
+              },
+              "wrappers": [
+                "rbn-form-group"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/config/realms/SAML"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "componentList": [
+            {
+              "fieldGroup": [
+                {
+                  "dynamicOptionsPath": "/v1.0/certs/alias",
+                  "id": "saml.idpCertificate",
+                  "key": "saml.idpCertificate",
+                  "templateOptions": {
+                    "description": "The certificate provided by IdP to validate the signature.",
+                    "label": "Identity provider Certificate",
+                    "required": true,
+                    "type": "text"
+                  },
+                  "type": "rbn-singleselect"
+                },
+                {
+                  "id": "saml.spPrivateKey",
+                  "key": "saml.spPrivateKey",
+                  "templateOptions": {
+                    "description": "The private key in the EMS used for decrypting the encrypted SAML assertion.",
+                    "label": "Service provider Private Key",
+                    "type": "text"
+                  },
+                  "type": "rbn-input"
+                },
+                {
+                  "id": "saml.spCertificate",
+                  "key": "saml.spCertificate",
+                  "templateOptions": {
+                    "description": "The certificate in the EMS used for decrypting the encrypted SAML assertion.",
+                    "label": "Service Provider Certificate",
+                    "type": "text"
+                  },
+                  "type": "rbn-input"
+                },
+                {
+                  "defaultValue": "UserGroup",
+                  "id": "saml.returningAttribute",
+                  "key": "saml.returningAttribute",
+                  "templateOptions": {
+                    "description": "The name of the attribute used to retrieve the User Group value from the SAML token.",
+                    "label": "Returning Attribute",
+                    "required": true,
+                    "type": "text"
+                  },
+                  "type": "rbn-input"
+                }
+              ],
+              "name": "SAML",
+              "templateOptions": {
+                "label": "SAML Realm Properties"
+              },
+              "wrappers": [
+                "rbn-form-group"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/config/realms/DB"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "componentList": [
+            {
+              "fieldGroup": [
+                {
+                  "fieldGroup": [
+                    {
+                      "fieldGroup": [
+                        {
+                          "defaultValue": "true",
+                          "id": "db.noPasswordSameAsUserIdRule",
+                          "key": "db.noPasswordSameAsUserIdRule",
+                          "templateOptions": {
+                            "description": "No password should be same as userId",
+                            "label": "No password same as UserId",
+                            "required": true
+                          },
+                          "type": "rbn-checkbox"
+                        }
+                      ],
+                      "templateOptions": {
+                        "label": "Ownership Policy"
+                      },
+                      "wrappers": [
+                        "rbn-form-chk-group"
+                      ]
+                    },
+                    {
+                      "fieldGroup": [
+                        {
+                          "defaultValue": "true",
+                          "id": "db.passwordNotReusableRule",
+                          "key": "db.passwordNotReusableRule",
+                          "templateOptions": {
+                            "description": "Password not reusable time period",
+                            "label": "Password not reusable time period",
+                            "required": true
+                          },
+                          "type": "rbn-checkbox"
+                        },
+                        {
+                          "defaultValue": "180",
+                          "id": "db.passwordNotReusableTimePeriod",
+                          "key": "db.passwordNotReusableTimePeriod",
+                          "templateOptions": {
+                            "description": "Password not reusable time period in days(Minimum 1,Maximum 3650)",
+                            "label": "Days",
+                            "max": 3650,
+                            "min": 1,
+                            "placeholder": "1 - 3650",
+                            "positionLabel": "right",
+                            "required": true,
+                            "type": "number"
+                          },
+                          "type": "rbn-input",
+                          "validators": {
+                            "validation": "integer"
+                          }
+                        }
+                      ],
+                      "templateOptions": {
+                        "label": "Ownership Policy"
+                      },
+                      "wrappers": [
+                        "rbn-form-chk-group"
+                      ]
+                    },
+                    {
+                      "fieldGroup": [
+                        {
+                          "defaultValue": "true",
+                          "id": "db.minPasswordLengthRule",
+                          "key": "db.minPasswordLengthRule",
+                          "templateOptions": {
+                            "description": "Minimum Password Length",
+                            "label": "Minimum Password Length",
+                            "required": true
+                          },
+                          "type": "rbn-checkbox"
+                        },
+                        {
+                          "defaultValue": "8",
+                          "id": "db.minPasswordLength",
+                          "key": "db.minPasswordLength",
+                          "templateOptions": {
+                            "description": "Minimum password length characters(Minimum 3)",
+                            "label": "Characters",
+                            "max": 32,
+                            "min": 3,
+                            "placeholder": "3 - 32",
+                            "positionLabel": "right",
+                            "required": true,
+                            "type": "number"
+                          },
+                          "type": "rbn-input",
+                          "validators": {
+                            "validation": "integer"
+                          }
+                        }
+                      ],
+                      "templateOptions": {
+                        "label": "Ownership Policy"
+                      },
+                      "wrappers": [
+                        "rbn-form-chk-group"
+                      ]
+                    },
+                    {
+                      "fieldGroup": [
+                        {
+                          "defaultValue": "true",
+                          "id": "db.maxPasswordLengthRule",
+                          "key": "db.maxPasswordLengthRule",
+                          "templateOptions": {
+                            "description": "Maximum Password Length",
+                            "label": "Maximum Password Length",
+                            "required": true
+                          },
+                          "type": "rbn-checkbox"
+                        },
+                        {
+                          "defaultValue": "20",
+                          "id": "db.maxPasswordLength",
+                          "key": "db.maxPasswordLength",
+                          "templateOptions": {
+                            "description": "Maximum password length",
+                            "label": "Characters",
+                            "max": 32,
+                            "min": 3,
+                            "placeholder": "3 - 32",
+                            "positionLabel": "right",
+                            "required": true,
+                            "type": "number"
+                          },
+                          "type": "rbn-input",
+                          "validators": {
+                            "validation": "integer"
+                          }
+                        }
+                      ],
+                      "templateOptions": {
+                        "label": "Ownership Policy"
+                      },
+                      "wrappers": [
+                        "rbn-form-chk-group"
+                      ]
+                    },
+                    {
+                      "fieldGroup": [
+                        {
+                          "defaultValue": "true",
+                          "id": "db.passwordCharacterRule",
+                          "key": "db.passwordCharacterRule",
+                          "templateOptions": {
+                            "description": "Password character rule",
+                            "label": "Password Contains",
+                            "required": true
+                          },
+                          "type": "rbn-checkbox"
+                        }
+                      ],
+                      "templateOptions": {
+                        "label": "Ownership Policy"
+                      },
+                      "wrappers": [
+                        "rbn-form-chk-group"
+                      ]
+                    },
+                    {
+                      "fieldGroup": [
+                        {
+                          "fieldGroup": [
+                            {
+                              "defaultValue": "true",
+                              "id": "db.upperAlphaCharRule",
+                              "key": "db.upperAlphaCharRule",
+                              "templateOptions": {
+                                "description": "Upper case alpha character",
+                                "label": "At least",
+                                "required": true
+                              },
+                              "type": "rbn-checkbox"
+                            },
+                            {
+                              "defaultValue": "1",
+                              "id": "db.upperAlphaCharCount",
+                              "key": "db.upperAlphaCharCount",
+                              "templateOptions": {
+                                "description": "upper case alpha character",
+                                "label": "upper case alpha character",
+                                "max": 8,
+                                "min": 1,
+                                "placeholder": "1 - 8",
+                                "positionLabel": "right",
+                                "required": true,
+                                "type": "number"
+                              },
+                              "type": "rbn-input",
+                              "validators": {
+                                "validation": "integer"
+                              }
+                            }
+                          ],
+                          "templateOptions": {
+                            "label": "Ownership Policy"
+                          },
+                          "wrappers": [
+                            "rbn-form-chk-group"
+                          ]
+                        },
+                        {
+                          "fieldGroup": [
+                            {
+                              "defaultValue": "true",
+                              "id": "db.lowerAlphaCharRule",
+                              "key": "db.lowerAlphaCharRule",
+                              "templateOptions": {
+                                "description": "Lower case alpha character",
+                                "label": "At least",
+                                "required": true
+                              },
+                              "type": "rbn-checkbox"
+                            },
+                            {
+                              "defaultValue": "1",
+                              "id": "db.lowerAlphaCharCount",
+                              "key": "db.lowerAlphaCharCount",
+                              "templateOptions": {
+                                "description": "lower case alpha character",
+                                "label": "lower case alpha character",
+                                "max": 8,
+                                "min": 1,
+                                "placeholder": "1 - 8",
+                                "positionLabel": "right",
+                                "required": true,
+                                "type": "number"
+                              },
+                              "type": "rbn-input",
+                              "validators": {
+                                "validation": "integer"
+                              }
+                            }
+                          ],
+                          "templateOptions": {
+                            "label": "Ownership Policy"
+                          },
+                          "wrappers": [
+                            "rbn-form-chk-group"
+                          ]
+                        },
+                        {
+                          "fieldGroup": [
+                            {
+                              "defaultValue": "true",
+                              "id": "db.numericCharRule",
+                              "key": "db.numericCharRule",
+                              "templateOptions": {
+                                "description": "Numeric character",
+                                "label": "At least",
+                                "required": true
+                              },
+                              "type": "rbn-checkbox"
+                            },
+                            {
+                              "defaultValue": "1",
+                              "id": "db.numericCharCount",
+                              "key": "db.numericCharCount",
+                              "templateOptions": {
+                                "description": "numeric character",
+                                "label": "numeric character",
+                                "max": 8,
+                                "min": 1,
+                                "placeholder": "1 - 8",
+                                "positionLabel": "right",
+                                "required": true,
+                                "type": "number"
+                              },
+                              "type": "rbn-input",
+                              "validators": {
+                                "validation": "integer"
+                              }
+                            }
+                          ],
+                          "templateOptions": {
+                            "label": "Ownership Policy"
+                          },
+                          "wrappers": [
+                            "rbn-form-chk-group"
+                          ]
+                        },
+                        {
+                          "fieldGroup": [
+                            {
+                              "defaultValue": "true",
+                              "id": "db.specialCharRule",
+                              "key": "db.specialCharRule",
+                              "templateOptions": {
+                                "description": "Special character",
+                                "label": "At least",
+                                "required": true
+                              },
+                              "type": "rbn-checkbox"
+                            },
+                            {
+                              "defaultValue": "1",
+                              "id": "db.specialCharCount",
+                              "key": "db.specialCharCount",
+                              "templateOptions": {
+                                "description": "special character",
+                                "label": "special character",
+                                "max": 8,
+                                "min": 1,
+                                "placeholder": "1 - 8",
+                                "positionLabel": "right",
+                                "required": true,
+                                "type": "number"
+                              },
+                              "type": "rbn-input",
+                              "validators": {
+                                "validation": "integer"
+                              }
+                            }
+                          ],
+                          "templateOptions": {
+                            "label": "Ownership Policy"
+                          },
+                          "wrappers": [
+                            "rbn-form-chk-group"
+                          ]
+                        },
+                        {
+                          "fieldGroup": [
+                            {
+                              "defaultValue": "true",
+                              "id": "db.repeatCharRule",
+                              "key": "db.repeatCharRule",
+                              "templateOptions": {
+                                "description": "Characters repeated consecutively",
+                                "label": "No",
+                                "required": true
+                              },
+                              "type": "rbn-checkbox"
+                            },
+                            {
+                              "defaultValue": "2",
+                              "id": "db.repeatCharCount",
+                              "key": "db.repeatCharCount",
+                              "templateOptions": {
+                                "description": "characters repeated consecutively",
+                                "label": "characters repeated consecutively",
+                                "max": 8,
+                                "min": 2,
+                                "placeholder": "2 - 8",
+                                "positionLabel": "right",
+                                "required": true,
+                                "type": "number"
+                              },
+                              "type": "rbn-input",
+                              "validators": {
+                                "validation": "integer"
+                              }
+                            }
+                          ],
+                          "templateOptions": {
+                            "label": "Ownership Policy"
+                          },
+                          "wrappers": [
+                            "rbn-form-chk-group"
+                          ]
+                        },
+                        {
+                          "fieldGroup": [
+                            {
+                              "defaultValue": "true",
+                              "id": "db.passwordExpWarningRule",
+                              "key": "db.passwordExpWarningRule",
+                              "templateOptions": {
+                                "description": "Password Expiration Warning",
+                                "label": "Password Expiration Warning",
+                                "required": true
+                              },
+                              "type": "rbn-checkbox"
+                            },
+                            {
+                              "defaultValue": "14",
+                              "id": "db.passwordExpWarningValue",
+                              "key": "db.passwordExpWarningValue",
+                              "templateOptions": {
+                                "description": "Password Expiration Warning",
+                                "label": "Days before Expiration",
+                                "max": 365,
+                                "min": 1,
+                                "positionLabel": "right",
+                                "required": true,
+                                "type": "number"
+                              },
+                              "type": "rbn-input",
+                              "validators": {
+                                "validation": "integer"
+                              }
+                            }
+                          ],
+                          "templateOptions": {
+                            "label": "Ownership Policy"
+                          },
+                          "wrappers": [
+                            "rbn-form-chk-group"
+                          ]
+                        }
+                      ],
+                      "templateOptions": {},
+                      "wrappers": [
+                        "rbn-wrapper-field"
+                      ]
+                    }
+                  ],
+                  "templateOptions": {
+                    "label": "User Password Complexity Rules"
+                  },
+                  "wrappers": [
+                    "rbn-form-group"
+                  ]
+                },
+                {
+                  "fieldGroup": [
+                    {
+                      "fieldGroup": [
+                        {
+                          "defaultValue": "true",
+                          "id": "db.userIdAgingThresholdRule",
+                          "key": "db.userIdAgingThresholdRule",
+                          "templateOptions": {
+                            "description": "UserId aging threshold rule",
+                            "label": "UserId aging threshold rule",
+                            "required": true
+                          },
+                          "type": "rbn-checkbox"
+                        },
+                        {
+                          "defaultValue": "60",
+                          "id": "db.userIdAgingThreshold",
+                          "key": "db.userIdAgingThreshold",
+                          "templateOptions": {
+                            "description": "UserId aging threshold",
+                            "label": "UserId aging threshold",
+                            "max": 3650,
+                            "min": 1,
+                            "placeholder": "1 - 3650",
+                            "positionLabel": "right",
+                            "required": true,
+                            "type": "number"
+                          },
+                          "type": "rbn-input",
+                          "validators": {
+                            "validation": "integer"
+                          }
+                        }
+                      ],
+                      "templateOptions": {
+                        "label": "Ownership Policy"
+                      },
+                      "wrappers": [
+                        "rbn-form-chk-group"
+                      ]
+                    },
+                    {
+                      "fieldGroup": [
+                        {
+                          "defaultValue": "true",
+                          "id": "db.passwordAgingThresholdRule",
+                          "key": "db.passwordAgingThresholdRule",
+                          "templateOptions": {
+                            "description": "Password aging threshold rule",
+                            "label": "Password aging threshold rule",
+                            "required": true
+                          },
+                          "type": "rbn-checkbox"
+                        },
+                        {
+                          "defaultValue": "30",
+                          "id": "db.passwordAgingThreshold",
+                          "key": "db.passwordAgingThreshold",
+                          "templateOptions": {
+                            "description": "Password aging threshold",
+                            "label": "Password aging threshold",
+                            "max": 3650,
+                            "min": 1,
+                            "placeholder": "1 - 3650",
+                            "positionLabel": "right",
+                            "required": true,
+                            "type": "number"
+                          },
+                          "type": "rbn-input",
+                          "validators": {
+                            "validation": "integer"
+                          }
+                        }
+                      ],
+                      "templateOptions": {
+                        "label": "Ownership Policy"
+                      },
+                      "wrappers": [
+                        "rbn-form-chk-group"
+                      ]
+                    }
+                  ],
+                  "templateOptions": {
+                    "label": "UserId and Password Aging"
+                  },
+                  "wrappers": [
+                    "rbn-form-group"
+                  ]
+                }
+              ],
+              "name": "DB",
+              "templateOptions": {
+                "label": "Database Realm Properties"
+              },
+              "wrappers": [
+                "rbn-form-group"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/certs/alias"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          {
+            "label": "Alias1",
+            "value": "Alias1"
+          },
+          {
+            "label": "Alias2",
+            "value": "Alias2"
+          }
+        ]
+      }
+    }
+  ]
+}

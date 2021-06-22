@@ -1,0 +1,39 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/dashboard-service/v1.0/views"
+            }
+        },
+        {
+            "matches": {"query": {"groupId": 1}}
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": [
+                    {
+                        "id": 1,
+                        "name": "View-01",
+                        "hasAudibleAlarms": false,
+                        "resourceGroupId": 1,
+                        "date": "01:03:40 PM -0400 05/17/2016",
+                        "order": 2
+                    },
+                    {
+                        "id": 2,
+                        "name": "View-02",
+                        "hasAudibleAlarms": true,
+                        "resourceGroupId": 1,
+                        "date": "03:40:50 PM -0600 05/19/2016",
+                        "order": 1
+                    }
+                ]
+            }
+        }
+    ]
+}

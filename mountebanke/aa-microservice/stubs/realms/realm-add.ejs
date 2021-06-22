@@ -1,0 +1,63 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "POST",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/config/realms"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "",
+          "name": "realms",
+          "sequence": 6,
+          "enabled": true,
+          "connectedTestSuccess": true,
+          "value": {
+            "RealmProperties.realmUrl": "testPost",
+            "RealmProperties.systemUsername": "testPost",
+            "RealmProperties.systemPassword": "testPost"
+          }
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "POST",
+        "path": "/auth/v1.0/config/realms?testOnly=true"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "",
+          "name": "testConnect",
+          "sequence": 6,
+          "enabled": true,
+          "connectedTestSuccess": true,
+          "value": {
+            "RealmProperties.realmUrl": "s",
+            "RealmProperties.systemUsername": "s",
+            "RealmProperties.systemPassword": "s"
+          }
+        }
+      }
+    }
+  ]
+}

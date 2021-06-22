@@ -1,0 +1,90 @@
+{
+	"predicates": [
+			{
+					"equals": {
+							"method": "PUT",
+							"path": "/administration-service/v1.0/eventPurge"
+					}
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..scheduled..frequency" },
+					"comment": "frequency property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..scheduled..startTime" },
+					"comment": "startTime property must exist in body"
+			},
+			{
+				"exists": { "body": true },
+				"caseSensitive": true,
+				"jsonpath": { "selector": "$..scheduled..startDate" },
+				"comment": "startDate property must exist in body"
+			},
+			{
+				"exists": { "body": true },
+				"caseSensitive": true,
+				"jsonpath": { "selector": "$..selection..eventSelection" },
+				"comment": "eventSelection property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..selection..olderThanHours" },
+					"comment": "olderThanHours property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..selection..eventMaxNumber..maxNumber" },
+					"comment": "maxNumber property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..selection..eventMaxNumber..maxSize" },
+					"comment": "maxSize property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..severity..critical" },
+					"comment": "critical property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..severity..major" },
+					"comment": "major property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..severity..minor" },
+					"comment": "minor property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..severity..warning" },
+					"comment": "warning property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..severity..indeterminate" },
+					"comment": "indeterminate property must exist in body"
+			}
+	],
+	"responses": [
+		{
+			"is": {
+				"headers": <% include ../headers.json %>,
+				"statusCode": 200
+			}
+		}
+	]
+}

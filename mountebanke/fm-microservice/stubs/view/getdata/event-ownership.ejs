@@ -1,0 +1,32 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/view-service/v1.0/views/event-owner-ship"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": [
+					{
+						"id": 1,
+						"name": "All"
+					},
+					{
+						"id": 2,
+						"name": "Self and Unassigned"
+					},
+					{
+						"id": 3,
+						"name": "Self Only"
+					}
+				]
+			}
+		}
+  ]
+}

@@ -1,0 +1,44 @@
+{
+    "predicates": [
+        {
+            "contains": {
+                "method": "GET",
+                "path": "/dashboard-service/v1.0/bar-events/1/filter-data"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": {
+                    "ack": [
+                      true,
+                      false
+                    ],
+                    "owner": [
+                      "unknown",
+                      "somebody",
+                      "anybody"
+                    ],
+                    "severity": [
+                      1,
+                      2
+                    ],
+                    "deviceType": [
+                       "GSX9000"
+                    ],
+                    "deviceName": [
+                        "unknown"
+                    ],
+                    "eventName": [
+                        "sonusPolicyServerDbConnection",
+                        "sonusPolicyServerDbConnection6",
+                        "sonusPolicyServerDbConnection7"
+                    ]
+                }
+            }
+        }
+    ]
+}

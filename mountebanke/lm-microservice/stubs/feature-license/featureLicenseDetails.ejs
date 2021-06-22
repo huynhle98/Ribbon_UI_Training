@@ -1,0 +1,170 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "headers": {
+                    "Authorization": "123456789"
+                },
+                "path": "/lm/v1.0/feature/licenses/1"
+            }
+        },
+        {
+          "matches": {"query": {"licenseType": "nodeLocked"}}
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body":{
+                    "usage": 2,
+                    "alertDays": 0,
+                    "description": "This feature provides a command line interface to Sonus Insight",
+                    "earliestExpirationDate": "2021-06-03"
+                }
+            }
+        }
+    ]
+},
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "headers": {
+                    "Authorization": "123456789"
+                },
+                "path": "/lm/v1.0/feature/licenses/1/instances"
+            }
+        },
+        {
+            "exists": {"query": true},
+            "caseSensitive": true,
+            "comment": "unique property must exist in query"
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body":{
+                    "instanceList": [
+                        {
+                            "instanceId": "EMS_CLI | 551528",
+                            "licenseId": "101310",
+                            "licenseInfoOid": "strLicenseInfoOid",
+                            "node": "localhost",
+                            "ipaddr": "1",
+                            "purchaseOrder": "771310",
+                            "customer": "Internal - Ribbon",
+                            "generationDate": "2021-06-03",
+                            "expirationDate": "2021-06-03",
+                            "revokeAction": true
+                        },
+                        {
+                            "instanceId": "EMS_CLI | 551529",
+                            "licenseId": "101309",
+                            "licenseInfoOid": "strLicenseInfoOid",
+                            "node": "another-ems",
+                            "ipaddr": "1",
+                            "purchaseOrder": "771310",
+                            "customer": "Internal - Ribbon",
+                            "generationDate": "2021-06-03",
+                            "expirationDate": "2021-06-03",
+                            "revokeAction": false
+                        }
+                    ],
+                    "totalCount": 2
+                }
+            }
+        }
+    ]
+},
+{
+  "predicates": [
+      {
+          "equals": {
+              "method": "GET",
+              "headers": {
+                  "Authorization": "123456789"
+              },
+              "path": "/lm/v1.0/feature/licenses/2"
+          }
+      },
+      {
+        "matches": {"query": {"licenseType": "domainLocked"}}
+      }
+  ],
+  "responses": [
+      {
+          "is": {
+              "statusCode": 200,
+              "headers": <% include ../headers.json %>,
+              "body":{
+                "usage": 0,
+                "alertDays": 0,
+                "description": "SBC-POL-RTU-D Licenses",
+                "earliestExpirationDate": "2021-06-03"
+              }
+          }
+      }
+  ]
+},
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "headers": {
+                    "Authorization": "123456789"
+                },
+                "path": "/lm/v1.0/feature/licenses/2/instances"
+            }
+        },
+        {
+            "exists": {"query": true},
+            "caseSensitive": true,
+            "comment": "unique property must exist in query"
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body":{
+                    "instanceList": [
+                        {
+                            "instanceId": "8888",
+                            "licenseId": "33442",
+                            "licenseInfoOid": "strLicenseInfoOid",
+                            "node": "node 1",
+                            "ipaddr": "ipaddr 1",
+                            "purchaseOrder": "76199",
+                            "customer": "Internal - Ribbon",
+                            "generationDate": "2021-06-03",
+                            "expirationDate": "2021-06-03",
+                            "revokeAction": true
+                        },
+                        {
+                            "instanceId": "8889",
+                            "licenseId": "33443",
+                            "licenseInfoOid": "strLicenseInfoOid",
+                            "node": "node 2",
+                            "ipaddr": "ipaddr 2",
+                            "purchaseOrder": "76199",
+                            "customer": "Internal - Ribbon",
+                            "generationDate": "2021-06-03",
+                            "expirationDate": "2021-06-03",
+                            "revokeAction": false
+                        }
+                    ],
+                    "totalCount": 2
+                }
+            }
+        }
+    ]
+}

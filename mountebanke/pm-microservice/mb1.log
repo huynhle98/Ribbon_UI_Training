@@ -1,0 +1,14 @@
+{"message":"[mb:2525] mountebank v2.1.2 now taking orders - point your browser to http://localhost:2525/ for help","level":"info","timestamp":"2019-11-14T08:15:37.849Z"}
+{"message":"[mb:2525] PUT /imposters","level":"info","timestamp":"2019-11-14T08:15:37.884Z"}
+{"message":"[http:4646 proto] Open for business...","level":"info","timestamp":"2019-11-14T08:15:37.916Z"}
+{"message":"[http:4646 proto] ::1:63953 => GET /v1/assignment/assigned-profile","level":"info","timestamp":"2019-11-14T08:15:59.666Z"}
+{"message":"[http:4646 proto] ::1:63957 => GET /users","level":"info","timestamp":"2019-11-14T08:16:20.223Z"}
+{"message":"[http:4646 proto] ::1:63959 => GET /v1/assignment/assigned-profile","level":"info","timestamp":"2019-11-14T08:16:20.366Z"}
+{"message":"[http:4646 proto] ::1:63961 => GET /v1/assignment/assigned-profile/id01","level":"info","timestamp":"2019-11-14T08:16:20.505Z"}
+{"message":"[http:4646 proto] ::1:63963 => PUT /v1/assignment/assigned-profile","level":"info","timestamp":"2019-11-14T08:16:20.642Z"}
+{"message":"[http:4646 proto] ::1:63982 => PUT /v1/assignment/assigned-profile","level":"info","timestamp":"2019-11-14T08:16:37.091Z"}
+{"message":"[http:4646 proto] ::1:54359 => GET /users","level":"info","timestamp":"2019-11-14T08:16:55.452Z"}
+{"message":"[http:4646 proto] ::1:54361 => GET /v1/assignment/assigned-profile","level":"info","timestamp":"2019-11-14T08:16:55.473Z"}
+{"message":"[http:4646 proto] ::1:54363 => GET /v1/assignment/assigned-profile/id01","level":"info","timestamp":"2019-11-14T08:16:55.501Z"}
+{"message":"[http:4646 proto] ::1:54365 => PUT /v1/assignment/assigned-profile","level":"info","timestamp":"2019-11-14T08:16:55.538Z"}
+{"message":"[mb:2525] Adios - see you soon?","level":"info","timestamp":"2019-11-14T08:34:03.857Z"}

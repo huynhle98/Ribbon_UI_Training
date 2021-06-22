@@ -1,0 +1,52 @@
+{
+    "predicates": [
+        {
+            "contains": {
+                "method": "GET",
+                "path": "/forwarding-service/v1.0/filter-profile/filter-data-by-type"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../../headers.json %>,
+                "body": {
+                    "severity": [
+                        "Cleared",
+                        "Indeterminate",
+                        "Warning",
+                        "Minor",
+                        "Major",
+                        "Critical"
+                    ],
+                    "eventClass": [
+                        "Cleared",
+                        "Notification",
+                        "Need attention",
+                        "Suspended"
+                    ],
+                    "eventLevel": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5"
+                    ],
+                    "nodeId": [
+                        "Administrator",
+                        "Manager",
+                        "User1"
+                    ],
+                    "eventName": [
+                        "sonusPolicyServerDbError",
+                        "sonusPolicyServerDbWarning",
+                        "sonusPolicyServerDbInfo"
+                    ]
+                }
+            }
+        }
+    ]
+}

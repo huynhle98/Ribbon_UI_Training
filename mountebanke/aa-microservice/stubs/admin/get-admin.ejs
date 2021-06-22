@@ -1,0 +1,24 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/adminSettings"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "tokenExpiration": 15
+        }
+      }
+    }
+  ]
+}

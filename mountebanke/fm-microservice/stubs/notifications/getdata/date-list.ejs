@@ -1,0 +1,44 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/notifications-service/v1.0/date-list"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": [
+					{
+						"id": 1,
+						"name": "Any Day"
+					},
+					{
+						"id": 2,
+						"name": "Monday"
+					},
+					{
+						"id": 3,
+						"name": "Tuesday"
+					},
+					{
+						"id": 4,
+						"name": "Wednesday"
+					},
+					{
+						"id": 5,
+						"name": "Thursday"
+					},
+					{
+						"id": 6,
+						"name": "Friday"
+					}
+				]
+			}
+		}
+  ]
+}

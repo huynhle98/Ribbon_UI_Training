@@ -1,0 +1,12 @@
+{
+    "name": "test",
+    "description": "test service",
+    "version": "0.0.0",
+    "license": "UNLICENSED",
+    "scripts": {
+        "mock": "mb --configfile imposters.ejs --debug"
+    },
+    "dependencies": {
+        "mountebank": "^2.1.0"
+    }
+ }

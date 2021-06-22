@@ -1,0 +1,28 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/trap-resync-service/v1.0/trap-resync-setting"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": [
+                    {
+                        "ossIpAddress": "255.255.255.255",
+                        "snmpVersion": "v2"
+                    },                    
+                    {
+                        "ossIpAddress": "123.56.89.12",
+                        "snmpVersion": "v3"
+                    }
+                ]
+            }
+        }
+    ]
+}

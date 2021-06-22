@@ -1,0 +1,80 @@
+{
+	"predicates": [
+		  {
+			  "equals": {
+				  "method": "GET",
+				  "path": "/view-service/v1.0/bars"
+				}
+			},
+			{
+				"matches": {"query": {"viewId": 1}}
+			}
+	],
+	"responses": [
+		  {
+			  "is": {
+				  "statusCode": 200,
+				  "headers": <% include ../../headers.json %>,
+				  "body": [
+					  {
+						  "id": 1,
+						  "name": "2-SBCs",
+						  "elements": "SBX1K|sbc-edge-2",
+						  "severity": "5|4|3|2|1",
+						  "rateTripwire": "off",
+						  "eventTripWire": "2 Events"
+  
+					  },
+					  {
+						  "id": 2,
+						  "name": "Testview",
+						  "elements": "SBX1K|sbc-edge-2|sbc-edge-3",
+						  "severity": "3|2|1",
+						  "rateTripwire": "off",
+						  "eventTripWire": "1 Event"
+					  }
+				  ]
+			  }
+		  }
+	]
+	},
+	{
+		"predicates": [
+				{
+					"equals": {
+						"method": "GET",
+						"path": "/view-service/v1.0/bars"
+					}
+				},
+				{
+					"matches": {"query": {"viewId": 2}}
+				}
+		],
+		"responses": [
+				{
+					"is": {
+						"statusCode": 200,
+						"headers": <% include ../../headers.json %>,
+						"body": [
+							{
+								"id": 1,
+								"name": "2-SBCs",
+								"elements": "SBX1K|sbc-edge-2",
+								"severity": "All",
+								"rateTripwire": "off",
+								"eventTripWire": "2 Events"
+		
+							},
+							{
+								"id": 2,
+								"name": "Testview",
+								"elements": "SBX1K|sbc-edge-2|sbc-edge-3",
+								"severity": "All",
+								"rateTripwire": "off",
+								"eventTripWire": "1 Event"
+							}
+						]
+					}
+				}
+		]
+		}

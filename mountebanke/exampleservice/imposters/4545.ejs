@@ -1,0 +1,15 @@
+{
+  "port": 4545,
+  "protocol": "http",
+  "name": "proto",
+  "recordRequests": true,
+  "stubs": [
+
+     <%# Requires an "Authorization" header of "123456789" %>
+     <%# Returns a list of users %>
+     <% include ../stubs/users.json %>,
+
+     <%# Include this last, if no other matches, then return a 401 %>
+     <% include ../stubs/401.json %>
+  ]
+}

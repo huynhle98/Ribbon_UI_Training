@@ -1,0 +1,189 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/profile-service/v1/statistic"
+      }
+    },
+    {
+      "exists": { "query": { "device-type": true} },
+      "comment": "Type of status, enabled are required"
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../../headers.json %>,
+        "body": [
+          {
+            "id": "id01",
+            "name": "CallFailIntervalStats",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": false,
+            "isOverride": true
+          },
+          {
+            "id": "id02",
+            "name": "CallIntervalStats",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": false,
+            "isOverride": false
+          },
+          {
+            "id": "id03",
+            "name": "DnsGroupDnsServerStats",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": false,
+            "isOverride": true
+          },
+          {
+            "id": "id04",
+            "name": "DspResDspCallIntervalStats",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id05",
+            "name": "EthernetPortMgmtStats",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id06",
+            "name": "EthernetPortPacketStats",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id08",
+            "name": "H323SigPortStatisticsStats",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id09",
+            "name": "IcmpGeneralGroupStats",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id10",
+            "name": "IpAclOverallStats",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id11",
+            "name": "IpAclRuleStats",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id12",
+            "name": "IpGeneralGroupStats",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id13",
+            "name": "IpPolicingSystemIntStats",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id14",
+            "name": "LinkDetectionGroupStats",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id15",
+            "name": "LinkMonitorStats",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id016",
+            "name": "AppIResUsage",
+            "deviceType": "SBC",
+            "generationStatus": true,
+            "generationFreq": "15 Minutes",
+            "collectionStatus": true,
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": false,
+            "isOverride": true
+          }
+        ]
+      }
+    }
+  ]
+}

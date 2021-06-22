@@ -1,0 +1,22 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "DELETE",
+        "path": "/trap-resync-service/v1.0/trap-resync-setting/255.255.255.255"
+      }
+    }
+  ],
+  "responses": <% include ../responses/responses-without-status.ejs %>
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "DELETE",
+        "path": "/trap-resync-service/v1.0/trap-resync-setting/123.56.89.12"
+      }
+    }
+  ],
+  "responses": <% include ../responses/responses-without-status.ejs %>
+}

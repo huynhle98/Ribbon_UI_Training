@@ -1,0 +1,32 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/notifications-service/v1.0/specific-clusters-list"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": [
+					{
+						"id": 1,
+						"name": "Cluster-1"
+					},
+					{
+						"id": 2,
+						"name": "sbc-clust-2"
+					},
+					{
+						"id": 3,
+						"name": "sbc-clust-3"
+					}
+				]
+			}
+		}
+  ]
+}

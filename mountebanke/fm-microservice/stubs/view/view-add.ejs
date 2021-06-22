@@ -1,0 +1,23 @@
+{
+	"predicates": [
+			{
+					"equals": {
+							"method": "POST",
+							"path": "/view-service/v1.0/view"
+					}
+			},
+			{
+				"exists": {"body": true},
+				"caseSensitive": true
+			}
+	],
+	"responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body": { "viewId": 2 }
+			}
+		}
+	]
+}

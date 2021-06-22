@@ -1,0 +1,53 @@
+{
+	"predicates": [
+			{
+					"equals": {
+							"method": "PUT",
+							"path": "/administration-service/v1.0/trap"
+					}
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..stateSynchronization..enabledState" },
+					"comment": "enabledState property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..stateSynchronization..overridedResponse" },
+					"comment": "overridedResponse property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..resynchronization..enabledResync" },
+					"comment": "enabledResync property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..resynchronization..retentionTimePeriod" },
+					"comment": "retentionTimePeriod property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..resynchronization..idleTimePeriod" },
+					"comment": "idleTimePeriod property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..resynchronization..sequenceSpaceID" },
+					"comment": "sequenceSpaceID property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..resynchronization..maxTrapsToResync" },
+					"comment": "maxTrapsToResync property must exist in body"
+			}
+	],
+	"responses": <% include ../responses/responses-without-status.ejs %>
+}

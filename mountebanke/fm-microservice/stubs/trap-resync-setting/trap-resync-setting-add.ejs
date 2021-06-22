@@ -1,0 +1,15 @@
+{
+    "predicates": [
+      {
+        "equals": {
+          "method": "POST",
+          "path": "/trap-resync-service/v1.0/trap-resync-setting"
+        }
+      },
+      {
+        "exists": {"body": true},
+        "caseSensitive": true
+      }
+    ],
+    "responses": <% include ../responses/responses-without-status.ejs %>
+  }

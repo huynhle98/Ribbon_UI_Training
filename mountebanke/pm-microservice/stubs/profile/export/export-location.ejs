@@ -1,0 +1,56 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/profile-service/v1/export/location/"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../../headers.json %>,
+        "body": [
+          {
+            "id": "1",
+            "name": "PM Archive",
+            "ipAddress": "localhost",
+            "directory": "opt/sonus/ems/weblogic/sounsEms/data/pm_archive",
+            "associatedProfiles": 3,
+            "username": "user01",
+            "password": "123456789"
+          },
+          {
+            "id": "2",
+            "name": "PM Archive2",
+            "ipAddress": "10.54.28.97",
+            "directory": "opt/sonus/ems/weblogic/sounsEms/data/pm_archive-2",
+            "associatedProfiles": 5,
+            "username": "user1",
+            "password": "123456789"
+          },
+          {
+            "id": "3",
+            "name": "PM Archive3",
+            "ipAddress": "10.54.28.97",
+            "directory": "opt/sonus/ems/weblogic/sounsEms/data/pm_archive-3",
+            "associatedProfiles": 5,
+            "username": "user1",
+            "password": "123456789"
+          },
+          {
+            "id": "4",
+            "name": "PM Archive4",
+            "ipAddress": "10.54.28.97",
+            "directory": "opt/sonus/ems/weblogic/sounsEms/data/pm_archive-4",
+            "associatedProfiles": 5,
+            "username": "user1",
+            "password": "123456789"
+          }
+        ]
+      }
+    }
+  ]
+}

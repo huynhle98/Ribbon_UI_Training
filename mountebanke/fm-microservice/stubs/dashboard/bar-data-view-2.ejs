@@ -1,0 +1,50 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/dashboard-service/v1.0/views/2/bars"
+            }
+        },
+        {
+            "exists": {"query": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.unique" },
+            "comment": "unique property must exist in query"
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": [
+                    {
+                        "id": 2,
+                        "name": "Chart-2",
+                        "totalEvents": 2,
+                        "tripwire": {
+                            "isActive": true,
+                            "info": [
+                                "info A",
+                                "info B"
+                            ]
+                        },
+                        "totalEventDetail": [
+                            {
+                                "id": 3,
+                                "name": "Warning",
+                                "number": 1
+                            },
+                            {
+                                "id": 2,
+                                "name": "Indeterminate",
+                                "number": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

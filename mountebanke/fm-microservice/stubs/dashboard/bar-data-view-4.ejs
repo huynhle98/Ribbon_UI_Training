@@ -1,0 +1,203 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/dashboard-service/v1.0/views/4/bars"
+            }
+        },
+        {
+            "exists": {"query": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.unique" },
+            "comment": "unique property must exist in query"
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": [
+                    {
+                        "id": 5,
+                        "name": "Chart-5",
+                        "totalEvents": 4,
+                        "tripwire": {
+                            "isActive": true,
+                            "info": [
+                                "info A",
+                                "info B"
+                            ]
+                        },
+                        "totalEventDetail": [
+                            {
+                                "id": 0,
+                                "name": "Cleared",
+                                "number": 1
+                            },
+                            {
+                                "id": 1,
+                                "name": "Indeterminate",
+                                "number": 1
+                            },
+                            {
+                                "id": 2,
+                                "name": "Warning",
+                                "number": 1
+                            },
+                            {
+                                "id": 3,
+                                "name": "Minor",
+                                "number": 1
+                            }
+                        ]
+                    },
+                    {
+                        "id": 6,
+                        "name": "Chart-6",
+                        "totalEvents": 5,
+                        "totalEventDetail": [
+                            {
+                                "id": 0,
+                                "name": "Cleared",
+                                "number": 1
+                            },
+                            {
+                                "id": 1,
+                                "name": "Indeterminate",
+                                "number": 1
+                            },
+                            {
+                                "id": 2,
+                                "name": "Warning",
+                                "number": 1
+                            },
+                            {
+                                "id": 3,
+                                "name": "Minor",
+                                "number": 1
+                            },
+                            {
+                                "id": 4,
+                                "name": "Major",
+                                "number": 1
+                            }
+                        ]
+                    },
+                    {
+                        "id": 7,
+                        "name": "Chart-7",
+                        "totalEvents": 6,
+                        "totalEventDetail": [
+                            {
+                                "id": 0,
+                                "name": "Cleared",
+                                "number": 1
+                            },
+                            {
+                                "id": 1,
+                                "name": "Indeterminate",
+                                "number": 1
+                            },
+                            {
+                                "id": 2,
+                                "name": "Warning",
+                                "number": 1
+                            },
+                            {
+                                "id": 3,
+                                "name": "Minor",
+                                "number": 1
+                            },
+                            {
+                                "id": 4,
+                                "name": "Major",
+                                "number": 1
+                            },
+                            {
+                                "id": 5,
+                                "name": "Critical",
+                                "number": 1
+                            }
+                        ]
+                    },
+                    {
+                        "id": 8,
+                        "name": "Chart-8",
+                        "totalEvents": 6,
+                        "totalEventDetail": [
+                            {
+                                "id": 0,
+                                "name": "Cleared",
+                                "number": 1
+                            },
+                            {
+                                "id": 1,
+                                "name": "Indeterminate",
+                                "number": 1
+                            },
+                            {
+                                "id": 2,
+                                "name": "Warning",
+                                "number": 1
+                            },
+                            {
+                                "id": 3,
+                                "name": "Minor",
+                                "number": 1
+                            },
+                            {
+                                "id": 4,
+                                "name": "Major",
+                                "number": 1
+                            },
+                            {
+                                "id": 5,
+                                "name": "Critical",
+                                "number": 1
+                            }
+                        ]
+                    },
+                    {
+                        "id": 9,
+                        "name": "Chart-9",
+                        "totalEvents": 6,
+                        "totalEventDetail": [
+                            {
+                                "id": 0,
+                                "name": "Cleared",
+                                "number": 1
+                            },
+                            {
+                                "id": 1,
+                                "name": "Indeterminate",
+                                "number": 1
+                            },
+                            {
+                                "id": 2,
+                                "name": "Warning",
+                                "number": 1
+                            },
+                            {
+                                "id": 3,
+                                "name": "Minor",
+                                "number": 1
+                            },
+                            {
+                                "id": 4,
+                                "name": "Major",
+                                "number": 1
+                            },
+                            {
+                                "id": 5,
+                                "name": "Critical",
+                                "number": 1
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

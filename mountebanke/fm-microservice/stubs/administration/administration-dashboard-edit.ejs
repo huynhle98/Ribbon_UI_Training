@@ -1,0 +1,47 @@
+{
+	"predicates": [
+			{
+					"equals": {
+							"method": "PUT",
+							"path": "/administration-service/v1.0/dashboard"
+					}
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..ownershipPolicy..allowOperationsOwned" },
+					"comment": "allowOperationsOwned property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..eventListLimits..windowPerAdministrator" },
+					"comment": "windowPerAdministrator property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..eventListLimits..windowPerProvisioner" },
+					"comment": "windowPerProvisioner property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..eventListLimits..windowPerOperator" },
+					"comment": "windowPerOperator property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..eventListLimits..maximumPerServer" },
+					"comment": "maximumPerServer property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..eventListLimits..autoRefreshInterval" },
+					"comment": "autoRefreshInterval property must exist in body"
+			}
+	],
+	"responses": <% include ../responses/responses-without-status.ejs %>
+}

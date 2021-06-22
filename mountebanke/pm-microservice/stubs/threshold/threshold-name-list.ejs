@@ -1,0 +1,33 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/threshold-service/v1.0/name"
+      }
+    },
+    {
+      "exists": { "query": { "node-type": true} },
+      "comment": "node-type, enabled are required"
+    },
+    {
+      "exists": { "query": { "category": true} },
+      "comment": "category, enabled are required"
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          "CALL_ABANDONED",
+          "SECURITY FAIL",
+          "IN_CALL_FAIL_NO_ROUTES",
+          "# Calls Failed",
+          "CPU USAGE PERCENT"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/administration-service/v1.0/trap"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body": [
+					{
+						"stateSynchronization": {
+							"enabledState": false,
+							"overridedResponse": false
+						},
+						"resynchronization": {
+							"enabledResync": false,
+							"retentionTimePeriod": 120,
+							"idleTimePeriod": 350,
+							"sequenceSpaceID": 0.6,
+							"maxTrapsToResync": 1001
+						}
+					}
+				]
+			}
+		}
+  ]
+}

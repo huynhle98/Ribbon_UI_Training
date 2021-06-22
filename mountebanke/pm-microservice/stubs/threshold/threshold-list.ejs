@@ -1,0 +1,118 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/threshold-service/v1.0/threshold"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": [
+                    {
+                        "id": "id01",
+                        "name": "CPU USAGE PERCENT",
+                        "category": "AppIResUsage",
+                        "trigger": 18.0,
+                        "clear": 15.0,
+                        "severity": "Major",
+                        "notifyOnClear": true,
+                        "enable": true,
+                        "nodeType": "PSX",
+                        "events": [
+                            {
+                                "nodeName": "node-abc",
+                                "location": "location",
+                                "thresholdValue": "Threshold Value"
+                            },
+                            {
+                                "nodeName": "node-xyz",
+                                "location": "location",
+                                "thresholdValue": "Threshold Value"
+                            },
+                            {
+                                "nodeName": "node-123",
+                                "location": "location",
+                                "thresholdValue": "Threshold Value"
+                            },
+                            {
+                                "nodeName": "node-456",
+                                "location": "location",
+                                "thresholdValue": "Threshold Value"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "id02",
+                        "name": "IN_CALL_FAIL_NO_ROUTES",
+                        "category": "CallFailIntervalStats",
+                        "trigger": 18.0,
+                        "clear": 15.0,
+                        "severity": "Critical",
+                        "notifyOnClear": true,
+                        "enable": true,
+                        "nodeType": "PSX",
+                        "events": [
+                        ]
+                    },
+                    {
+                        "id": "id03",
+                        "name": "IN_CALL_FAIL_NO_ROUTES",
+                        "category": "CallFailIntervalStats",
+                        "trigger": 18.0,
+                        "clear": 15.0,
+                        "severity": "Critical",
+                        "notifyOnClear": true,
+                        "enable": true,
+                        "nodeType": "PSX",
+                        "events": [
+                        ]
+                    },
+                    {
+                        "id": "id04",
+                        "name": "SECURITY FAIL",
+                        "category": "EthernetPortMgmtStats",
+                        "trigger": 18.0,
+                        "clear": 15.0,
+                        "severity": "Major",
+                        "notifyOnClear": true,
+                        "enable": true,
+                        "nodeType": "PSX",
+                        "events": [
+                        ]
+                    },
+                    {
+                        "id": "id05",
+                        "name": "CALL_ABANDONED",
+                        "category": "DnsGroupDnsServerStats",
+                        "trigger": 18.0,
+                        "clear": 15.0,
+                        "severity": "Major",
+                        "notifyOnClear": true,
+                        "enable": true,
+                        "nodeType": "PSX",
+                        "events": [
+                        ]
+                    },
+                    {
+                        "id": "id06",
+                        "name": "IN_CALL_FAIL_NO_ROUTES",
+                        "category": "CallFailIntervalStats",
+                        "trigger": 18.0,
+                        "clear": 15.0,
+                        "severity": "Critical",
+                        "notifyOnClear": true,
+                        "enable": true,
+                        "nodeType": "PSX",
+                        "events": [
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

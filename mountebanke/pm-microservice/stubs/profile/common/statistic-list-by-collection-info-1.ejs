@@ -1,0 +1,135 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/profile-service/v1/export/statistic"
+      }
+    },
+    {
+      "exists": { "query": { "collection-info": true} },
+      "comment": "Type of status, enabled are required"
+    },
+    {
+      "matches": {"query": {"collection-info": "Default SBC Profile"}}
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../../headers.json %>,
+        "body": [
+          {
+            "id": "id01",
+            "name": "CallFailIntervalStats01",
+            "deviceType": "SBC",
+            "exportStatus": true,
+            "exportFreq": "15 Minutes",
+            "exportLocation": ["1", "2", "3"],
+            "granularity": "All",
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": false,
+            "isOverride": true
+          },
+          {
+            "id": "id02",
+            "name": "CallIntervalStats02",
+            "deviceType": "SBC",
+            "exportStatus": true,
+            "exportFreq": "15 Minutes",
+            "exportLocation": ["1", "2", "3"],
+            "granularity": "All",
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": false,
+            "isOverride": false
+          },
+          {
+            "id": "id03",
+            "name": "DnsGroupDnsServerStats03",
+            "deviceType": "SBC",
+            "exportStatus": true,
+            "exportFreq": "15 Minutes",
+            "exportLocation": ["1", "2", "3"],
+            "granularity": "All",
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": false,
+            "isOverride": true
+          },
+          {
+            "id": "id04",
+            "name": "DspResDspCallIntervalStats04",
+            "deviceType": "SBC",
+            "exportStatus": true,
+            "exportFreq": "15 Minutes",
+            "exportLocation": ["1", "2", "3"],
+            "granularity": "All",
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id05",
+            "name": "EthernetPortMgmtStats05",
+            "deviceType": "SBC",
+            "exportStatus": true,
+            "exportFreq": "15 Minutes",
+            "exportLocation": ["1", "2", "3"],
+            "granularity": "All",
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id06",
+            "name": "EthernetPortPacketStats06",
+            "deviceType": "SBC",
+            "exportStatus": true,
+            "exportFreq": "15 Minutes",
+            "exportLocation": ["1", "2", "3"],
+            "granularity": "All",
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id08",
+            "name": "H323SigPortStatisticsStats08",
+            "deviceType": "SBC",
+            "exportStatus": true,
+            "exportFreq": "15 Minutes",
+            "exportLocation": ["1", "2", "3"],
+            "granularity": "All",
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id09",
+            "name": "IcmpGeneralGroupStats09",
+            "deviceType": "SBC",
+            "exportStatus": true,
+            "exportFreq": "15 Minutes",
+            "exportLocation": ["1", "2", "3"],
+            "granularity": "All",
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          },
+          {
+            "id": "id10",
+            "name": "IpAclOverallStats10",
+            "deviceType": "SBC",
+            "exportStatus": true,
+            "exportFreq": "15 Minutes",
+            "exportLocation": ["1", "2", "3"],
+            "granularity": "All",
+            "collectionFreq": "15 Minutes",
+            "aggregationStatus": true,
+            "isOverride": true
+          }
+        ]
+      }
+    }
+  ]
+}

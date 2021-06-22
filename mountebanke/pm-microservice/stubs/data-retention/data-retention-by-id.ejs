@@ -1,0 +1,29 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/v1/retention-service/data-retention/id01"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": {
+                    "id": "id01",
+                    "name": "AppIResUsage",
+                    "statsType": "PSX",
+                    "intervalRententionTime": 4,
+                    "intervalRententionTimeType": "week",
+                    "hourlyAggregatedTime": 4,
+                    "hourlyAggregatedTimeType": "week",
+                    "dailyAggregatedTime": 4,
+                    "dailyAggregatedTimeType": "week"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/view-service/v1.0/severity-list"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": [
+					{
+						"id": 1,
+						"name": "Critical"
+					},
+					{
+						"id": 2,
+						"name": "Major"
+					},
+					{
+						"id": 3,
+						"name": "Minor"
+					},
+					{
+						"id": 4,
+						"name": "Warning"
+					},
+					{
+						"id": 5,
+						"name": "Indeterminate"
+					},
+					{
+						"id": 6,
+						"name": "Cleared"
+					}
+				]
+			}
+		}
+  ]
+}

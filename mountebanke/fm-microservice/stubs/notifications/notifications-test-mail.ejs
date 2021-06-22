@@ -1,0 +1,71 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "POST",
+                "path": "/notifications-service/v1.0/send-test-notification"
+            }
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..emailAddress" },
+            "comment": "emailAddress property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..data..name" },
+            "comment": "name property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..data..recipients" },
+            "comment": "recipients property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..data..alarmList" },
+            "comment": "recipients property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..data..criteria..severity" },
+            "comment": "severity property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..data..criteria..networkVia" },
+            "comment": "type property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..criteria..fieldsByVia" },
+            "comment": "type property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..data..alarmInfo..infoIncluded" },
+            "comment": "infoIncluded property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..data..alarmInfo..description" },
+            "comment": "description property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..data..timeFrame..anyTime" },
+            "comment": "description property must exist in body"
+        }
+    ],
+    "responses": <% include ../responses/responses-without-status.ejs %>
+}

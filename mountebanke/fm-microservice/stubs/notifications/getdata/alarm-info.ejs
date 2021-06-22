@@ -1,0 +1,60 @@
+{
+	"predicates": [
+		  {
+			  "equals": {
+				  "method": "GET",
+				  "path": "/notifications-service/v1.0/included-info-notification"
+			  }
+		  }
+	],
+	"responses": [
+		  {
+			  "is": {
+				  "statusCode": 200,
+				  "headers": <% include ../../headers.json %>,
+				  "body": [
+				  {
+					"id": 1,
+					"name": "Alarm Name"
+				},
+				{
+					"id": 2,
+					"name": "Time Stamp"
+				},
+				{
+					"id": 3,
+					"name": "Severity"
+				},
+				{
+					"id": 4,
+					"name": "Node Type"
+				},
+				{
+					"id": 5,
+					"name": "Node Name"
+				},
+				{
+					"id": 6,
+					"name": "Alarm Summary"
+				},
+				{
+					"id": 7,
+					"name": "Clearing Group"
+				},
+				{
+					"id": 8,
+					"name": "Clearing Type" 
+				},
+				{
+					"id": 9,
+					"name": "Resource Group" 
+				},
+				{
+					"id": 10,
+					"name": "Cluster Name" 
+				}
+				  ]
+			  }
+		  }
+	]
+}

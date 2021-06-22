@@ -1,0 +1,28 @@
+{
+    "predicates": [
+          {
+              "equals": {
+                  "method": "POST",
+          "headers": {
+            "Authorization": "123456789"
+          },
+                  "path": "/lm/v1.0/manualReports"
+              }
+          },
+          {
+            "exists": {"body": true, "query": {
+                "runReport": true
+            }},
+            "caseSensitive": true
+          }
+    ],
+    "responses": [
+          {
+              "is": {
+                  "statusCode": 200,
+                  "headers": <% include ../headers.json %>,
+                  "body": ""
+              }
+          }
+    ]
+}

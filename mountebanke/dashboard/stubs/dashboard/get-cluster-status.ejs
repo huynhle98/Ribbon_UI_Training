@@ -1,0 +1,22 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/nodeMgmt/V1.0/clusterStatus"
+			}
+    }
+  ],
+  "responses": [
+		{
+			"is": {
+        "headers": <% include ../headers.json %>,
+				"statusCode": 200,
+        "body": {
+          "healthyCluster": 0,
+          "unhealthyCluster": 0
+        }    
+			}
+		}
+  ]
+}

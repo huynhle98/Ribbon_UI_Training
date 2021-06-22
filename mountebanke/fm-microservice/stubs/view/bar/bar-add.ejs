@@ -1,0 +1,15 @@
+{
+	"predicates": [
+			{
+					"equals": {
+							"method": "POST",
+							"path": "/view-service/v1.0/bar"
+					}
+			},
+			{
+				"exists": {"body": true},
+				"caseSensitive": true
+			}
+	],
+	"responses": <% include ../../responses/responses-without-status.ejs %>
+}

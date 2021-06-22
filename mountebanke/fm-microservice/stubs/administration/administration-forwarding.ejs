@@ -1,0 +1,24 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/administration-service/v1.0/forwarding"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body": [
+					{
+						"transparentForwarding": true,
+  					"loopChecking": true
+					}
+				]
+			}
+		}
+  ]
+}

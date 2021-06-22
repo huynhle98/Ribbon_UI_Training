@@ -1,0 +1,39 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/threshold-service/v1.0/category"
+      }
+    },
+    {
+      "exists": { "query": { "node-type": true} },
+      "comment": "Type of status, enabled are required"
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+         "CallFailIntervalStats",
+          "CallIntervalStats",
+          "DnsGroupDnsServerStats",
+          "DspResDspCallIntervalStats",
+          "EthernetPortMgmtStats",
+          "EthernetPortPacketStats",
+          "H323SigPortStatisticsStats",
+          "IcmpGeneralGroupStats",
+          "IpAclOverallStats",
+          "IpAclRuleStats",
+          "IpGeneralGroupStats",
+          "IpPolicingSystemIntStats",
+          "LinkDetectionGroupStats",
+          "LinkMonitorStats",
+          "AppIResUsage"
+        ]
+      }
+    }
+  ]
+}

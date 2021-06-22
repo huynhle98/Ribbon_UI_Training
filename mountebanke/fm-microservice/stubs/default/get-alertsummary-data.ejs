@@ -1,0 +1,26 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/dashboard-service/v1.0/fm/alertsummary"
+			}
+    }
+  ],
+  "responses": [
+		{
+			"is": {
+        "headers": <% include ../headers.json %>,
+				"statusCode": 200,
+				"body": {
+          "critical": 6,
+          "major": 4,
+          "minor": 41,
+          "warning": 12,
+          "indeterminate": 49,
+          "tripwire": 19
+        }   
+			}
+		}
+  ]
+}

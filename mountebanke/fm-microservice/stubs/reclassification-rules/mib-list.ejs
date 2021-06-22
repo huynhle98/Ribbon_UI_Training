@@ -1,0 +1,19 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/fm/reclassificationRule/v1.0/reclassification-rules-service/mib"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body": ["EMS", "PSX"]
+			}
+		}
+  ]
+}

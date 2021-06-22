@@ -1,0 +1,48 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/view-service/v1.0/bars/event-tripwire-list"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": [
+					{
+						"id": 1,
+						"name": "ADS: AccessDir01"
+					},
+					{
+						"id": 2,
+						"name": "ADS: AccessDir02"
+					},
+					{
+						"id": 3,
+						"name": "ADS: AccessDir03"
+					},
+					{
+						"id": 4,
+						"name": "ADS: AccessDir04"
+					},
+					{
+						"id": 5,
+						"name": "ADS: AccessDir05"
+					},
+					{
+						"id": 6,
+						"name": "ADS: AccessDir06"
+					},
+					{
+						"id": 7,
+						"name": "ADS: AccessDir07"
+					}
+				]
+			}
+		}
+  ]
+}

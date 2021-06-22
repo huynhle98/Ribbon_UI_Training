@@ -1,0 +1,44 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/dashboard-service/v1.0/severity"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": [
+                    {
+                        "id": 5,
+                        "name": "Critical"
+                    },
+                    {
+                        "id": 4,
+                        "name": "Major"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Minor"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Warning"
+                    },
+                    {
+                        "id": 1,
+                        "name": "Indeterminate"
+                    },
+                    {
+                        "id": 0,
+                        "name": "Cleared"
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "PUT",
+        "path": "/profile-service/v1/export/location/id01"
+      }
+    },
+    {
+      "exists": {"body": {"id": true}},
+      "caseSensitive": true,
+      "comment": "id property must exist in body"
+    },
+    {
+      "exists": {"body": {"name": true}},
+      "caseSensitive": true,
+      "comment": "name property must exist in body"
+    },
+    {
+      "exists": {"body": {"ipAddress": true}},
+      "caseSensitive": true,
+      "comment": "ipAddress property must exist in body"
+    },
+    {
+      "exists": {"body": {"directory": true}},
+      "caseSensitive": true,
+      "comment": "directory property must exist in body"
+    },
+    {
+      "exists": {"body": {"associatedProfiles": true}},
+      "caseSensitive": true,
+      "comment": "associatedProfiles property must exist in body"
+    }
+  ],
+  "responses": <% include ../../responses/responses-without-status.ejs %>
+}

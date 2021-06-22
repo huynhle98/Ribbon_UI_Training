@@ -1,0 +1,26 @@
+{
+    "predicates": [
+          {
+              "equals": {
+                  "method": "PUT",
+          "headers": {
+            "Authorization": "123456789"
+          },
+                  "path": "/lm/v1.0/manualReports"
+              }
+          },
+      {
+        "exists": {"query": {"action": "delete"}},
+        "caseSensitive": true
+      }
+    ],
+    "responses": [
+          {
+              "is": {
+                  "statusCode": 200,
+                  "headers": <% include ../headers.json %>,
+          "body": []
+              }
+          }
+    ]
+}

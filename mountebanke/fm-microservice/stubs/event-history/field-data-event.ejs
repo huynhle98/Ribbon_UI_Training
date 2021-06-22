@@ -1,0 +1,42 @@
+{
+    "predicates": [
+        {
+            "contains": {
+                "method": "GET",
+                "path": "/event-history-service/v1.0/event-history/filter-data"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": {
+                    "eventName": [
+                      "All",
+                      "Self Only",
+                      "Unackknowledged"
+                    ],
+                    "severity": [
+                      "warning",
+                      "minor",
+                      "cleared",
+                      "indeterminate"
+                    ],
+                    "type": [
+                      "EMS",
+                      "PSX",
+                      "DSC"
+                    ],
+                    "node": [
+                     "10.54.28.89-xyz",
+                     "abc-123-dsc",
+                     "px1-zzzzzz",
+                     "psxmste"
+                    ]
+                }
+            }
+        }
+    ]
+}

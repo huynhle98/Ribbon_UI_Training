@@ -1,0 +1,36 @@
+{
+    "predicates": [
+        {
+            "contains": {
+                "method": "PUT",
+                "path": "/forwarding-service/v1.0/filter-profile/"
+            }
+        },
+        {
+            "exists": {"body": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.id" },
+            "comment": "id property must exist in body"
+        },
+        {
+            "exists": {"body": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.profileName" },
+            "comment": "profileName property must exist in body"
+        },
+        {
+            "exists": {"body": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.isFilterEnabled" },
+            "comment": "isFilterEnabled property must exist in body"
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../../headers.json %>
+            }
+        }
+    ]
+}

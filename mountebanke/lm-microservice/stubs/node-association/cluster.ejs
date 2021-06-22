@@ -1,0 +1,469 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/clusters"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          {
+            "id": "1",
+            "name": "cluster-1",
+            "type": "SBC",
+            "subtype": "Integrated",
+            "ip": "n/a",
+            "isCluster": true
+          },
+          {
+            "id": "2",
+            "name": "cluster-rep-PSX-999",
+            "type": "PSX",
+            "subtype": "Replica",
+            "ip": "n/a",
+            "isCluster": true
+          },
+          {
+            "id": "3",
+            "name": "aSingle-SBC-123",
+            "type": "SBC",
+            "subtype": "Signaling",
+            "ip": "10.34.22.50",
+            "isCluster": false,
+            "licenseType": 1
+          },
+          {
+            "id": "4",
+            "name": "aSingle-Insight-789",
+            "type": "Insight",
+            "subtype": "n/a",
+            "ip": "10.228.25.70",
+            "isCluster": false,
+            "licenseType": 2
+          },
+          {
+            "id": "5",
+            "name": "cluster-rep-PSX-456",
+            "type": "PSX",
+            "subtype": "Replica",
+            "ip": "n/a",
+            "isCluster": true
+          },
+          {
+            "id": "6",
+            "name": "PSX-main-1-cluster",
+            "type": "PSX",
+            "subtype": "Main",
+            "ip": "n/a",
+            "isCluster": true
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/clusters/1/nodes"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          {
+            "id": "1",
+            "name": "OAM-1",
+            "nodeType": "SBC",
+            "subtype": "Integrated-OAM",
+            "ip": "10.54.48.180",
+            "licenseType": 0
+          },
+          {
+            "id": "2",
+            "name": "abc-123",
+            "nodeType": "SBC",
+            "subtype": "Integrated",
+            "ip": "10.34.22.50",
+            "licenseType": 0
+          },
+          {
+            "id": "3",
+            "name": "xyz-456",
+            "nodeType": "SBC",
+            "subtype": "Integrated",
+            "ip": "10.228.25.70",
+            "licenseType": 0
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/clusters/2/nodes"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          {
+            "id": "1",
+            "name": "OAM-2",
+            "nodeType": "SBC",
+            "subtype": "Integrated-OAM",
+            "ip": "10.54.48.180",
+            "licenseType": 0
+          },
+          {
+            "id": "2",
+            "name": "abc-456",
+            "nodeType": "SBC",
+            "subtype": "Integrated",
+            "ip": "10.34.22.50",
+            "licenseType": 0
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/clusters/1/usage"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          {
+            "featureName": "POL-TEST-DB-D",
+            "allocated": 1000,
+            "used": 900
+          },
+          {
+            "featureName": "Feature-LIC-AUDIT-REPORT",
+            "allocated": 1000,
+            "used": 900
+          },
+          {
+            "featureName": "POL-BASESW-D",
+            "allocated": 1000,
+            "used": 1000
+          },
+          {
+            "featureName": "Feature-LI",
+            "allocated": 1000,
+            "used": 1000
+          },
+          {
+            "featureName": "POL-SIP-D",
+            "allocated": 1000,
+            "used": 1000
+          },
+          {
+            "featureName": "License-123",
+            "allocated": 1000,
+            "used": 1000
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/clusters/1/POL-TEST-DB-D/usage"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          {
+            "id": "1",
+            "name": "OAM-1",
+            "allocated": 1000,
+            "used": 300,
+            "licenseType": 0
+          },
+          {
+            "id": "2",
+            "name": "abc-xyz",
+            "allocated": 1000,
+            "used": 400,
+            "licenseType": 2
+          },
+          {
+            "id": "3",
+            "name": "sbc-456",
+            "allocated": 1000,
+            "used": 200,
+            "licenseType": 0
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/clusters/1/Feature-LIC-AUDIT-REPORT/usage"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          {
+            "id": "1",
+            "name": "OAM-1",
+            "allocated": 1000,
+            "used": 300,
+            "licenseType": 0
+          },
+          {
+            "id": "2",
+            "name": "abc-xyz",
+            "allocated": 1000,
+            "used": 400,
+            "licenseType": 1
+          },
+          {
+            "id": "3",
+            "name": "sbc-456",
+            "allocated": 1000,
+            "used": 200,
+            "licenseType": 0
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/clusters/1/POL-BASESW-D/usage"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          {
+            "id": "1",
+            "name": "OAM-1",
+            "allocated": 1000,
+            "used": 300,
+            "licenseType": 2
+          },
+          {
+            "id": "2",
+            "name": "abc-xyz",
+            "allocated": 1000,
+            "used": 400,
+            "licenseType": 2
+          },
+          {
+            "id": "3",
+            "name": "sbc-456",
+            "allocated": 1000,
+            "used": 200,
+            "licenseType": 0
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/clusters/1/Feature-LI/usage"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          {
+            "id": "1",
+            "name": "OAM-1",
+            "allocated": 1000,
+            "used": 300,
+            "licenseType": 0
+          },
+          {
+            "id": "2",
+            "name": "abc-xyz",
+            "allocated": 1000,
+            "used": 400,
+            "licenseType": 1
+          },
+          {
+            "id": "3",
+            "name": "sbc-456",
+            "allocated": 1000,
+            "used": 200,
+            "licenseType": 0
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/clusters/1/POL-SIP-D/usage"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          {
+            "id": "1",
+            "name": "OAM-1",
+            "allocated": 1000,
+            "used": 300,
+            "licenseType": 0
+          },
+          {
+            "id": "2",
+            "name": "abc-xyz",
+            "allocated": 1000,
+            "used": 400,
+            "licenseType": 1
+          },
+          {
+            "id": "3",
+            "name": "sbc-456",
+            "allocated": 1000,
+            "used": 200,
+            "licenseType": 0
+          }
+        ]
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/clusters/1/License-123/usage"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          {
+            "id": "1",
+            "name": "OAM-2",
+            "allocated": 1000,
+            "used": 300,
+            "licenseType": 0
+          },
+          {
+            "id": "2",
+            "name": "abc-xyz123",
+            "allocated": 1000,
+            "used": 400,
+            "licenseType": 1
+          }
+        ]
+      }
+    }
+  ]
+}

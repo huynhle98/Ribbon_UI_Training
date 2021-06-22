@@ -1,0 +1,36 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/forwarding-service/v1.0/export-profiles"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../../headers.json %>,
+                "body": [
+                    {
+                        "id": 0,
+                        "name": "admin-profile",
+                        "associatedFilterProfile": "Administrator",
+                        "ipAddress": "192.168.0.1",
+                        "directory": "master",
+                        "dataFormat": "REST"
+                    },
+                    {
+                        "id": 1,
+                        "name": "profile-sample",
+                        "associatedFilterProfile": "Manager",
+                        "ipAddress": "192.168.0.2",
+                        "directory": "fm",
+                        "dataFormat": "SNMP"
+                    }
+                ]
+            }
+        }
+    ]
+}

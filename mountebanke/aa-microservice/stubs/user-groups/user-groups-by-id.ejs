@@ -1,0 +1,301 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/auth/v1.0/config/userGroup/1"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "1",
+          "name": "admin group",
+          "userIdList": [
+            "1",
+            "2"
+          ],
+          "description": "Top level group",
+          "accessControlAssocList": [
+            {
+              "rgId": "1",
+              "roleId": "1"
+            },
+            {
+              "rgId": "2",
+              "roleId": "2"
+            }
+          ]
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/auth/v1.0/config/userGroup/2"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "2",
+          "name": "sbc-group",
+          "userIdList": [
+            "1",
+            "2"
+          ],
+          "description": "Top level group",
+          "accessControlAssocList": [
+            {
+              "rgId": "1",
+              "roleId": "1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/auth/v1.0/config/userGroup/2"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "2",
+          "name": "sbc-group",
+          "userIdList": [
+            "1",
+            "2"
+          ],
+          "description": "Top level group",
+          "accessControlAssocList": [
+            {
+              "rgId": "1",
+              "roleId": "1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/auth/v1.0/config/userGroup/3"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "3",
+          "name": "psx-user",
+          "userIdList": [
+            "1",
+            "2"
+          ],
+          "description": "Top level group",
+          "accessControlAssocList": [
+            {
+              "rgId": "1",
+              "roleId": "1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/auth/v1.0/config/userGroup/4"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "4",
+          "name": "operator-level-group",
+          "userIdList": [
+            "1",
+            "2"
+          ],
+          "description": "Top level group",
+          "accessControlAssocList": [
+            {
+              "rgId": "1",
+              "roleId": "1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/auth/v1.0/config/userGroup/5"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "5",
+          "name": "EMS-prov-group",
+          "userIdList": [
+            "1",
+            "2"
+          ],
+          "description": "Top level group",
+          "accessControlAssocList": [
+            {
+              "rgId": "1",
+              "roleId": "1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/auth/v1.0/config/userGroup/6"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "6",
+          "name": "Analytics-read-only-group",
+          "userIdList": [
+            "1",
+            "2"
+          ],
+          "description": "Top level group",
+          "accessControlAssocList": [
+            {
+              "rgId": "1",
+              "roleId": "1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/auth/v1.0/config/userGroup/7"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "7",
+          "name": "EDGE-group",
+          "userIdList": [
+            "1",
+            "2"
+          ],
+          "description": "Top level group",
+          "accessControlAssocList": [
+            {
+              "rgId": "1",
+              "roleId": "1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/auth/v1.0/config/userGroup/8"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "8",
+          "name": "AS-PA-read-write-users",
+          "userIdList": [
+            "1",
+            "2"
+          ],
+          "description": "Top level group",
+          "accessControlAssocList": [
+            {
+              "rgId": "1",
+              "roleId": "1"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

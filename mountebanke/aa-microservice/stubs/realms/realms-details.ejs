@@ -1,0 +1,75 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/config/realm/1"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "1",
+          "name": "Radius",
+          "sequence": 1,
+          "type": "SAML",
+          "enabled": false,
+          "connectedTestSuccess": true,
+          "value": {
+            "saml.idpCertificate": "0",
+            "saml.spPrivateKey": "test",
+            "saml.spCertificate": "test",
+            "saml.returningAttribute": "UserGroup"
+          }
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/config/realm/2"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "2",
+          "name": "LDAP",
+          "sequence": 2,
+          "type": "LDAP",
+          "enabled": true,
+          "connectedTestSuccess": true,
+          "value": {
+            "ldap.url": "ldap://10.34.22.52:389",
+            "ldap.systemUsername": "cn=Administrator,dc=rbbn,dc=com",
+            "ldap.systemPassword": "ServerPopulated",
+            "ldap.userDnTemplate": "cn={0},ou=users,dc=rbbn,dc=com",
+            "ldap.searchBase": "dc=rbbn,dc=com",
+            "ldap.searchFilter": "(&(objectClass=groupOfUniqueNames)(uniqueMember=cn={0},ou=users,dc=rbbn,dc=com))",
+            "ldap.referral": "ignore",
+            "ldap.ignorePartialResultException": "true",
+            "ldap.returningAttribute": "cn"
+          }
+        }
+      }
+    }
+  ]
+}

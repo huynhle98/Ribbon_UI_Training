@@ -1,0 +1,16 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "POST",
+                "path": "/dashboard-service/v1.0/tasks"
+            }
+        },
+        {
+            "exists": {"query": {"action": true}},
+            "caseSensitive": true,
+            "comment": "actions property must exist in query"
+        }
+    ],
+    "responses": <% include ../responses/responses-without-status.ejs %>
+}

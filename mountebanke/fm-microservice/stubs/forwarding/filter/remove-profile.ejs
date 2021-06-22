@@ -1,0 +1,18 @@
+{
+    "predicates": [
+        {
+            "contains": {
+                "method": "DELETE",
+                "path": "/forwarding-service/v1.0/filter-profile/"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../../headers.json %>
+            }
+        }
+    ]
+}

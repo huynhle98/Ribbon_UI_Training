@@ -1,0 +1,302 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/lm/v1.0/nodes/1/instances"
+      }
+    },
+    {
+      "equals": {
+        "query": {
+          "licenseType": "nodeLocked"
+        }
+      },
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "nodeInstanceList": [
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551530",
+              "licenseInfoOid": "EMS-LI-551530",
+              "licenseId": "101310",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": true
+            },
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551531",
+              "licenseInfoOid": "EMS-LI-551531",
+              "licenseId": "101311",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": true
+            },
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551532",
+              "licenseInfoOid": "EMS-LI-551533",
+              "licenseId": "101312",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": false
+            }
+          ],
+          "totalCount": 3
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/nodes/2/instances"
+      }
+    },
+    {
+      "equals": {
+        "query": {
+          "licenseType": "nodeLocked"
+        }
+      },
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "nodeInstanceList": [
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551530",
+              "licenseInfoOid": "EMS-LI-551530",
+              "licenseId": "101310",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": true
+            },
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551531",
+              "licenseInfoOid": "EMS-LI-551531",
+              "licenseId": "101311",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": true
+            },
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551532",
+              "licenseInfoOid": "EMS-LI-551532",
+              "licenseId": "101312",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": false
+            }
+          ],
+          "totalCount": 3
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/nodes/3/instances"
+      }
+    },
+    {
+      "equals": {
+        "query": {
+          "licenseType": "nodeLocked"
+        }
+      },
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "nodeInstanceList": [
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551530",
+              "licenseInfoOid": "EMS-LI-551530",
+              "licenseId": "101310",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": true
+            },
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551531",
+              "licenseInfoOid": "EMS-LI-551531",
+              "licenseId": "101311",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": true
+            },
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551532",
+              "licenseInfoOid": "EMS-LI-551532",
+              "licenseId": "101312",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": false
+            }
+          ],
+          "totalCount": 0
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/nodes/4/instances"
+      }
+    },
+    {
+      "equals": {
+        "query": {
+          "licenseType": "nodeLocked"
+        }
+      },
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "nodeInstanceList": [
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551530",
+              "licenseInfoOid": "EMS-LI-551530",
+              "licenseId": "101310",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": true
+            },
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551531",
+              "licenseInfoOid": "EMS-LI-551531",
+              "licenseId": "101311",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": true
+            },
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551532",
+              "licenseInfoOid": "EMS-LI-551532",
+              "licenseId": "101312",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": false
+            }
+          ],
+          "totalCount": 0
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/nodes/5/instances"
+      }
+    },
+    {
+      "equals": {
+        "query": {
+          "licenseType": "nodeLocked"
+        }
+      },
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "nodeInstanceList": [
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551530",
+              "licenseInfoOid": "EMS-LI-551530",
+              "licenseId": "101310",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": true
+            },
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551531",
+              "licenseInfoOid": "EMS-LI-551531",
+              "licenseId": "101311",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": true
+            },
+            {
+              "featureName": "EMS-LI",
+              "licenseInstanceId": "EMS-LI-551532",
+              "licenseInfoOid": "EMS-LI-551532",
+              "licenseId": "101312",
+              "generationDate": "08/30/2020",
+              "expirationDate": "02/26/2021",
+              "associationState": false
+            }
+          ],
+          "totalCount": 3
+        }
+      }
+    }
+  ]
+}

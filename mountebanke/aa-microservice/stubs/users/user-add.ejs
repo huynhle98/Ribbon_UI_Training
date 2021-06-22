@@ -1,0 +1,23 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "POST",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/config/users"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+        }
+      }
+    }
+  ]
+}

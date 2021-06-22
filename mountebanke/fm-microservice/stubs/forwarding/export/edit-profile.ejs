@@ -1,0 +1,54 @@
+{
+    "predicates": [
+        {
+            "contains": {
+                "method": "PUT",
+                "path": "/forwarding-service/v1.0/export-profile/"
+            }
+        },
+        {
+            "exists": {"body": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.id" },
+            "comment": "id property must exist in body"
+        },
+        {
+            "exists": {"body": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.name" },
+            "comment": "name property must exist in body"
+        },
+        {
+            "exists": {"body": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.isProfileEnabled" },
+            "comment": "isProfileEnabled property must exist in body"
+        },
+        {
+            "exists": {"body": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.ipAddress" },
+            "comment": "ipAddress property must exist in body"
+        },
+        {
+            "exists": {"body": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.port" },
+            "comment": "port property must exist in body"
+        },
+        {
+            "exists": {"body": true},
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$.dataFormat" },
+            "comment": "dataFormat property must exist in body"
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../../headers.json %>
+            }
+        }
+    ]
+}

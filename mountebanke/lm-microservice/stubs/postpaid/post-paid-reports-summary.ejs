@@ -1,0 +1,137 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "POST",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/postPaidReports/register"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/postPaidReports"
+      }
+    },
+    {
+      "equals": {
+        "query": {
+          "type": "networkWide"
+        }
+      },
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "reportList": [
+            {
+              "id": "1",
+              "name": "NetworkLevelt-01242021",
+              "generationDate": "01/24/2021 at 19:30:20",
+              "startTimeRange": "1617089094",
+              "endTimeRange": "1614581997",
+              "uploadTime": "1614581997"
+            },
+            {
+              "id": "2",
+              "name": "NetworkLevel-01232021",
+              "generationDate": "01/23/2021 at 19:30:18",
+              "startTimeRange": "1617089094",
+              "endTimeRange": "1614581997",
+              "uploadTime": "1614581997"
+            },
+            {
+              "id": "6",
+              "name": "NodeLevelId6",
+              "generationDate": "01/23/2021 at 19:30:29",
+              "startTimeRange": "1617089094",
+              "endTimeRange": "1614581997",
+              "uploadTime": "1614581997"
+            }
+          ],
+          "totalCount": 2
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/postPaidReports"
+      }
+    },
+    {
+      "equals": {
+        "query": {
+          "type": "nodeLevel"
+        }
+      },
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "reportList": [
+            {
+              "id": "3",
+              "name": "NodeLevel-01242021",
+              "generationDate": "01/24/2021 at 19:30:30",
+              "startTimeRange": "1617089094",
+              "endTimeRange": "1614581997",
+              "uploadTime": "1614581997"
+            },
+            {
+              "id": "4",
+              "name": "NodeLevel-01232021",
+              "generationDate": "01/23/2021 at 19:30:29",
+              "startTimeRange": "1617089094",
+              "endTimeRange": "1614581997",
+              "uploadTime": "1614581997"
+            },
+            {
+              "id": "5",
+              "name": "NodeLevelId5",
+              "generationDate": "01/23/2021 at 19:30:29",
+              "startTimeRange": "1617089094",
+              "endTimeRange": "1614581997",
+              "uploadTime": "1614581997"
+            }
+          ],
+          "totalCount": 2
+        }
+      }
+    }
+  ]
+}

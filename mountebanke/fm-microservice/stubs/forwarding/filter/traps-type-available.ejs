@@ -1,0 +1,32 @@
+{
+    "predicates": [
+        {
+            "contains": {
+                "method": "GET",
+                "path": "/forwarding-service/v1.0/filter-profile/traps-type-by-nodes"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../../headers.json %>,
+                "body": [
+                    {
+                        "id": 1,
+                        "name": "Info"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Warning"
+                    },
+                    {
+                        "id": 3,
+                        "name": "Critical"
+                    }
+                ]
+            }
+        }
+    ]
+}

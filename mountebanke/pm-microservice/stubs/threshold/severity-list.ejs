@@ -1,0 +1,22 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/threshold-service/v1.0/severity"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+             "Major",
+             "Critical" 
+      ]
+      }
+    }
+  ]
+}

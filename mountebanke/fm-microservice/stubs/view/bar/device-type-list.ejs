@@ -1,0 +1,126 @@
+{
+	"predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/view-service/v1.0/bars/device-type", 
+				"query": {
+					"resourceGroupId": 1
+				}
+			}
+		},
+		{
+			"exists": {
+				"query": true
+			},
+			"caseSensitive": true,
+			"jsonpath": {
+				"selector": "$.resourceGroupId"
+			},
+			"comment": "resourceGroupId property must exist in query"
+		}
+	],
+	"responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": [
+					{
+						"id": 1,
+						"name": "SBCEdge",
+						"isSelected": true
+					},
+					{
+						"id": 2,
+						"name": "SBCEdge1",
+						"isSelected": true
+					},
+					{
+						"id": 3,
+						"name": "SBCEdge2",
+						"isSelected": true
+					},
+					{
+						"id": 4,
+						"name": "SBCEdge3",
+						"isSelected": false
+					},
+					{
+						"id": 5,
+						"name": "SBCEdge4",
+						"isSelected": false
+					},
+					{
+						"id": 6,
+						"name": "SBCEdge5",
+						"isSelected": false
+					}
+				]
+			}
+		}
+	]
+},
+{
+	"predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/view-service/v1.0/bars/device-type", 
+				"query": {
+					"resourceGroupId": 2
+				}
+			}
+		},
+		{
+			"exists": {
+				"query": true
+			},
+			"caseSensitive": true,
+			"jsonpath": {
+				"selector": "$.resourceGroupId"
+			},
+			"comment": "resourceGroupId property must exist in query"
+		}
+	],
+	"responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": [
+                    {
+                        "id": 1,
+                        "name": "SBCEdge",
+                        "isSelected": false
+                    },
+                    {
+                        "id": 2,
+                        "name": "SBCEdge1",
+                        "isSelected": false
+                    },
+                    {
+                        "id": 3,
+                        "name": "SBCEdge2",
+                        "isSelected": false
+                    },
+                    {
+                        "id": 4,
+                        "name": "SBCEdge3",
+                        "isSelected": true
+                    },
+                    {
+                        "id": 5,
+                        "name": "SBCEdge4",
+                        "isSelected": true
+                    },
+                    {
+                        "id": 6,
+                        "name": "SBCEdge5",
+                        "isSelected": true
+                    }
+				]
+			}
+		}
+	]
+}

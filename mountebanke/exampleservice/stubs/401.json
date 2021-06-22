@@ -1,0 +1,10 @@
+{
+  "predicates": [],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 401
+      }
+    }
+  ]
+}

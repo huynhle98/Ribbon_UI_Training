@@ -1,0 +1,27 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/profile-service/v1/assignment/id01"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../../headers.json %>,
+        "body": {
+          "id": "id01",
+          "nodeName": "psxmste",
+          "assignmentseType": "PSX",
+          "collectionProfile": "Default SBC Profile",
+          "collectionStatus": true,
+          "exportProfile": "EastCoast Export",
+          "exportStatus": true
+        }
+      }
+    }
+  ]
+}

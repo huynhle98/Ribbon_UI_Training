@@ -1,0 +1,291 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/view-service/v1.0/view/1"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body": 
+					{
+						"id": 1,
+						"name": "EDGEview",
+						"description": "test 1k alarms",
+						"resourceGroupId": 2,
+						"eventInfo": {
+							"ownership": 2,
+							"ackStatus": 3,
+							"displayColumns": "MINIMAL2"
+						},
+						"audibleALarms": {
+							"alarmsList": [
+								{
+									"severity": "critical",
+									"alarmName": "alarm1.mp3"
+								},
+								{
+									"severity": "major",
+									"alarmName": "alarm1.mp3"
+								},
+								{
+									"severity": "minor",
+									"alarmName": "alarm2.mp3"
+								},
+								{
+									"severity": "warning",
+									"alarmName": "alarm2.mp3"
+								},
+								{
+									"severity": "indeterminate",
+									"alarmName": "alarm3.mp3"
+								},
+								{
+									"severity": "cleared",
+									"alarmName": "alarm1.mp3"
+								}
+							]
+						},
+						"bars": [
+							{
+								"id": 0,
+								"name": "2-SBCs",
+								"devices": {
+									"optionType": "DEVICE",
+									"seletedDevices": [
+										{
+											"id": 0,
+											"name": "SBX1K",
+											"type": "string",
+											"isSelected": true
+										 },
+										 {
+											"id": 1,
+											"name": "sbc-edge-2",
+											"type": "string",
+											"isSelected": true
+										 }
+									],
+									"seletedClusters": [
+									],
+									"seletedDeviceTypes": [
+									]
+								},
+								"rateTripwire": {
+									"isActiveTripWire": true,
+									"numberLimitedEvent": 0,
+									"numberSecondInterval": 0
+								 },
+								 "selectedEventTripWireInfo": [
+									{
+										"id": 0,
+										"name": "ADS: AccessDir01"
+									}
+								],
+								"severity": [
+									{
+										"id": 1,
+										"name": "Critical",
+										"include": true,
+										"tripsWire": true
+									},
+									{
+										"id": 2,
+										"name": "Major",
+										"include": true,
+										"tripsWire": true
+									},
+									{
+										"id": 3,
+										"name": "Minor",
+										"include": true,
+										"tripsWire": true
+									}
+								]	
+							},
+							{
+								"id": 1,
+								"name": "Testview",
+								"devices": {
+									"optionType": "DEVICE",
+									"seletedDevices": [
+									],
+									"seletedClusters": [
+										{
+											"id": "0",
+											"name": "SBX1K",
+											"isSelected": true
+										},
+										{
+											"id": "1",
+											"name": "sbc-edge-2",
+											"isSelected": true
+										},
+										{
+											"id": "2",
+											"name": "sbc-edge-3",
+											"isSelected": true
+										}
+									],
+									"seletedDeviceTypes": [
+									]
+								},
+								"rateTripwire": {
+									"isActiveTripWire": true,
+									"numberLimitedEvent": 0,
+									"numberSecondInterval": 0
+								 },
+								 "selectedEventTripWireInfo": [
+									{
+										"id": 0,
+										"name": "ADS: AccessDir01"
+									}
+								],
+								"severity": [
+									{
+										"id": 1,
+										"name": "Critical",
+										"include": true,
+										"tripsWire": true
+									},
+									{
+										"id": 2,
+										"name": "Major",
+										"include": true,
+										"tripsWire": true
+									},
+									{
+										"id": 3,
+										"name": "Minor",
+										"include": true,
+										"tripsWire": true
+									}
+								]	
+							}
+						]
+					}
+			}
+		}
+  ]
+},
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/view-service/v1.0/view/2"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body": 
+					{
+						"id": 2,
+						"name": "EDGEview",
+						"description": "test 1k alarms",
+						"resourceGroupId": 1,
+						"eventInfo": {
+							"ownership": 2,
+							"ackStatus": 3,
+							"displayColumns": "MINIMAL"
+						},
+						"audibleALarms": {
+							"alarmsList": [
+								{
+									"severity": "critical",
+									"alarmName": "alarm1.mp3"
+								},
+								{
+									"severity": "major",
+									"alarmName": "alarm1.mp3"
+								},
+								{
+									"severity": "minor",
+									"alarmName": "alarm2.mp3"
+								},
+								{
+									"severity": "warning",
+									"alarmName": "alarm2.mp3"
+								},
+								{
+									"severity": "indeterminate",
+									"alarmName": "alarm3.mp3"
+								},
+								{
+									"severity": "cleared",
+									"alarmName": "alarm1.mp3"
+								}
+							]
+						}
+					}
+			}
+		}
+  ]
+},
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/view-service/v1.0/view/3"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body": 
+					{
+						"id": 3,
+						"name": "eastcoast",
+						"description": "test 1k alarms",
+						"resourceGroupId": 2,
+						"eventInfo": {
+							"ownership": 2,
+							"ackStatus": 3,
+							"displayColumns": "MINIMAL"
+						},
+						"audibleALarms": {
+							"alarmsList": [
+								{
+									"severity": "critical",
+									"alarmName": "alarm1.mp3"
+								},
+								{
+									"severity": "major",
+									"alarmName": "alarm1.mp3"
+								},
+								{
+									"severity": "minor",
+									"alarmName": "alarm2.mp3"
+								},
+								{
+									"severity": "warning",
+									"alarmName": "alarm2.mp3"
+								},
+								{
+									"severity": "indeterminate",
+									"alarmName": "alarm3.mp3"
+								},
+								{
+									"severity": "cleared",
+									"alarmName": "alarm1.mp3"
+								}
+							]
+						}
+					}
+			}
+		}
+  ]
+}

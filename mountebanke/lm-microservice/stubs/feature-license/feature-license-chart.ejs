@@ -1,0 +1,212 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "headers": {
+                    "Authorization": "123456789"
+                },
+                "path": "/lm/v1.0/feature/licenses/2/chart/chartdata"
+            }
+        },
+        {
+          "exists": {"query": true},
+          "caseSensitive": true,
+          "comment": "unique property must exist in query"
+        }
+    ],
+    "responses": [
+      {
+          "is": {
+              "statusCode": 200,
+              "headers": <% include ../headers.json %>,
+              "body": {
+                "time": [
+                1614556800000,
+                1614643200000,
+                1614729600000,
+                1614816000000,
+                1614902400000,
+                1614988800000,
+                1615075200000,
+                1615161600000,
+                1615248000000,
+                1615334400000
+                ],
+                "installed": [
+                  1100,
+                  1100,
+                  1100,
+                  1100,
+                  1100,
+                  1100,
+                  1100,
+                  1100,
+                  1100,
+                  1100
+                ],
+                "avgUsed": [
+                  1000,
+                  1000,
+                  1000,
+                  1000,
+                  1000,
+                  1000,
+                  1000,
+                  1000,
+                  1000,
+                  1000
+                ],
+                "used": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ]
+              }
+          }
+      }
+    ]
+},
+{
+  "predicates": [
+      {
+          "equals": {
+              "method": "GET",
+              "headers": {
+                  "Authorization": "123456789"
+              },
+              "path": "/lm/v1.0/feature/licenses/2/chart/tabledata"
+          }
+      },
+      {
+        "exists": {"query": true},
+        "caseSensitive": true,
+        "comment": "unique property must exist in query"
+      }
+  ],
+  "responses": [
+    {
+        "is": {
+            "statusCode": 200,
+            "headers": <% include ../headers.json %>,
+            "body": {
+              "time": [
+              "12-14-2020 10:30",
+              "12-14-2020 10:30",
+              "12-14-2020 10:30",
+              "12-14-2020 10:30",
+              "12-14-2020 10:30"
+              ],
+              "status": [
+                "Safe",
+                "Safe",
+                "Safe",
+                "Safe",
+                "Safe"
+              ],
+              "used": [
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "installed": [
+               1000,
+               1000,
+               1000,
+               1000,
+               1000
+              ]
+            }
+        }
+    }
+  ]
+},
+{
+  "predicates": [
+      {
+          "equals": {
+              "method": "GET",
+              "headers": {
+                  "Authorization": "123456789"
+              },
+              "path": "/lm/v1.0/feature/licenses/2/chart/averageusage"
+          }
+      },
+      {
+        "exists": {"query": true},
+        "caseSensitive": true,
+        "comment": "unique property must exist in query"
+      }
+  ],
+  "responses": [
+    {
+        "is": {
+            "statusCode": 200,
+            "headers": <% include ../headers.json %>,
+            "body":{
+              "time": [
+                1614556800000,
+                1614643200000,
+                1614729600000
+              ],
+              "avgUsage": [
+                1000,
+                1000,
+                1000
+              ]
+            }
+        }
+    }
+  ]
+},
+{
+  "predicates": [
+      {
+          "equals": {
+              "method": "GET",
+              "headers": {
+                  "Authorization": "123456789"
+              },
+              "path": "/lm/v1.0/feature/licenses/2/chart/peakdata"
+          }
+      },
+      {
+        "exists": {"query": true},
+        "caseSensitive": true,
+        "comment": "unique property must exist in query"
+      }
+  ],
+  "responses": [
+    {
+        "is": {
+            "statusCode": 200,
+            "headers": <% include ../headers.json %>,
+            "body":{
+              "time": [
+                "12-14-2020 10:30",
+                "12-14-2020 10:30",
+                "12-14-2020 10:30",
+                "12-14-2020 10:30",
+                "12-14-2020 10:30"
+              ],
+              "used": [
+                1000,
+                1000,
+                1000,
+                1000,
+                1000
+              ]
+            }
+        }
+    }
+  ]
+}

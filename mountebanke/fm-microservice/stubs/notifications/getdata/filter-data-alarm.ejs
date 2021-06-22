@@ -1,0 +1,32 @@
+{
+  "predicates": [
+      {
+          "contains": {
+              "method": "GET",
+              "path": "/notifications-service/v1.0/alarm-list/filter-data"
+          }
+      }
+  ],
+  "responses": [
+      {
+          "is": {
+              "statusCode": 200,
+              "headers": <% include ../../headers.json %>,
+              "body": [
+                {
+                  "id" : 1,
+                  "name" : "sonusV2VfyMgrAgentVersionSuccessNotification"
+                },
+                {
+                  "id" : 2,
+                  "name" : "Critical2"
+                },
+                {
+                  "id" : 3,
+                  "name" : "Critical3"
+                }    
+              ]
+          }
+      }
+  ]
+}

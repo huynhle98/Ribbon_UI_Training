@@ -1,0 +1,23 @@
+{
+	"predicates": [
+			{
+					"equals": {
+							"method": "PUT",
+							"path": "/administration-service/v1.0/forwarding"
+					}
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..transparentForwarding" },
+					"comment": "transparentForwarding property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..loopChecking" },
+					"comment": "loopChecking property must exist in body"
+			}
+	],
+	"responses": <% include ../responses/responses-without-status.ejs %>
+}

@@ -1,0 +1,678 @@
+{
+    "predicates": [
+          {
+              "equals": {
+                  "method": "GET",
+          "headers": {
+            "Authorization": "123456789"
+          },
+                  "path": "/lm/v1.0/manualReports"
+              }
+          }
+    ],
+    "responses": [
+          {
+              "is": {
+                  "statusCode": 200,
+                  "headers": <% include ../headers.json %>,
+                  "body": [
+                    {
+                        "id": "1",
+                        "name": "My Quarterly Node Report",
+                        "reportType": "Node",
+                        "format": "PDF",
+                        "nextScheduled": 1617253200000
+                    },
+                    {
+                        "id": "2",
+                        "name": "random historical report",
+                        "reportType": "License",
+                        "format": "PDF"
+                    },
+                    {
+                        "id": "3",
+                        "name": "My Weekly Node Report",
+                        "reportType": "Node",
+                        "format": "PDF",
+                        "nextScheduled": 1610341200000
+                    },
+                    {
+                        "id": "4",
+                        "name": "Last Years Revoked Licenses",
+                        "reportType": "Revoked Licenses",
+                        "format": "PDF"
+                    },
+                    {
+                        "id": "5",
+                        "name": "anothr-historical-report",
+                        "reportType": "License",
+                        "format": "PDF"
+                    }
+                ]
+              }
+          }
+    ]
+},
+{
+    "predicates": [
+          {
+              "equals": {
+                  "method": "GET",
+          "headers": {
+            "Authorization": "123456789"
+          },
+                  "path": "/lm/v1.0/manualReports/availableFeatures"
+              }
+          },
+          {
+            "exists": {"query": "NWDL"},
+            "caseSensitive": true,
+            "comment": "unique property must exist in query"
+          }
+    ],
+    "responses": [
+          {
+              "is": {
+                  "statusCode": 200,
+                  "headers": <% include ../headers.json %>,
+                  "body": [
+                  {"id":"EMS-CLI","name":"EMS-CLI"},
+                  {"id":"EMS-CORE-API","name":"EMS-CORE-API"},
+                  {"id":"EMS-LI","name":"EMS-LI"},
+                  {"id":"EMS-LIC-AUDIT-REPORT","name":"EMS-LIC-AUDIT-REPORT"},
+                  {"id":"EMS-LIC-AUTO-REPORT","name":"EMS-LIC-AUTO-REPORT"},
+                  {"id":"EMS-NTM","name":"EMS-NTM"},
+                  {"id":"EMS-SMS-API","name":"EMS-SMS-API"},
+                  {"id":"NW-HPC","name":"NW-HPC"},
+                  {"id":"NW-MLPP","name":"NW-MLPP"},
+                  {"id":"POL-TESTDB","name":"POL-TESTDB"},
+                  {"id":"DSP-AMRNB-D","name":"DSP-AMRNB-D"},
+                  {"id":"DSP-AMRWB-D","name":"DSP-AMRWB-D"},
+                  {"id":"DSP-EVRC-D","name":"DSP-EVRC-D"},
+                  {"id":"DSP-G722-D","name":"DSP-G722-D"},
+                  {"id":"ENCRYPT-D","name":"ENCRYPT-D"},
+                  {"id":"POL-BASESW-D","name":"POL-BASESW-D"},
+                  {"id":"POL-ENUMCLT-D","name":"POL-ENUMCLT-D"},
+                  {"id":"POL-GLOBAL-D","name":"POL-GLOBAL-D"},
+                  {"id":"POL-SIP-D","name":"POL-SIP-D"},
+                  {"id":"POL-STSH-D","name":"POL-STSH-D"},
+                  {"id":"SBC-CAPACITY-D","name":"SBC-CAPACITY-D"},
+                  {"id":"SBC-MRF-RTU-D","name":"SBC-MRF-RTU-D"},
+                  {"id":"SBC-POL-RTU-D","name":"SBC-POL-RTU-D"},
+                  {"id":"SBC-PSX-RTU-D","name":"SBC-PSX-RTU-D"},
+                  {"id":"SBC-RCS-D","name":"SBC-RCS-D"},
+                  {"id":"SBC-RTU-D","name":"SBC-RTU-D"},
+                  {"id":"SBC-SIP323-D","name":"SBC-SIP323-D"},
+                  {"id":"SWE-INSTANCE-D","name":"SWE-INSTANCE-D"},
+                  {"id":"VDSP-RTU-D","name":"VDSP-RTU-D"}
+                ]
+              }
+          }
+    ]
+},
+{
+    "predicates": [
+          {
+              "equals": {
+                  "method": "GET",
+          "headers": {
+            "Authorization": "123456789"
+          },
+                  "path": "/lm/v1.0/manualReports/features"
+              }
+          },
+          {
+            "exists": {"query": { "nodeTypes": "PSX,SBC" }},
+            "caseSensitive": true,
+            "comment": "unique property must exist in query"
+          }
+    ],
+    "responses": [
+          {
+              "is": {
+                  "statusCode": 200,
+                  "headers": <% include ../headers.json %>,
+                  "body": [
+                  {"id":"POL-GLOBAL-D","name":"POL-GLOBAL-D"},
+                  {"id":"POL-ENUMCLT-D","name":"POL-ENUMCLT-D"},
+                  {"id":"POL-TESTDB","name":"POL-TESTDB"},
+                  {"id":"POL-SIP-D","name":"POL-SIP-D"},
+                  {"id":"POL-STSH-D","name":"POL-STSH-D"},
+                  {"id":"POL-BASESW-D","name":"POL-BASESW-D"}
+                ]
+              }
+          }
+    ]
+},
+{
+    "predicates": [
+          {
+              "equals": {
+                  "method": "GET",
+          "headers": {
+            "Authorization": "123456789"
+          },
+                  "path": "/lm/v1.0/manualReports/floatingNodeTypes"
+              }
+          }
+    ],
+    "responses": [
+          {
+              "is": {
+                  "statusCode": 200,
+                  "headers": <% include ../headers.json %>,
+                  "body": [
+                  {"id":"PSX","name":"PSX"},
+                  {"id":"SBC","name":"SBC"}
+                ]
+              }
+          }
+    ]
+},
+{
+    "predicates": [
+          {
+              "equals": {
+                  "method": "GET",
+          "headers": {
+            "Authorization": "123456789"
+          },
+                  "path": "/lm/v1.0/manualReports/featureNamesForCluster/31806"
+              }
+          }
+    ],
+    "responses": [
+          {
+              "is": {
+                  "statusCode": 200,
+                  "headers": <% include ../headers.json %>,
+                  "body": [
+                  {"id":"DSP-G722-D","name":"DSP-G722-D"},
+                  {"id":"SBC-RTU-D","name":"SBC-RTU-D"},
+                  {"id":"SBC-RCS-D","name":"SBC-RCS-D"},
+                  {"id":"SBC-CAPACITY-D","name":"SBC-CAPACITY-D"},
+                  {"id":"ENCRYPT-D","name":"ENCRYPT-D"},
+                  {"id":"SBC-MRF-RTU-D","name":"SBC-MRF-RTU-D"},
+                  {"id":"SBC-PSX-RTU-D","name":"SBC-PSX-RTU-D"},
+                  {"id":"DSP-AMRWB-D","name":"DSP-AMRWB-D"},
+                  {"id":"DSP-AMRNB-D","name":"DSP-AMRNB-D"},
+                  {"id":"VDSP-RTU-D","name":"VDSP-RTU-D"},
+                  {"id":"SBC-POL-RTU-D","name":"SBC-POL-RTU-D"},
+                  {"id":"SBC-SIP323-D","name":"SBC-SIP323-D"},
+                  {"id":"SWE-INSTANCE-D","name":"SWE-INSTANCE-D"},
+                  {"id":"DSP-EVRC-D","name":"DSP-EVRC-D"}
+                ]
+              }
+          }
+    ]
+},
+{
+    "predicates": [
+          {
+              "equals": {
+                  "method": "GET",
+          "headers": {
+            "Authorization": "123456789"
+          },
+                  "path": "/lm/v1.0/manualReports/clusters"
+              }
+          }
+    ],
+    "responses": [
+          {
+              "is": {
+                  "statusCode": 200,
+                  "headers": <% include ../headers.json %>,
+                  "body": [
+                  {"id":"37133","name":"SOLKTXADvSBC-M-SK-PS-10"},
+                  {"id":"37134","name":"SOLKTXADvSBC-M-SK-PM-10"},
+                  {"id":"31805","name":"SOLKTXADvSBC-M-SK-PM-30"},
+                  {"id":"31806","name":"SOLKTXADvSBC-M-SK-PS-30"},
+                  {"id":"46934","name":"SOLKTXADvSBC-M-SK-CS-01"},
+                  {"id":"59623","name":"SOLKTXADvSBC-L-SK-N11G-11"},
+                  {"id":"42135","name":"SOLKTXADvSBC-M-SK-PS-50"},
+                  {"id":"46969","name":"SOLKTXADvSBC-M-SK-CM-01"},
+                  {"id":"30951","name":"SOLKTXADvSBC-M-SK-PS-20"},
+                  {"id":"20034","name":"SOLKTXAAvSBC-L-SK-N11G-01"},
+                  {"id":"36238","name":"SOLKTXBDvSBC-L-SK-CIGW-01"},
+                  {"id":"30953","name":"SOLKTXADvSBC-M-SK-PM-20"},
+                  {"id":"41083","name":"SOLKTXADvSBC-M-SK-PM-50"},
+                  {"id":"76500","name":"SOLKTXADvSBC-L-SK-911G-20"},
+                  {"id":"36264","name":"SOLKTXADvSBC-L-SK-CIGW-01"},
+                  {"id":"38837","name":"SOLKTXADvSBC-M-SK-PS-40"},
+                  {"id":"38825","name":"SOLKTXADvSBC-M-SK-PM-40"},
+                  {"id":"30937","name":"SOLKTXADvPSX-L-SK-D-01"},
+                  {"id":"37544","name":"SOLKTXBDvPSX-L-SK-D-02"},
+                  {"id":"39882","name":"NESDvPSX-M-SK-PM-02"},
+                  {"id":"83874","name":" SOLKTXADvSBC-M-SK-CM-01Test"},
+                  {"id":"30940","name":"SOLKTXADvPSX-L-SK-SRV6-01"},
+                  {"id":"30059","name":"vPSX-M-SK-PM-01"},
+                  {"id":"60902","name":"SOLKTXADvSBC-M-SK-CS-02"},
+                  {"id":"37923","name":"CICDTXCIvPSX-L-SK-SRV6-01"},
+                  {"id":"60900","name":"SOLKTXADvSBC-M-SK-CS-22"},
+                  {"id":"60913","name":"SOLKTXADvSBC-M-SK-CM-02"},
+                  {"id":"84197","name":"SOLKTXADvSBC-M-SK-CS-04"},
+                  {"id":"83586","name":"SOLKTXADvSBC-M-SK-CM-03"},
+                  {"id":"84162","name":"SOLKTXADvSBC-M-SK-CS-03"},
+                  {"id":"84436","name":"SOLKTXADvSBC-M-SK-CS-03bkup"},
+                  {"id":"86671","name":"SOLKTXBDvPSX-L-SK-SRV6-55"},
+                  {"id":"87139","name":"SOLKTXBDvPSX-L-SK-D-05"},
+                  {"id":"87974","name":"SOLKTXBDvSBC-L-SK-CIGW-11"},
+                  {"id":"87925","name":"SOLKTXADvSBC-M-SK-PS-60"},
+                  {"id":"87935","name":"SOLKTXBDvPSX-L-SK-D-03"},
+                  {"id":"87926","name":"SOLKTXADvSBC-M-SK-PM-60"},
+                  {"id":"87986","name":"200908-334656SF"},
+                  {"id":"90124","name":"OamSigClus"},
+                  {"id":"90125","name":"OamMedClus"},
+                  {"id":"90424","name":"DSINTCluster"},
+                  {"id":"91295","name":"OamSignaling"},
+                  {"id":"91310","name":"directIntegrated"},
+                  {"id":"91320","name":"SlavePsx"},
+                  {"id":"91324","name":"sbcVinay"},
+                  {"id":"91327","name":"testOAM"},
+                  {"id":"91345","name":"smcluster"},
+                  {"id":"91311","name":"PsxMasterClus"}
+                ]
+              }
+          }
+    ]
+},
+{
+    "predicates": [
+          {
+              "equals": {
+                  "method": "GET",
+          "headers": {
+            "Authorization": "123456789"
+          },
+                  "path": "/lm/v1.0/manualReports/targets"
+              }
+          },
+          {
+            "exists": {"query": {"nodeTypes": "SBC,PSX"}},
+            "caseSensitive": true
+          }
+    ],
+    "responses": [
+          {
+              "is": {
+                  "statusCode": 200,
+                  "headers": <% include ../headers.json %>,
+                  "body": [
+                  { "id":"2607:f160:b:1059:cf:208::", "name":"2607:f160:b:1059:cf:208::"},
+                  {"id":"NESDvPSXMSKPM02A01", "name":"NESDvPSXMSKPM02A01"},
+                  {"id":"SlavePsx", "name":"SlavePsx"},
+                  {"id":"SOLKTXADvPSXLSKD01A01", "name":"SOLKTXADvPSXLSKD01A01"},
+                  {"id":"SOLKTXADvPSXLSKSRV601A01", "name":"SOLKTXADvPSXLSKSRV601A01"},
+                  {"id":"SOLKTXBDvPSXLSKD02A02", "name":"SOLKTXBDvPSXLSKD02A02"},
+                  {"id":"SOLKTXBDvPSXLSKD05A01", "name":"SOLKTXBDvPSXLSKD05A01"},
+                  {"id":"SOLKTXBDvPSXLSKSRV655A02", "name":"SOLKTXBDvPSXLSKSRV655A02"},
+                  {"id":"vPSXMSKPM01A01", "name":"vPSXMSKPM01A01"},
+                  {"id":"PsxMaster", "name":"PsxMaster"}
+                ]
+              }
+          }
+    ]
+},
+{
+  "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+                "path": "/lm/v1.0/manualReports/features"
+            }
+        },
+        {
+          "exists": {"query": {"nodeTypes": "SBC,PSX"}},
+          "caseSensitive": true
+        }
+  ],
+  "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": [
+                {"id":"DSP-G722-D","name":"DSP-G722-D"},
+                {"id":"SBC-RTU-D","name":"SBC-RTU-D"},
+                {"id":"POL-GLOBAL-D","name":"POL-GLOBAL-D"},
+                {"id":"SBC-RCS-D","name":"SBC-RCS-D"},
+                {"id":"POL-ENUMCLT-D","name":"POL-ENUMCLT-D"},
+                {"id":"SBC-CAPACITY-D","name":"SBC-CAPACITY-D"},
+                {"id":"ENCRYPT-D","name":"ENCRYPT-D"},
+                {"id":"SBC-MRF-RTU-D","name":"SBC-MRF-RTU-D"},
+                {"id":"SBC-PSX-RTU-D","name":"SBC-PSX-RTU-D"},
+                {"id":"DSP-AMRWB-D","name":"DSP-AMRWB-D"},
+                {"id":"POL-TESTDB","name":"POL-TESTDB"},
+                {"id":"POL-SIP-D","name":"POL-SIP-D"},
+                {"id":"DSP-AMRNB-D","name":"DSP-AMRNB-D"},
+                {"id":"VDSP-RTU-D","name":"VDSP-RTU-D"},
+                {"id":"SBC-POL-RTU-D","name":"SBC-POL-RTU-D"},
+                {"id":"SBC-SIP323-D","name":"SBC-SIP323-D"},
+                {"id":"POL-STSH-D","name":"POL-STSH-D"},
+                {"id":"POL-BASESW-D","name":"POL-BASESW-D"},
+                {"id":"SWE-INSTANCE-D","name":"SWE-INSTANCE-D"},
+                {"id":"DSP-EVRC-D","name":"DSP-EVRC-D"}
+              ]
+            }
+        }
+  ]
+},
+{
+    "predicates": [
+          {
+              "equals": {
+                  "method": "GET",
+          "headers": {
+            "Authorization": "123456789"
+          },
+                  "path": "/lm/v1.0/manualReport/1"
+              }
+          },
+          {
+            "exists": {"query": true},
+            "caseSensitive": true,
+            "comment": "unique property must exist in query"
+          }
+    ],
+    "responses": [
+          {
+              "is": {
+                  "statusCode": 200,
+                  "headers": <% include ../headers.json %>,
+                  "body": {
+                    "id": "1",
+                    "name": "Test Node Report",
+                    "description": "Test des",
+                    "reportType": "node",
+                    "dayOfMonthRepeat": 5,
+                    "frequency": "Repeat",
+                    "repeatFrequency": "Monthly",
+                    "reportFormat": "XML",
+                    "reportOutputType": "Download",
+                    "selectedColumnList": [
+                      "NODE",
+                      "POL-BASESW-D",
+                      "POL-ENUMCLT-D",
+                      "POL-SIP-D"
+                    ],
+                    "selectedNodeNames": [
+                      "2607:f160:b:1059:cf:208::",
+                      "SlavePsx",
+                      "SOLKTXADvPSXLSKSRV601A01"
+                    ],
+                    "selectedNodeTypes": [
+                      "SBC"
+                    ],
+                    "timeAt": "13:40"
+                  }
+              }
+          }
+    ]
+},
+{
+  "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+                "path": "/lm/v1.0/manualReport/2"
+            }
+        },
+        {
+          "exists": {"query": true},
+          "caseSensitive": true,
+          "comment": "unique property must exist in query"
+        }
+  ],
+  "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": {
+                  "reportType": "licenseSummary",
+                  "reportOutputType": "Download",
+                  "eligibleLicenses": [
+                    {
+                      "id": "POL-SPE-D",
+                      "name": "POL-SPE-D"
+                    },
+                    {
+                      "id": "POL-TESTDB-D",
+                      "name": "POL-TESTDB-D"
+                    },
+                    {
+                      "id": "POL-VPN-D",
+                      "name": "POL-VPN-D"
+                    },
+                    {
+                      "id": "POL-BASESW-D",
+                      "name": "POL-BASESW-D"
+                    }
+                  ],
+                  "selectedLicenses": [
+                    "POL-SPE-D",
+                    "POL-TESTDB-D",
+                    "POL-VPN-D",
+                    "POL-BASESW-D"
+                  ],
+                  "name": "Manual_summary_report",
+                  "reportFormat": "CSV",
+                  "description": "summaryReport",
+                  "selectedColumnList": [
+                    "featureId",
+                    "licenseType",
+                    "deviceType",
+                    "expiryStatus",
+                    "licenseInstalled",
+                    "licenseUsed",
+                    "description"
+                  ],
+                  "eligibleLicenseTypes": [
+                    {
+                      "id": "LEGACY",
+                      "name": "LEGACY"
+                    },
+                    {
+                      "id": "NWDL",
+                      "name": "NWDL"
+                    }
+                  ],
+                  "selectedLicenseTypes": [
+                    "LEGACY",
+                    "NWDL"
+                  ],
+                  "expirationAlert": [
+                    "safe",
+                    "expiringSoon"
+                  ],
+                  "frequency": "Now"
+                }
+            }
+        }
+  ]
+},
+{
+  "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+                "path": "/lm/v1.0/manualReport/3"
+            }
+        },
+        {
+          "exists": {"query": true},
+          "caseSensitive": true,
+          "comment": "unique property must exist in query"
+        }
+  ],
+  "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": {
+                  "id": "3",
+                  "name": "My Quarterly Node Report",
+                  "description": "Description Report",
+                  "reportType": "node",
+                  "eligibleColumnList": [
+                    {"id": "POL-TESTDB", "name": "POL-TESTDB"},
+                    {"id": "NODE", "name": "NODE"},
+                    {"id": "POL-GLOBAL-D", "name": "POL-GLOBAL-D"},
+                    {"id": "POL-ENUMCLT-D", "name": "POL-ENUMCLT-D"},
+                    {"id": "POL-SIP-D", "name": "POL-SIP-D"},
+                    {"id": "POL-STSH-D", "name": "POL-STSH-D"},
+                    {"id": "POL-BASESW-D", "name": "POL-BASESW-D"}
+                  ],
+                  "selectedColumnList": [
+                  "POL-TESTDB", "NODE", "POL-GLOBAL-D", "POL-ENUMCLT-D", "POL-SIP-D"
+                  ],
+                  "eligibleNodeTypes": [
+                    "PSX", "SBC"
+                  ],
+                  "selectedNodeTypes": [
+                    "SBC"
+                  ],
+                  "eligibleNodeNames": [
+                    "2607:f160:b:1059:cf:208::",
+                    "NESDvPSXMSKPM02A01",
+                    "SlavePsx",
+                    "SOLKTXADvPSXLSKD01A01",
+                    "SOLKTXADvPSXLSKSRV601A01",
+                    "SOLKTXBDvPSXLSKD02A02",
+                    "SOLKTXBDvPSXLSKD05A01",
+                    "SOLKTXBDvPSXLSKSRV655A02",
+                    "vPSXMSKPM01A01",
+                    "PsxMaster"
+                  ],
+                  "selectedNodeNames": [
+                    "NESDvPSXMSKPM02A01",
+                    "SlavePsx",
+                    "SOLKTXADvPSXLSKD01A01"
+                  ],
+                  "frequency": "Now",
+                  "reportFormat": "CSV",
+                  "reportOutputType": "Export",
+                  "timeAt": "14:06",
+                  "exportLocations": [
+                    {"ip": "1.1.1.1", "directory": "directory1", "username": "userName", "password": "123456"},
+                    {"ip": "2.2.2.2", "directory": "directory", "username": "", "password": ""}
+                  ]
+                }
+            }
+        }
+  ]
+},
+{
+  "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+                "path": "/lm/v1.0/manualReport/4"
+            }
+        },
+        {
+          "exists": {"query": true},
+          "caseSensitive": true,
+          "comment": "unique property must exist in query"
+        }
+  ],
+  "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": {
+                  "id": "4",
+                  "name": "My Weekly Node Report",
+                  "description": "Description Report",
+                  "reportType": "revoked",
+                  "expirationEndDate": "2021/06/10",
+                  "expirationStartDate": "2021/06/06",
+                  "eligibleColumnList": [
+                    {"id": "remoteIp", "name": "Remote Ip"},
+                    {"id": "featureId", "name": "Feature Name"},
+                    {"id": "lineId", "name": "Instance Id"},
+                    {"id": "licenseType", "name": "License Type"},
+                    {"id": "deviceType", "name": "Device Type"},
+                    {"id": "eventTime", "name": "Operation Time"},
+                    {"id": "remoteUser", "name": "Remote User"}
+                  ],
+                  "selectedColumnList": [
+                    "remoteIp",
+                    "featureId",
+                    "lineId"
+                  ],
+                  "frequency": "Later",
+                  "reportFormat": "PDF",
+                  "reportOutputType": "Export",
+                  "date": "2021/06/09",
+                  "timeAt": "17:00",
+                  "exportLocations": [
+                    {"ip": "1.1.1.1", "directory": "directory", "username": "userName", "password": "123456"}
+                  ]
+                }
+            }
+        }
+  ]
+},
+{
+  "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+                "path": "/lm/v1.0/manualReport/5"
+            }
+        },
+        {
+          "exists": {"query": true},
+          "caseSensitive": true,
+          "comment": "unique property must exist in query"
+        }
+  ],
+  "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../headers.json %>,
+                "body": {
+                  "clusterId": "31806",
+                  "clusterName": "SOLKTXADvSBC-M-SK-PS-30",
+                  "description": "Test Des",
+                  "expirationEndDate": "2021/06/10",
+                  "expirationStartDate": "2021/06/06",
+                  "frequency": "Now",
+                  "name": "Test Historical ",
+                  "reportFormat": "CSV",
+                  "reportOutputType": "Download",
+                  "reportType": "licenseHistoricalPerCluster",
+                  "selectedColumnList": [
+                    "DSP-G722-D",
+                    "SBC-RTU-D",
+                    "SBC-RCS-D",
+                    "TIME"
+                  ],
+                  "selectedLicenses": [
+                  "DSP-G722-D", "SBC-RTU-D", "SBC-RCS-D"
+                  ]
+                }
+            }
+        }
+  ]
+}

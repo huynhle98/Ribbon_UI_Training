@@ -1,0 +1,116 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/config/userGroups"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": [
+          {
+            "id": "1",
+            "name": "admin group",
+            "userIdList": [
+              {
+                "id": "1",
+                "name": "Mary"
+              },
+              {
+                "id": "2",
+                "name": "Jim"
+              },
+              {
+                "id": "7",
+                "name": "user-abc456"
+              }
+            ],
+            "description": "Top level group"
+          },
+          {
+            "id": "2",
+            "name": "sbc-group",
+            "userIdList": [
+              {
+                "id": "1",
+                "name": "Mary"
+              },
+              {
+                "id": "2",
+                "name": "Jim"
+              }
+            ],
+            "description": "Top level group"
+          },
+          {
+            "id": "3",
+            "name": "psx-user",
+            "userIdList": [
+              {
+                "id": "1",
+                "name": "Mary"
+              },
+              {
+                "id": "2",
+                "name": "Jim"
+              }
+            ],
+            "description": "Top level group"
+          },
+          {
+            "id": "4",
+            "name": "operator-level-group",
+            "userIdList": [
+              {
+                "id": "4",
+                "name": "Raoul"
+              },
+              {
+                "id": "2",
+                "name": "Jim"
+              }
+            ],
+            "description": "Top level group"
+          },
+          {
+            "id": "5",
+            "name": "EMS-prov-group",
+            "userIdList": [
+              {
+                "id": "6",
+                "name": "user-abc123"
+              }
+            ],
+            "description": "Top level group"
+          },
+          {
+            "id": "6",
+            "name": "Analytics-read-only-group",
+            "userIdList": [],
+            "description": "Orange"
+          },
+          {
+            "id": "7",
+            "name": "EDGE-group",
+            "userIdList": [],
+            "description": "Top level group"
+          },
+          {
+            "id": "8",
+            "name": "AS-PA-read-write-users",
+            "userIdList": [],
+            "description": "Red"
+          }
+        ]
+      }
+    }
+  ]
+}

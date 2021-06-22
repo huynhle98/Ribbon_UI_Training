@@ -1,0 +1,34 @@
+{
+	"predicates": [
+			{
+					"equals": {
+							"method": "PUT",
+							"path": "/view-service/v1.0/view/1"
+					}
+			},
+			{
+				"exists": {"body": true},
+				"caseSensitive": true,
+				"jsonpath": { "selector": "$..id" },
+				"comment": "id property must exist in body"
+			}
+	],
+	"responses": <% include ../responses/responses-without-status.ejs %>
+},
+{
+	"predicates": [
+			{
+					"equals": {
+							"method": "PUT",
+							"path": "/view-service/v1.0/view/2"
+					}
+			},
+			{
+				"exists": {"body": true},
+				"caseSensitive": true,
+				"jsonpath": { "selector": "$..id" },
+				"comment": "id property must exist in body"
+			}
+	],
+	"responses": <% include ../responses/responses-without-status.ejs %>
+}

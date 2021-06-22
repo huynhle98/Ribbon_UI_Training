@@ -1,0 +1,339 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/nodes/1/NWDLInstances"
+      }
+    },
+    {
+      "equals": {
+        "query": {
+          "licenseType": "domainLocked"
+        }
+      },
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "nodeInstanceList": [
+            {
+              "featureName": "POL-AINVPN-D",
+              "licenseInfoOid": "POL-AINVPN-D-551531",
+              "licenseId": "85011",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 200000,
+              "currentAssociatedCount": 100,
+              "status": true
+            },
+            {
+              "featureName": "POL-BASESW-D",
+              "licenseInfoOid": "POL-BASESW-D-551532",
+              "licenseId": "85012",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 20000,
+              "currentAssociatedCount": 20000,
+              "status": true
+            }
+          ],
+          "totalCount": 0
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/nodes/2/NWDLInstances"
+      }
+    },
+    {
+      "equals": {
+        "query": {
+          "licenseType": "domainLocked"
+        }
+      },
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "nodeInstanceList": [
+            {
+              "featureName": "POL-AINVPN-D",
+              "licenseInfoOid": "POL-AINVPN-D-551531",
+              "licenseId": "85011",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 200000,
+              "currentAssociatedCount": 100,
+              "status": true
+            },
+            {
+              "featureName": "POL-BASESW-D",
+              "licenseInfoOid": "POL-BASESW-D-551532",
+              "licenseId": "85012",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 20000,
+              "currentAssociatedCount": 20000,
+              "status": true
+            },
+            {
+              "featureName": "POL-BASESW-D",
+              "licenseInfoOid": "POL-BASESW-D-551533",
+              "licenseId": "85013",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 100000,
+              "currentAssociatedCount": 100,
+              "status": false
+            },
+            {
+              "featureName": "POL-ENUMCLT-D",
+              "licenseInfoOid": "POL-ENUMCLT-D-551534",
+              "licenseId": "85014",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 2000,
+              "currentAssociatedCount": 100,
+              "status": true
+            },
+            {
+              "featureName": "POL-ENUMCLT-D",
+              "licenseInfoOid": "POL-ENUMCLT-D-551535",
+              "licenseId": "85015",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 200000,
+              "currentAssociatedCount": 100,
+              "status": false
+            }
+          ],
+          "totalCount": 0
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/nodes/3/NWDLInstances"
+      }
+    },
+    {
+      "equals": {
+        "query": {
+          "licenseType": "domainLocked"
+        }
+      },
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "nodeInstanceList": [
+            {
+              "featureName": "POL-AINVPN-D",
+              "licenseInfoOid": "POL-AINVPN-D-551531",
+              "licenseId": "85011",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 200000,
+              "currentAssociatedCount": 100,
+              "status": false
+            },
+            {
+              "featureName": "POL-BASESW-D",
+              "licenseInfoOid": "POL-BASESW-D-551532",
+              "licenseId": "85012",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 200000,
+              "currentAssociatedCount": 100,
+              "status": true
+            },
+            {
+              "featureName": "POL-BASESW-D",
+              "licenseInfoOid": "POL-BASESW-D-551533",
+              "licenseId": "85013",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 200000,
+              "currentAssociatedCount": 100,
+              "status": false
+            },
+            {
+              "featureName": "POL-ENUMCLT-D",
+              "licenseInfoOid": "POL-ENUMCLT-D-551534",
+              "licenseId": "85014",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 200000,
+              "currentAssociatedCount": 100,
+              "status": true
+            },
+            {
+              "featureName": "POL-ENUMCLT-D",
+              "licenseInfoOid": "POL-ENUMCLT-D-551535",
+              "licenseId": "85015",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 200000,
+              "currentAssociatedCount": 100,
+              "status": false
+            }
+          ],
+          "totalCount": 5
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/nodes/4/NWDLInstances"
+      }
+    },
+    {
+      "equals": {
+        "query": {
+          "licenseType": "domainLocked"
+        }
+      },
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "nodeInstanceList": [
+            {
+              "featureName": "POL-AINVPN-D",
+              "licenseInfoOid": "POL-AINVPN-D-551531",
+              "licenseId": "85011",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 200000,
+              "currentAssociatedCount": 200,
+              "status": false
+            },
+            {
+              "featureName": "POL-BASESW-D",
+              "licenseInfoOid": "POL-BASESW-D-551532",
+              "licenseId": "85012",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 200000,
+              "currentAssociatedCount": 100,
+              "status": true
+            },
+            {
+              "featureName": "POL-BASESW-D",
+              "licenseInfoOid": "POL-BASESW-D-551533",
+              "licenseId": "85013",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 200000,
+              "currentAssociatedCount": 100,
+              "status": true
+            },
+            {
+              "featureName": "POL-ENUMCLT-D",
+              "licenseInfoOid": "POL-ENUMCLT-D-551534",
+              "licenseId": "85014",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 200000,
+              "currentAssociatedCount": 100,
+              "status": false
+            },
+            {
+              "featureName": "POL-ENUMCLT-D",
+              "licenseInfoOid": "POL-ENUMCLT-D-551535",
+              "licenseId": "85015",
+              "generationDate": "04/16/2019",
+              "expirationDate": "10/13/2020",
+              "maxPerNodeLimit": 200000,
+              "currentAssociatedCount": 100,
+              "status": false
+            }
+          ],
+          "totalCount": 5
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/nodes/5/NWDLInstances"
+      }
+    },
+    {
+      "equals": {
+        "query": {
+          "licenseType": "domainLocked"
+        }
+      },
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "nodeInstanceList": [],
+          "totalCount": 0
+        }
+      }
+    }
+  ]
+}

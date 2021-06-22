@@ -1,0 +1,29 @@
+{
+	"predicates": [
+			{
+					"equals": {
+							"method": "PUT",
+							"path": "/administration-service/v1.0/presentUsage"
+					}
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..eventRecords" },
+					"comment": "eventRecords property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..activeRealTimeManager" },
+					"comment": "activeRealTimeManager property must exist in body"
+			},
+			{
+					"exists": { "body": true },
+					"caseSensitive": true,
+					"jsonpath": { "selector": "$..eventListsCurrently" },
+					"comment": "eventListsCurrently property must exist in body"
+			}
+	],
+	"responses": <% include ../responses/responses-without-status.ejs %>
+}

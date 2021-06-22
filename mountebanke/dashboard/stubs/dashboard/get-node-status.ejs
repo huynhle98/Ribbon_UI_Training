@@ -1,0 +1,24 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/nodeMgmt/v1.0/nodeStatus"
+			}
+    }
+  ],
+  "responses": [
+		{
+			"is": {
+        "headers": <% include ../headers.json %>,
+				"statusCode": 200,
+        "body": {
+          "onlineNodes": 5,
+          "offlineNodes": 6,
+          "unregisteredNodes": 10,
+          "partialStatesNodes": 19
+        }  
+			}
+		}
+  ]
+}

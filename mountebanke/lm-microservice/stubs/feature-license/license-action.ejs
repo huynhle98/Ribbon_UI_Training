@@ -1,0 +1,104 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "PUT",
+        "headers": {
+          "Authorization": "123456789"
+        },
+				"path": "/lm/v1.0/feature/licenses/1"
+			}
+		},
+    {
+      "exists": {"query": {"action": "revoke"}},
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+        "body": []
+			}
+		}
+  ]
+},
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "PUT",
+        "headers": {
+          "Authorization": "123456789"
+        },
+				"path": "/lm/v1.0/feature/licenses/1"
+			}
+		},
+    {
+      "exists": {"query": {"action": "override"}},
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+        "body": []
+			}
+		}
+  ]
+},
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "PUT",
+        "headers": {
+          "Authorization": "123456789"
+        },
+				"path": "/lm/v1.0/feature/licenses/2"
+			}
+		},
+    {
+      "exists": {"query": {"action": "revoke"}},
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+        "body": []
+			}
+		}
+  ]
+},
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "PUT",
+        "headers": {
+          "Authorization": "123456789"
+        },
+				"path": "/lm/v1.0/feature/licenses/2"
+			}
+		},
+    {
+      "exists": {"query": {"action": "override"}},
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+        "body": []
+			}
+		}
+  ]
+}

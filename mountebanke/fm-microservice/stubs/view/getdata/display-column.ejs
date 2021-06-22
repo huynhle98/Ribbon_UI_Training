@@ -1,0 +1,121 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/view-service/v1.0/views/display-columns"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": [
+					{
+						"id": "DEFAULT",
+						"name": "Default",
+						"data": [
+						]
+					},
+					{
+						"id": "MINIMAL",
+						"name": "Minimal",
+						"data": [
+						]
+					},
+					{
+						"id": "MINIMAL2",
+						"name": "Minimal2",
+						"data": [
+						"sequenceId",
+						"eventName",
+						"severity",
+						"ack",
+						"lastOccurrence",
+						"summary"
+						]
+					},
+					{
+						"id": "VARIATION1",
+						"name": "Variation1",
+						"data": [
+						"sequenceId",
+						"eventName",
+						"severity",
+						"ack",
+						"deviceType",
+						"deviceName",
+						"lastOccurrence",
+						"summary"
+						]
+					},
+					{
+						"id": "VARIATION2",
+						"name": "Variation2",
+						"data": [
+						"sequenceId",
+						"eventName",
+						"severity",
+						"ack",
+						"deviceType",
+						"deviceName",
+						"lastOccurrence",
+						"summary"
+						]
+					},
+					{
+						"id": "VARIATION3",
+						"name": "Variation3",
+						"data": [
+						"sequenceId",
+						"eventName",
+						"severity",
+						"ack",
+						"deviceType",
+						"deviceName",
+						"firstOccurrence",
+						"lastOccurrence",
+						"count",
+						"summary"
+						]
+					},
+					{
+						"id": "VARIATION4",
+						"name": "Variation4",
+						"data": [
+						"sequenceId",
+						"eventName",
+						"severity",
+						"ack",
+						"owner",
+						"deviceType",
+						"deviceName",
+						"firstOccurrence",
+						"lastOccurrence",
+						"count"
+						]
+					},
+					{
+						"id": "ALL",
+						"name": "All",
+						"data": [
+						"sequenceId",
+						"eventName",
+						"severity",
+						"ack",
+						"owner",
+						"deviceType",
+						"deviceName",
+						"firstOccurrence",
+						"lastOccurrence",
+						"count",
+						"summary"
+						]
+					}
+				]
+			}
+		}
+  ]
+}

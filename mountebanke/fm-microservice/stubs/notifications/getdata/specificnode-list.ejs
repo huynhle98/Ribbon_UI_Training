@@ -1,0 +1,32 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/notifications-service/v1.0/specific-node-list"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../headers.json %>,
+				"body": [
+					{
+						"id": 1,
+						"name": "ems-1"
+					},
+					{
+						"id": 2,
+						"name": "psx-1"
+					},
+					{
+						"id": 3,
+						"name": "ems-2"
+					}
+				]
+			}
+		}
+  ]
+}

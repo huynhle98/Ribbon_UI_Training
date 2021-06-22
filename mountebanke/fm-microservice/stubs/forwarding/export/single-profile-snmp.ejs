@@ -1,0 +1,41 @@
+{
+    "predicates": [
+        {
+            "contains": {
+                "method": "GET",
+                "path": "/forwarding-service/v1.0/export-profile/1"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../../headers.json %>,
+                "body": {
+                    "id": 1,
+                    "name": "profile-sample",
+                    "description": "user profile sample",
+                    "associatedFilterProfileId": 2,
+                    "isProfileEnabled": true,
+                    "ipAddress": "192.168.0.2",
+                    "port": "161",
+                    "dataFormat": "SNMP",
+                    "trapCommunity": "TMA",
+                    "trapVersion": "SNMP v3",
+                    "v3SecurityLevel": "AuthPriv",
+                    "v3User": "user1",
+                    "v3PrivacyPassphrase": "12345678",
+                    "v3AuthenPassphrase": "87654321",
+                    "v3PrivacyProtocol": "DES",
+                    "v3AuthenProtocol": "MD5",
+                    "maxRate": "No limit",
+                    "enableAlarmNormalization": false,
+                    "enableSingleDeviceSourceAddress": true,
+                    "addEpochToTraps": false,
+                    "deviceHostnameToTraps": false
+                  }
+            }
+        }
+    ]
+}

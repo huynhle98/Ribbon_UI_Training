@@ -1,0 +1,22 @@
+{
+    "predicates": [
+      {
+        "equals": {
+          "method": "OPTIONS"
+        }
+      }
+    ],
+    "responses": [
+      {
+        "is": {
+          "headers": {
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",          
+            "Content-Type": "application/json",
+            "Other-info": "Always allow OPTIONS method"
+          },
+          "statusCode": 200
+        }
+      }
+    ]
+  }

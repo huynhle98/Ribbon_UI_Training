@@ -1,0 +1,115 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/config/user/1"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "1",
+          "name": "Mary",
+          "password": "12345678",
+          "enabled": false,
+          "forcePasswordChange": false,
+          "passwordAging": false,
+          "localization": "northAmerica",
+          "defaultCountry": "string",
+          "description": "Software Engineer",
+          "email": "string",
+          "type": "temp",
+          "selectedGroupIdList": [
+            "1",
+            "2"
+          ],
+          "accessControlAssocList": [
+            {
+              "ugId": "string",
+              "rgId": "string",
+              "roleId": "string"
+            }
+          ]
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/config/user/2"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": "2",
+          "name": "Jim",
+          "password": "12345678",
+          "enabled": true,
+          "forcePasswordChange": true,
+          "passwordAging": true,
+          "localization": "northAmerica",
+          "defaultCountry": "USA",
+          "description": "Cowboy",
+          "email": "string",
+          "type": "prov",
+          "selectedGroupIdList": [
+            "1",
+            "2"
+          ],
+          "accessControlAssocList": [
+            {
+              "ugId": "string",
+              "rgId": "string",
+              "roleId": "string"
+            }
+          ]
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/auth/v1.0/config/user/3"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 404,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "code": 404,
+          "message": "Cry ( ´･･)ﾉ(._.`)"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "PUT",
+                "path": "/v1/retention-service/data-retention"
+            }
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..id" },
+            "comment": "id property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..intervalRententionTime" },
+            "comment": "Interval Rentention Time property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..intervalRententionTimeType" },
+            "comment": "Interval Rentention Time Type property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..hourlyAggregatedTime" },
+            "comment": "Hourly Aggregated Time property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..hourlyAggregatedTimeType" },
+            "comment": "Hourly Aggregated Time Type property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..dailyAggregatedTime" },
+            "comment": "Daily Aggregated Time property must exist in body"
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..dailyAggregatedTimeType" },
+            "comment": "Daily Aggregated Time Type property must exist in body"
+        }
+    ],
+    "responses": <% include ../responses/responses-without-status.ejs %>
+}

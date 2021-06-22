@@ -1,0 +1,54 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/trap-resync-service/v1.0/trap-resync-setting/123.56.89.12"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": 2,
+          "ossIpAddress": "123.56.89.12",
+          "snmpVersion": "v3",
+          "snmpWriteComunity": "",
+          "securityName": "Security Name",
+          "securityLevel": "1111",
+          "authenticationProtocol": "Authentication Protocol",
+          "authenticationPassphrase": "Authentication Passphrase",
+          "privacyProtocol": "Privacy Protocol",
+          "privacyPassphrase": "Privacy Passphrase"
+        }
+      }
+    }
+  ]
+},
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/trap-resync-service/v1.0/trap-resync-setting/255.255.255.255"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../headers.json %>,
+        "body": {
+          "id": 1,
+          "ossIpAddress": "255.255.255.255",
+          "snmpVersion": "v2",
+          "snmpWriteComunity": ""
+        }
+      }
+    }
+  ]
+}

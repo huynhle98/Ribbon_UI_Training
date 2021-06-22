@@ -1,0 +1,46 @@
+{
+  "port": 4747,
+  "protocol": "http",
+  "name": "proto",
+  "recordRequests": false,
+  "useCORS": true,
+  "allowCORS": true,
+
+  "stubs": [
+	 <%# Requires an "Authorization" header of "123456789" %>
+     <%# Returns a list of users %>
+     <% include ../stubs/users.json %>,
+
+	 <%# Forwarding %>
+     <% include ../stubs/forwarding/index.ejs %>,
+
+     <% include ../stubs/options.ejs %>,
+
+     <%# Reclassification Rules %>
+     <% include ../stubs/reclassification-rules/index.ejs %>,
+
+     <%# Event History %>
+     <% include ../stubs/event-history/index.ejs %>,
+
+     <%# Notifications %>
+     <% include ../stubs/notifications/index.ejs %>,
+
+     <%# Administration %>
+     <% include ../stubs/administration/index.ejs %>,
+     
+     <%# Trap Resync %>
+     <% include ../stubs/trap-resync-setting/index.ejs %>,
+
+     <%# View %>
+     <% include ../stubs/view/index.ejs %>,
+
+     <%# Dashboard %>
+     <% include ../stubs/dashboard/index.ejs %>,
+
+     <%# Default %>
+     <% include ../stubs/default/index.ejs %>,
+
+     <%# Include this last, if no other matches, then return a 404 %>
+     <% include ../stubs/404.ejs %>
+  ]
+}

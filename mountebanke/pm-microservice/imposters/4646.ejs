@@ -1,0 +1,42 @@
+{
+  "port": 4646,
+  "protocol": "http",
+  "name": "proto",
+  "recordRequests": true,
+  "useCORS": true,
+  "allowCORS": true,
+
+  "stubs": [
+     <%# Returns a list of users %>
+     <% include ../stubs/users.json %>,
+
+     <% include ../stubs/options.ejs %>,
+
+     <%# Addendum %>
+     <% include ../stubs/addendum/index.ejs %>,
+
+     <%# Assignment %>
+     <% include ../stubs/profile/assignment/index.ejs %>,
+
+     <%# Collection %>
+     <% include ../stubs/profile/collection/index.ejs %>,
+
+     <%# Common %>
+     <% include ../stubs/profile/common/index.ejs %>,
+
+     <%# Data Retention %>
+     <% include ../stubs/data-retention/index.ejs %>,
+
+     <%# Threshold %>
+     <% include ../stubs/threshold/index.ejs %>,
+     
+     <%# Export %>
+     <% include ../stubs/profile/export/index.ejs %>,
+     
+     <%# Default %>
+     <% include ../stubs/default/index.ejs %>,
+     
+     <%# Include this last, if no other matches, then return a 404 %>
+     <% include ../stubs/404.ejs %>
+  ]
+}

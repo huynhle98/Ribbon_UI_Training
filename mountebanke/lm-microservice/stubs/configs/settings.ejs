@@ -1,0 +1,55 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+				"path": "/lm/v1.0/settings"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body":{
+          "alertDays": 14,
+          "raiseTrapExpirationAlerts": true,
+          "retainRawReportingDataDays": 180,
+          "retriesRibbonIT": 2,
+          "delayRetriesRibbonITSeconds": 5,
+          "retentionTime": 30,
+          "collectionFrequencyMinutes": 5
+        }
+			}
+		}
+  ]
+},
+{
+	"predicates": [
+    {
+      "equals": {
+        "method": "PUT",
+        "headers": {
+          "Authorization": "123456789"
+        },
+        "path": "/lm/v1.0/settings"
+      }
+    },
+    {
+      "exists": {"body": true},
+      "caseSensitive": true
+    }
+	],
+	"responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>
+			}
+		}
+	]
+}

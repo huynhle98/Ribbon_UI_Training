@@ -1,0 +1,23 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "GET",
+                "path": "/forwarding-service/v1.0/export-profile/associated-filter-profile"
+            }
+        }
+    ],
+    "responses": [
+        {
+            "is": {
+                "statusCode": 200,
+                "headers": <% include ../../headers.json %>,
+                "body": [
+                    { "id": 1, "name": "Administrator" },
+                    { "id": 2, "name": "Manager" },
+                    { "id": 3, "name": "User1" }
+                ]
+            }
+        }
+    ]
+}

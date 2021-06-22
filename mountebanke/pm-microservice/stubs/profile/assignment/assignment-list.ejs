@@ -1,0 +1,128 @@
+{
+  "predicates": [
+    {
+      "equals": {
+        "method": "GET",
+        "path": "/profile-service/v1/assignment"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "is": {
+        "statusCode": 200,
+        "headers": <% include ../../headers.json %>,
+        "body": [
+          {
+            "id": "id01",
+            "nodeName": "psxmste",
+            "cluster": "psx-cluster",
+            "assignmentseType": "PSX",
+            "collectionProfile": "Default SBC Profile",
+            "collectionStatus": true,
+            "exportProfile": "Eastcoast",
+            "exportStatus": false,
+            "profileStatus": true,
+            "lastCollectionDate": "03/15/2020 03:05:00"
+          },
+          {
+            "id": "id02",
+            "nodeName": "px1-zzzzzz",
+            "cluster": "psx-cluster",
+            "assignmentseType": "PSX",
+            "collectionProfile": "Default SBC Profile",
+            "collectionStatus": true,
+            "exportProfile": "Eastcoast",
+            "exportStatus": false,
+            "profileStatus": true,
+            "lastCollectionDate": "04/15/2020 00:00:00"
+          },
+          {
+            "id": "id03",
+            "nodeName": "abc-123-dsc",
+            "assignmentseType": "DSC",
+            "cluster": "",
+            "collectionProfile": "Default DSC Profile",
+            "collectionStatus": false,
+            "exportProfile": "Eastcoast",
+            "exportStatus": false,
+            "profileStatus": false,
+            "lastCollectionDate": "12/15/2020 03:40:00"
+          },
+          {
+            "id": "id04",
+            "nodeName": "10.54.28.89-xyz",
+            "assignmentseType": "EMS",
+			      "cluster": "",
+            "collectionProfile": "Default EMS Profile",
+            "collectionStatus": false,
+            "exportProfile": "Eastcoast",
+            "exportStatus": false,
+            "profileStatus": true,
+            "lastCollectionDate": "02/23/2020 20:30:00"
+          },
+          {
+            "id": "id05",
+            "nodeName": "10.54.28.89-ems",
+            "cluster": "",
+            "assignmentseType": "EMS",
+            "collectionProfile": "Default EMS Profile",
+            "collectionStatus": false,
+            "exportProfile": "Eastcoast",
+            "exportStatus": true,
+            "profileStatus": false,
+            "lastCollectionDate": "10/20/2020 00:00:00"
+          },
+          {
+            "id": "id06",
+            "nodeName": "localhost8.1",
+            "cluster": "",
+            "assignmentseType": "EMS",
+            "collectionProfile": "Default EMS Profile",
+            "collectionStatus": false,
+            "exportProfile": "Eastcoast",
+            "exportStatus": true,
+            "profileStatus": false,
+            "lastCollectionDate": "10/30/2020 05:30:00"
+          },
+          {
+            "id": "id07",
+            "nodeName": "localhost971",
+			      "cluster": "",
+            "assignmentseType": "EMS",
+            "collectionProfile": "Default EMS Profile",
+            "collectionStatus": false,
+            "exportProfile": "Eastcoast",
+            "exportStatus": false,
+            "profileStatus": false,
+            "lastCollectionDate": "10/30/2020 05:30:00"
+          },
+          {
+            "id": "id08",
+            "nodeName": "sbcCluster",
+            "cluster": "",
+            "assignmentseType": "EMS",
+            "collectionProfile": "Default EMS Profile",
+            "collectionStatus": false,
+            "exportProfile": "Eastcoast",
+            "exportStatus": false,
+            "profileStatus": true,
+            "lastCollectionDate": "05/05/2020 10:30:00"
+          },
+          {
+            "id": "id09",
+            "nodeName": "10.54.49.57",
+            "cluster": "",
+            "assignmentseType": "EMS",
+            "collectionProfile": "Default EMS Profile",
+            "collectionStatus": false,
+            "exportProfile": "SBC",
+            "exportStatus": false,
+            "profileStatus": true,
+            "lastCollectionDate": "10/10/2020 00:00:00"
+          }
+        ]
+      }
+    }
+  ]
+}

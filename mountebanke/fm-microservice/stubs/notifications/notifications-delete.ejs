@@ -1,0 +1,17 @@
+{
+	"predicates": [
+			{
+					"equals": {
+							"method": "PUT",
+							"path": "/notifications-service/v1.0/notification-delete"
+					}
+			},
+			{
+				"exists": { "body": true },
+				"caseSensitive": true,
+				"jsonpath": { "selector": "$..listId" },
+				"comment": "listId property must exist in body"
+		}
+	],
+	"responses": <% include ../responses/responses-without-status.ejs %>
+}

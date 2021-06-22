@@ -1,0 +1,32 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/administration-service/v1.0/dashboard"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body": [
+					{
+						"ownershipPolicy": {
+							"allowOperationsOwned": false
+						},
+						"eventListLimits": {
+							"windowPerAdministrator": 10,
+							"windowPerProvisioner": 10,
+							"windowPerOperator": 10,
+							"maximumPerServer": 10,
+							"autoRefreshInterval": 15
+						}
+					}
+				]
+			}
+		}
+  ]
+}

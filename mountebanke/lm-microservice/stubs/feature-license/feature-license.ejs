@@ -1,0 +1,129 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+        "headers": {
+          "Authorization": "123456789"
+        },
+				"path": "/lm/v1.0/feature/licenses"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+				"body":[
+          {
+            "featureId": "1",
+            "featureName": "EMS-CLI",
+            "licenseType": "Legacy",
+            "nodeType": "INSIGHT",
+            "expiredCount": 0,
+            "expiringSoonCount": 0,
+            "totalCount": 1,
+            "purchaseOrder": ["760160", "762090", "724620", "824770"],
+            "description": "The feature provides CLI. - instance(s) with alert overrides"
+          },
+          {
+            "featureId": "2",
+            "featureName": "SBC-POL-RTU-D",
+            "licenseType": "NWDL",
+            "nodeType": "SBC",
+            "expiredCount": 4,
+            "expiringSoonCount": 37,
+            "totalCount": 1000,
+            "purchaseOrder": ["760160", "762090", "724620", "824770"],
+            "description": "SBC-POL-RTU-Dlicenses - instance(s) with alert overrides"
+          },
+          {
+            "featureId": "1",
+            "featureName": "EMS-LIC-AUTO-REPORT",
+            "licenseType": "Legacy",
+            "nodeType": "INSIGHT",
+            "expiredCount": 0,
+            "expiringSoonCount": 1,
+            "totalCount": 1,
+            "purchaseOrder": ["760160", "762090", "724620", "824770"],
+            "description": "This feature provides automatic transfer of post-paid biling lecense data to Sonus ..."
+          },
+          {
+            "featureId": "1",
+            "featureName": "H323PGK-SW",
+            "licenseType": "Legacy",
+            "nodeType": "PSX",
+            "expiredCount": 947,
+            "expiringSoonCount": 24,
+            "totalCount": 10000,
+            "purchaseOrder": ["760160", "762090", "724620", "824770"],
+            "description": "This feature provides H.323 Gatekeeper functionality on Sonus PSX Policy Server. -instance(s) with alert overrides"
+          },
+          {
+            "featureId": "1",
+            "featureName": "EMS-CORE-API",
+            "licenseType": "Legacy",
+            "nodeType": "INSIGHT",
+            "expiredCount": 0,
+            "expiringSoonCount": 44,
+            "totalCount": 500,
+            "purchaseOrder": ["760160", "762090", "724620", "824770"],
+            "description": "This feature provides an application programming interface to Sonus Insight for prov"
+          }
+        ]
+			}
+		}
+  ]
+},
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "POST",
+        "headers": {
+          "Authorization": "123456789",
+          "Content-Type": "text/plain"
+        },
+				"path": "/lm/v1.0/feature/licenses"
+			}
+		},
+    {
+      "exists": {"body": true},
+      "caseSensitive": true
+    }
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+        "body": []
+			}
+		}
+  ]
+},
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "POST",
+        "headers": {
+          "Authorization": "123456789",
+          "Content-Type": "multipart/form-data"
+        },
+				"path": "/lm/v1.0/feature/licenses/file"
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../headers.json %>,
+        "body": []
+			}
+		}
+  ]
+}
+

@@ -1,0 +1,17 @@
+{
+    "predicates": [
+        {
+            "equals": {
+                "method": "PUT",
+                "path": "/threshold-service/v1/threshold"
+            }
+        },
+        {
+            "exists": { "body": true },
+            "caseSensitive": true,
+            "jsonpath": { "selector": "$..id" },
+            "comment": "id property must exist in body"
+        }
+    ],
+    "responses": <% include ../responses/responses-without-status.ejs %>
+}

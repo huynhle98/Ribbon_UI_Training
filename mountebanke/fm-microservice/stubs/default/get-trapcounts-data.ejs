@@ -1,0 +1,69 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "GET",
+				"path": "/dashboard-service/v1.0/fm/trapcounts"
+			}
+    }
+  ],
+  "responses": [
+		{
+			"is": {
+        "headers": <% include ../headers.json %>,
+				"statusCode": 200,
+        "body": [
+          {
+            "id": "id-1",
+            "alertCount": {
+              "critical": 5,
+              "major": 3,
+              "minor": 4,
+              "warning": 10,
+              "indeterminate": 0,
+              "tripwire": 4
+            },
+            "nodeList": null
+          },
+          {
+            "id": "id-2",
+            "alertCount": {
+              "critical": 12,
+              "major": 0,
+              "minor": 5,
+              "warning": 8,
+              "indeterminate": 10,
+              "tripwire": 4
+            },
+            "nodeList": [
+              {
+                "id": "id-2-1",
+                "alertCount": {
+                  "critical": 1,
+                  "major": 9,
+                  "minor": 13,
+                  "warning": 5,
+                  "indeterminate": 6,
+                  "tripwire": 8
+                },
+                "nodeList": null
+              }
+            ]
+          },
+          {
+            "id": "id-3",
+            "alertCount": {
+              "critical": 5,
+              "major": 8,
+              "minor": 4,
+              "warning": 20,
+              "indeterminate": 0,
+              "tripwire": 4
+            },
+            "nodeList": null
+          }
+        ]    
+			}
+		}
+  ]
+}
