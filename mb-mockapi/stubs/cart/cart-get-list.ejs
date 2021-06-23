@@ -1,0 +1,18 @@
+{
+	"predicates": [
+		{
+			"equals": {
+					"headers": {
+							"Authorization": "123456"
+					},
+					"method": "GET",
+					"path": "/auth/cart"
+			}
+	}],
+	"responses": [{
+			"is": {
+					"statusCode": 200,
+					"body": <% include ../../data/cart/resSuccess.ejs %>
+			}
+	}]
+}

@@ -1,0 +1,26 @@
+{
+  "predicates": [
+		{
+			"equals": {
+				"method": "POST",
+        "headers": {
+          "Authorization": "123456"
+        },
+				"path": "/auth/cart",
+        "body": {
+          "id": 1,
+          "count": 2
+        }
+			}
+		}
+  ],
+  "responses": [
+		{
+			"is": {
+				"statusCode": 200,
+				"headers": <% include ../../options/headers.ejs %>,
+        "body": <% include ../../data/cart/resSuccessAdd.ejs %>
+			}
+		}
+  ]
+}

@@ -1,35 +1,35 @@
 <div class="bgr-img">
-    <img [src]="checkImg(heroInfo.img)" alt="" class="hero-type-list-img" />
+    <img [src]="checkImg(heroInfo.img)" alt="" class="hero-type-list-img" *ngIf="heroInfo != undefined" />
 </div>
-<div class="hero-type-list-content">
-    <span class="hero-type-list-name">{{heroInfo.name | uppercase}}</span>
+<div class="hero-type-list-content" *ngIf="heroInfo != undefined">
+    <span class="hero-type-list-name">{{ heroInfo.name | uppercase }}</span>
     <div class="hero-type-list-info">
         <div class="left">
             <div class="gr-info">
                 <span><i class="fas fa-heart"></i>Health:</span>
-                <span>{{heroInfo.health}}</span>
+                <span>{{ heroInfo.health }}</span>
             </div>
             <div class="gr-info">
                 <span><i class="fas fa-shield"></i>Armor:</span>
-                <span>{{heroInfo.armor}}</span>
+                <span>{{ heroInfo.armor }}</span>
             </div>
             <div class="gr-info">
                 <span><i class="fas fa-flask-potion"></i>Magic Resist:</span>
-                <span>{{heroInfo.magicResist}}</span>
+                <span>{{ heroInfo.magicResist }}</span>
             </div>
         </div>
         <div class="right">
             <div class="gr-info">
                 <span><i class="fas fa-swords"></i>Attack Damage:</span>
-                <span>{{heroInfo.attackDamage}}</span>
+                <span>{{ heroInfo.attackDamage }}</span>
             </div>
             <div class="gr-info">
                 <span><i class="fas fa-hat-witch"></i>Power Magic:</span>
-                <span>{{heroInfo.powerMagic}}</span>
+                <span>{{ heroInfo.powerMagic }}</span>
             </div>
             <div class="gr-info">
                 <span><i class="fas fa-bow-arrow"></i>Attack Range:</span>
-                <span>{{heroInfo.attackRange}}</span>
+                <span>{{ heroInfo.attackRange }}</span>
             </div>
         </div>
     </div>
