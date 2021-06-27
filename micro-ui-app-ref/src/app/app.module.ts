@@ -50,7 +50,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     FmComponent,
   ],
   imports: [
-    FmModule,
+    // FmModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
