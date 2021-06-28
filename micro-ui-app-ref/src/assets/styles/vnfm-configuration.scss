@@ -1,0 +1,211 @@
+@import './common-styles.scss';
+
+.full-width {
+  width: 100%;
+}
+
+.error {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: -5px;
+}
+
+.padding-right-form {
+  padding-right: 80px;
+}
+
+.ui-row-location {
+  margin-top: 10px;
+}
+
+.header {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/******************CSS Form*******************/
+.form-tenant-usage {
+  border-left: 4px;
+  border-right: 5px;
+  border-top: 3px;
+  border-bottom: 5px;
+  border-style: solid;
+  border-color: $panelHeaderBgColor;
+}
+
+.label-tenant-usage {
+  margin: 30px 0px 0px 50px;
+
+  hr {
+    width: 70%;
+  }
+}
+
+.content-rows {
+  margin-top: 10px;
+}
+
+.label-rows {
+  margin: 20px 0px 5px 0px;
+}
+
+.label-value {
+  border: 1px $gainsboro solid;
+  float: left;
+  height: 24px; // equal height of process bar
+
+  span {
+    font-size: small;
+  }
+
+  width: 7em;
+  text-align: center;
+}
+
+.tenant-usage {
+  margin: 50px;
+  margin-top: 20px;
+}
+
+.form-edit-tenant {
+  margin: 0px 20% 0px 12%;
+}
+
+.stripe-lines {
+  border-right: 1px $black solid;
+}
+
+.rows-edit-form {
+  margin-top: 20px;
+}
+
+/***********Over write on frimeNg**************/
+
+.cus-table {
+  ::ng-deep {
+    .colgroup-cols {
+      width: 175px;
+    }
+
+    .colgroup-small {
+      width: 130px;
+    }
+
+    .colgroup-normal {
+      width: 213px;
+    }
+
+    .colgroup-action {
+      width: 130px;
+    }
+
+    // css of calender
+    .ui-calendar .ui-datepicker {
+      min-width: 150px;
+    }
+
+    .colgroup-date {
+      width: $col-date-width;
+    }
+
+    .colgroup-numbers {
+      width: 100px;
+    }
+
+    .colgroup-target {
+      width: 140px;
+    }
+
+    .colgroup-location {
+      width: 115px;
+    }
+
+    .colgroup-coordinate {
+      width: 140px;
+    }
+
+    .colgroup-floatingIP {
+      width: 150px;
+    }
+  }
+}
+
+// css for tenant component
+::ng-deep {
+  body {
+    .ui-table {
+      .ui-table-tbody {
+        tr {
+
+          // color for ram, cpu, ip, vnf, vm
+          // 0-25%
+          .excellent {
+            background-color: $alertInfoOn;
+            color: $black;
+          }
+
+          // 25-50%
+          .good {
+            background-color: $alertDebugOn;
+            color: $black;
+          }
+
+          //50-75%
+          .fair {
+            background-color: $lightOrange;
+            color: $black;
+          }
+
+          // > 75%
+          .poor {
+            background-color: $alertErrorOn;
+            color: $black;
+          }
+        }
+      }
+    }
+  }
+}
+
+// add/edit tenant
+::ng-deep {
+  .excellent {
+    .ui-progressbar {
+      background-color: $alertInfoOn;
+
+      .ui-progressbar-value {
+        background: $alertInfo;
+      }
+    }
+  }
+
+  .good {
+    .ui-progressbar {
+      background-color: $alertDebugOn;
+
+      .ui-progressbar-value {
+        background: $alertDebug;
+      }
+    }
+  }
+
+  .fair {
+    .ui-progressbar {
+      background-color: $lightOrange;
+
+      .ui-progressbar-value {
+        background: $darkOrange;
+      }
+    }
+  }
+
+  .poor {
+    .ui-progressbar {
+      background-color: $alertErrorOn;
+
+      .ui-progressbar-value {
+        background: $alertError;
+      }
+    }
+  }
+}

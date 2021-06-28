@@ -1,0 +1,17 @@
+@import './../../../../node_modules/rbn-common-lib/assets/styles/ribbontheme/variables';
+$headerNavBg: #1D1F21;
+$TopheaderBg: $headerNavBg;
+.topheaderContainer {
+  background-color: $TopheaderBg;
+  padding-top: 10px;
+}
+
+.headeralert {
+  padding-top: 15px;
+}
+
+.status {
+  color: $ribbon-danger-red;
+  font-size: 16px;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}

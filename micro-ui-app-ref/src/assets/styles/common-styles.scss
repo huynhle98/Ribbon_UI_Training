@@ -1,0 +1,103 @@
+@import '../../../node_modules/rbn-common-lib/assets/styles/ribbontheme/variables';
+
+.padding-left-form {
+  padding-left: 35px;
+}
+
+.vertical-line {
+  width: 1px;
+  height: 80%;
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+.ui-row {
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+}
+
+// text show error
+.text-danger {
+  color: $alertError;
+}
+
+/******************CSS Form*******************/
+.content-form {
+  margin: 10px 20px 30px 20px;
+}
+
+.header-form {
+  border-bottom: $panelContentBorder;
+
+  h5 {
+    // font-weight: bold;
+    margin: 10px 20px 10px 20px;
+  }
+}
+
+.label-edit-form {
+  margin: 30px 20% 0px 12%;
+  overflow: hidden;
+
+  hr {
+    width: 100%;
+    float: left;
+  }
+
+  h4 {
+    margin: 0px;
+  }
+}
+
+/***********Override on primeNg**************/
+.m-r-100 {
+  margin-right: 100px;
+}
+
+// css of calender
+.ui-calendar-button {
+  background-color: $tableBodyRowEvenBgColor;
+  border: 1px solid $ribbon-light-grey;
+  border-left: none;
+
+  .pi-calendar {
+    color: $ribbon-dark-grey;
+  }
+}
+
+.ui-calendar-button:hover {
+  .pi-calendar {
+    color: $tableBodyRowEvenBgColor;
+  }
+}
+
+.pull-right {
+  float: right;
+}
+
+$col-functions-width: 200px;
+$col-checkbox-width: 40px;
+$col-date-width: 260px;
+
+
+.cus-table {
+  ::ng-deep {
+    .ui-calendar {
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .ui-calendar.ui-calendar-w-btn {
+      .ui-inputtext {
+        padding-right: 30px;
+        width: 100%;
+      }
+
+      button {
+        position: absolute;
+        right: 0;
+      }
+    }
+  }
+}
