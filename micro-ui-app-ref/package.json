@@ -1,8 +1,8 @@
 {
   "name": "emslibs",
   "version": "0.0.0",
-  "scripts": {    
-    "start": "ng serve"    
+  "scripts": {
+    "start": "ng serve"
   },
   "private": true,
   "dependencies": {
@@ -23,6 +23,7 @@
     "chart.js": "^2.6.0",
     "core-js": "^2.5.4",
     "express": "^4.16.4",
+    "fm": "0.0.0",
     "font-awesome": "^4.7.0",
     "moment": "^2.23.0",
     "ng2-charts": "~1.6.0",
@@ -31,10 +32,10 @@
     "primeflex": "^1.0.0-rc.1 || ^1.0.0",
     "primeicons": "^1.0.0",
     "primeng": "^7.0.0-beta.1 || ^7.0.0",
+    "rbn-common-lib": "file:../rbn-common-lib-0.0.158.tgz",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
-    "zone.js": "~0.8.26",
-    "fm": "0.0.0"
+    "zone.js": "~0.8.26"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.13.0",

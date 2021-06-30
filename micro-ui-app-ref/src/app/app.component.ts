@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
     scriptElement.onerror = (error: any) => {
       console.log('ERROR: Could not load external application from: ' + fePluginUrl);
     };
-    document.getElementsByTagName('body')[0].appendChild(scriptElement);
+    // document.getElementsByTagName('body')[0].appendChild(scriptElement);
 
   }
 
