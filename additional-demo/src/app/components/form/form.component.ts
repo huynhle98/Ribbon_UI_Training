@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../../model/hero';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -29,9 +29,16 @@ export class FormComponent {
   model = new Hero(18, 'Dr IQ', this.powers[0], 'Chuck Overstreet');
 
   updateForm = new FormGroup({
-    name: new FormControl(''),
-    power: new FormControl(''),
-    alterEgo: new FormControl(''),
+    name: new FormControl('', [
+        Validators.required,
+        Validators.minLength(5)
+      ]),
+    power: new FormControl('', [
+        Validators.required,
+      ]),
+    alterEgo: new FormControl('', [
+        Validators.required,
+      ]),
   });
   constructor() {
     this.updateModel();
